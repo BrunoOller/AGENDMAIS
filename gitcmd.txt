@@ -1,0 +1,30 @@
+--> GIT CONFIG <--
+---------------------------------------------------
+GIT CONFIG - BRUNO:
+-> git config --global user.name BrunoOller
+-> git config --global user.email brunobrunelli4@gmail.com
+---------------------------------------------------
+
+GIT CONFIG - NOME:
+-> git config --global user.name "NOME"
+-> git config --global user.email example@gmail.com
+---------------------------------------------------
+
+GIT CONFIG - NOME:
+-> git config --global user.name "NOME"
+-> git config --global user.email example@gmail.com
+---------------------------------------------------
+
+--> COMANDOS GIT <--
+---------------------------------------------------
+SALVAR O PROJETO:
+-> git add .
+-> git commit -m "descrição do commit"
+-> git push
+---------------------------------------------------
+
+(CASO JÁ TENHA O PROJETO E ESTÁ COM UMA VERSÃO NÃO ATUALIZADA)
+---------------------------------------------------------------
+VÁ NO CMD E ACESSE A PASTA DO PROJETO, E DÊ O SEGUINTE COMANDO:
+-> git pull
+---------------------------------------------------
