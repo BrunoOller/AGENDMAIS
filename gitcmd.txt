@@ -5,9 +5,9 @@ GIT CONFIG - BRUNO:
 -> git config --global user.email brunobrunelli4@gmail.com
 ---------------------------------------------------
 
-GIT CONFIG - NOME:
--> git config --global user.name "NOME"
--> git config --global user.email example@gmail.com
+GIT CONFIG - SURITA:
+-> git config --global user.name JoaoSurita
+-> git config --global user.email joaopedrosurita490@gmail.com
 ---------------------------------------------------
 
 GIT CONFIG - NOME:
