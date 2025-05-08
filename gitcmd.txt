@@ -10,9 +10,9 @@ GIT CONFIG - SURITA:
 -> git config --global user.email joaopedrosurita490@gmail.com
 ---------------------------------------------------
 
-GIT CONFIG - NOME:
--> git config --global user.name "NOME"
--> git config --global user.email example@gmail.com
+GIT CONFIG - EDUARDO: 
+-> git config --global user.name EduardoGabri356
+-> git config --global user.email edaurdo1227edu@gmail.com
 ---------------------------------------------------
 
 --> COMANDOS GIT <--
