@@ -173,6 +173,7 @@
                         padding: 10px;
                         border-radius: 50%;
                         background: var(--cor-header-titulos);
+                        box-shadow: 0 5px 10px #0000002e;
                     }
 
                     & p {
@@ -181,6 +182,73 @@
                         margin-top: 10px;
                         text-align: center;
                     }
+                }
+            }
+        }
+
+        #startAppointment {
+            width: 100%;
+            height: auto;
+            margin: 5rem 0 0 0;
+            padding: 2.5rem 0;
+            background: var(--cor-fundo-02);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            & .sa-content {
+                display: flex;
+                align-items: center;
+                gap: 1.5rem;
+
+                & .texts-e-btn {
+                    width: 45%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 1rem;
+
+                    & h1 {
+                        width: 80%;
+
+                        text-align: center;
+                        font-size: 2rem;
+                        font-weight: 600;
+                    }
+
+                    & p {
+                        width: 50%;
+
+                        margin-top: 10px;
+                        font-size: 1.4rem;
+                        text-align: center;
+                    }
+
+                    & #btn-start {
+                        border-radius: 8rem;
+                        padding: 15px 70px;
+                        font-size: 1.8rem;
+                        font-weight: 700;
+                        background: var(--cor-header-titulos);
+                        color: var(--cor-textos-01);
+                        box-shadow: 0 5px 10px #0000002e;
+                        transition: all .25s ease-out;
+                        margin-top: 5px;
+
+                        &:hover {
+                            transform: scale(1.05);
+                            background: #6bd3a9;
+                            transition: all .25s ease-in;
+                        }
+                    }
+                }
+
+                & img {
+                    width: 55%;
+                    height: auto;
+                    border-radius: 15px;
+                    box-shadow: 0 6px 10px #0000002e;
                 }
             }
         }
@@ -238,6 +306,17 @@
                 <img src="./assets/img/home/eye.svg" alt="Icone de atividade">
                 <p>Acompanhe seu agendamento em tempo real direto pelo site.</p>
             </div>
+        </div>
+    </section>
+
+    <section id="startAppointment">
+        <div class="container sa-content">
+            <div class="texts-e-btn">
+                <h1>Comece a fazer seu agendamento.</h1>
+                <p>Clique no botão abaixo para ver os postos de saúde mais perto de você.</p>
+                <a id="btn-start" href="#">Começar</a>
+            </div>
+            <img src="./assets/img/home/doctor.png" alt="Foto genérica de um médico">
         </div>
     </section>
 </body>
