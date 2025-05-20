@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAPS - Sistema de Agendamento de Postos de Saúde</title>
+    <title>AGEND+ - Sistema de Agendamento de Saúde</title>
     <link rel="shortcut icon" href="./assets/img/saps-fav.svg" type="image/x-icon">
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/color.css">
@@ -24,7 +24,7 @@
             align-items: center;
             padding: 5px 55px;
 
-            background: var(--cor-header-titulos);
+            background: #E8E8E8;
 
             & #logo {
                 width: auto;
@@ -42,16 +42,17 @@
                     justify-content: end;
 
                     & li a {
-                        font-weight: bold;
-                        padding: 25px 20px 21px 20px;
-                        border-bottom: 4px solid transparent;
-                        color: var(--cor-textos-01);
+                        font-weight: 500;
+                        padding: 10px 20px;
+                        font-size: 1.05rem;
+                        text-transform: uppercase;
+                        color: var(--cor-textos-02);
                         transition: all .25s ease-out;
 
                         &:hover {
-                            color: var(--cor-textos-footer-02);
-                            background: #FFFFFF;
-                            border-bottom: 4px solid var(--cor-textos-footer-02);
+                            color: var(--cor-textos-01);
+                            background: var(--cor-textos-02);
+                            box-shadow: 0 5px 10px #0000002e;
                             transition: all .25s ease-in;
                         }
                     }
@@ -59,68 +60,58 @@
             }
         }
 
-        #banner {
+        #apresentation {
             width: 100%;
-            height: 582px;
+            height: 350px;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: url(./assets/img/home/banner-home.png) no-repeat;
+            background: #E8E8E8;
 
-            & #texto-banner {
-                width: 35%;
-                text-align: center;
-                font-size: 2.5rem;
-                text-shadow: 0 0 10px #0000003f;
-                color: var(--cor-textos-01);
-
-                & span {
-                    color: var(--cor-header-titulos);
-                }
-            }
-        }
-
-        #line-s {
-            width: 100%;
-            height: 85px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            & .line {
-                width: 55%;
-                height: 2px;
-                background: var(--cor-header-titulos);
-            }
-        }
-
-        #welcome {
-            width: 100%;
-            height: auto;
-            padding: 2rem 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            & .content {
+            & .a-content {
                 display: flex;
                 flex-direction: column;
-                gap: 1.15rem;
+                justify-content: center;
+                align-items: center;
+                gap: 1.5rem;
 
-                & h1 {
-                    font-weight: 800;
-                    font-size: 2rem;
-                    color: var(--cor-header-titulos);
+                & .a-txts {
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: .5rem;
+
+                    & h2 {
+                        font-weight: 600;
+                        font-size: 1.25rem;
+                        color: #8d8d8d;
+                    }
+
+                    & h1 {
+                        text-align: center;
+                        font-size: 2.25rem;
+                        color: var(--cor-textos-02);
+                    }
                 }
 
-                & p {
-                    width: 93%;
-                    margin-left: 3rem;
-                    font-weight: 400;
-                    font-size: 1.3rem;
-                    color: var(--cor-textos-02);
+                & a {
+                    color: var(--cor-textos-01);
+                    background-color: var(--cor-header-titulos);
+                    padding: 10px 50px;
+                    box-shadow: 0 5px 10px #0000002e;
+                    border-radius: 35px;
+                    font-weight: 500;
+                    transition: all .25s ease-out;
+
+                    &:hover {
+                        transform: translateY(-4px);
+                        background-color: #6bd3a9;
+                        transition: all .25s ease-in;
+                    }
                 }
             }
+
         }
 
         #howAppointment {
@@ -155,9 +146,11 @@
                     flex-direction: column;
                     justify-content: start;
                     align-items: center;
+                    cursor: default;
 
                     background: #FFFFFF;
                     box-shadow: 0 5px 10px #0000002e;
+                    transition: all .25s ease-out;
 
                     & h2 {
                         width: 80%;
@@ -181,6 +174,11 @@
 
                         margin-top: 10px;
                         text-align: center;
+                    }
+
+                    &:hover {
+                        transform: translateY(-7px);
+                        transition: all .25s ease-in;
                     }
                 }
             }
@@ -268,21 +266,13 @@
         </nav>
     </header>
 
-    <section id="banner">
-        <h1 id="texto-banner">
-            <span>Sistema</span> de <span>Agendamento</span> de <span>Postos</span> De <span>Saúde</span>
-        </h1>
-    </section>
-
-    <section id="line-s">
-        <div class="line"></div>
-    </section>
-
-    <section id="welcome">
-        <div class="container content">
-            <h1>BEM VINDO(A) AO SAPS</h1>
-            <p>Agende seu atendimento nos postos de saúde de forma rápida e prática. Aqui você pode marcar consultas,
-                exames e vacinas sem precisar sair de casa. Simples, rápido e seguro.</p>
+    <section id="apresentation">
+        <div class="container a-content">
+            <div class="a-txts">
+                <h2>- BUSCANDO FACILITAR A VIDA DAS PESSOAS -</h2>
+                <h1>Sistema de Agendamento de Saúde</h1>
+            </div>
+            <a href="#">Faça um Agendamento</a>
         </div>
     </section>
 
