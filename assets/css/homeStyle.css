@@ -2,38 +2,14 @@ body {
     background: var(--cor-fundo-01);
 }
 
+.titulo-section {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: var(--cor-header-titulos);
+}
+
 nav {
-    display: flex;
-    justify-content: space-between;
     background: #E8E8E8;
-
-    & #logo {
-        width: auto;
-        height: 60px;
-        transition: opacity .25s ease-out;
-
-        &:hover {
-            opacity: .7;
-            transition: opacity .25s ease-in;
-        }
-    }
-
-    & .navbar-nav .nav-item .nav-link {
-        font-weight: 500;
-        padding: 7px 20px;
-        font-size: 1rem;
-        border-radius: 5px;
-        text-transform: uppercase;
-        color: var(--cor-textos-02);
-        transition: all .25s ease-out;
-
-        &:hover {
-            color: var(--cor-textos-01);
-            background: var(--cor-header-titulos);
-            box-shadow: 0 5px 10px #0000002e;
-            transition: all .25s ease-in;
-        }
-    }
 }
 
 #apresentation {
@@ -56,17 +32,18 @@ nav {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: .5rem;
+            gap: .25rem;
 
             & #phrase {
                 font-weight: 600;
-                font-size: 1.25rem;
+                font-size: 1.2rem;
                 color: #8d8d8d;
             }
 
             & #name {
                 text-align: center;
                 font-size: 2.25rem;
+                font-weight: 700;
                 color: var(--cor-textos-02);
             }
         }
@@ -93,12 +70,12 @@ nav {
 #howAppointment {
     width: 100%;
     height: auto;
-    margin: 4rem 0;
+    margin: 4rem 0 0 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.75rem;
 
     & h1 {
         font-weight: 600;
@@ -116,7 +93,7 @@ nav {
 
             border-radius: 20px;
             padding: 13px 2px 1px 2px;
-            gap: 1rem;
+            gap: .7rem;
 
             display: flex;
             flex-direction: column;
@@ -169,19 +146,13 @@ nav {
 #popAppointments {
     width: 100%;
     height: auto;
-    margin: 5rem 0 0 0;
-    padding: 3.5rem 0 5rem 0;
+    padding: 5rem 0 5rem 0;
     background: var(--cor-fundo-02);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2rem;
-
-    & h1 {
-        font-weight: 600;
-        color: var(--cor-header-titulos);
-    }
 
     & .pa-blocks {
         width: 60%;
@@ -236,10 +207,104 @@ nav {
     }
 }
 
+#navegation {
+    width: 100%;
+    height: auto;
+    padding: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cor-fundo-03);
+    gap: 1.75rem;
+
+    & h1 {
+        font-weight: 600;
+        color: var(--cor-header-titulos);
+    }
+
+    & .blocks {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+
+        & .block {
+            width: 345px;
+            height: auto;
+
+            border-radius: 20px;
+            padding: 13px 2px;
+            gap: .5rem;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            cursor: default;
+
+            background: #FFFFFF;
+            box-shadow: 0 5px 10px #0000002e;
+            transition: all .25s ease-out;
+            
+            & img {
+                width: 40px;
+                height: 40px;
+            }
+
+            & .textos {
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: .05rem;
+
+                & h2 {
+                    width: 80%;
+    
+                    text-align: center;
+                    font-size: 1.15rem;
+                    font-weight: 600;
+                }
+    
+                & p {
+                    width: 85%;
+                    font-size: .9rem;
+                    font-weight: 400;
+                    text-align: center;
+    
+                    &:nth-child(3) {
+                        width: 82%;
+                    }
+                }
+            }
+
+            a {
+                width: 90%;
+                height: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: var(--cor-textos-01);
+                background-color: var(--cor-header-titulos);
+                font-size: 1rem;
+                font-weight: 500;
+                border-radius: 40px;
+                transition: .25s ease-out;
+
+                &:hover {
+                    background-color: #6bd3a9;
+                    transition: .25s ease-in;
+                }
+            }
+        }
+    }
+}
+
 #startAppointment {
     width: 100%;
     height: auto;
-    padding: 5rem 0;
+    padding: 4rem 0;
     background: var(--cor-fundo-02);
     display: flex;
     justify-content: center;
@@ -256,21 +321,22 @@ nav {
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 1rem;
+            gap: .35rem;
 
-            & h1 {
+            & #title-sa {
                 width: 80%;
 
                 text-align: center;
-                font-size: 2rem;
+                font-size: 1.9rem;
                 font-weight: 600;
             }
 
-            & p {
-                width: 50%;
+            & #text-sa {
+                width: 55%;
 
                 margin-top: 10px;
                 font-size: 1.4rem;
+                font-weight: 400;
                 text-align: center;
             }
 
@@ -286,7 +352,7 @@ nav {
                 margin-top: 5px;
 
                 &:hover {
-                    transform: scale(1.05);
+                    transform: scale(1.035);
                     background: #6bd3a9;
                     transition: all .25s ease-in;
                 }
@@ -294,7 +360,7 @@ nav {
         }
 
         & img {
-            width: 55%;
+            width: 45%;
             height: auto;
             border-radius: 15px;
             box-shadow: 0 6px 10px #0000002e;

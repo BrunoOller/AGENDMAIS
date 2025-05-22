@@ -11,10 +11,7 @@
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/color.css">
     <link rel="stylesheet" href="./assets/css/homeStyle.css">
-
-    <style>
-
-    </style>
+    <link rel="stylesheet" href="./assets/css/globalStyle.css">
 </head>
 
 <body>
@@ -36,7 +33,7 @@
                         <a class="nav-link" aria-current="page" href="#">Sobre</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contato</a>
+                        <a class="nav-link" href="./contato.html">Contato</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Login</a>
@@ -57,30 +54,30 @@
     </section>
 
     <section id="howAppointment">
-        <h1>Como Solicitar seu Agendamento?</h1>
+        <h1 class="titulo-section">Como Solicitar seu Agendamento?</h1>
         <div class="container blocks">
             <div class="block">
                 <h2>Escolha um serviço disponível</h2>
-                <img src="./assets/img/home/activity.svg" alt="Icone de atividade">
+                <img src="./assets/img/home/icons/activity.svg" alt="Icone de atividade">
                 <p>Escolha um horário em um serviço público ou privado disponível no site.</p>
             </div>
 
             <div class="block">
                 <h2>Conclua o agendamento</h2>
-                <img src="./assets/img/home/check-circle.svg" alt="Icone de atividade">
+                <img src="./assets/img/home/icons/check-circle.svg" alt="Icone de atividade">
                 <p>Após realizar o processo e/ou pagamento em caso de instituição privada, conclua-o e aguarde.</p>
             </div>
 
             <div class="block">
                 <h2>Acompanhe o processo pelo site</h2>
-                <img src="./assets/img/home/eye.svg" alt="Icone de atividade">
+                <img src="./assets/img/home/icons/eye.svg" alt="Icone de atividade">
                 <p>Acompanhe seu agendamento em tempo real direto pelo site.</p>
             </div>
         </div>
     </section>
-
+    
     <section id="popAppointments">
-        <h1>Agendamentos mais Procurados</h1>
+        <h1 class="titulo-section">Agendamentos mais Procurados</h1>
         <div class="pa-blocks">
             <a href="#" class="pa-block">Rotineiro</a>
             <a href="#" class="pa-block">Hemograma</a>
@@ -91,16 +88,59 @@
         </div>
     </section>
 
+    <section id="navegation">
+        <h1 class="titulo-section">Navegue pelo AGEND+</h1>
+        <div class="container blocks">
+            <div class="block">
+                <img src="./assets/img/home/icons/award.svg" alt="Icone de atividade">
+                <div class="textos">
+                    <h2>Serviços Populares</h2>
+                    <p>Os serviços mais utilizados e com melhor avaliação da sua região.</p>
+                </div>
+                <a href="#">Ver Populares</a>
+            </div>
+
+            <div class="block">
+                <img src="./assets/img/home/icons/clock.svg" alt="Icone de atividade">
+                <div class="textos">
+                    <h2>Meus Agendamentos</h2>
+                    <p>Acompanhe e gerencie suas consultas em andamento.</p>
+                </div>
+                <a href="#">Visualizar</a>
+            </div>
+
+            <div class="block">
+                <img src="./assets/img/home/icons/heart.svg" alt="Icone de atividade">
+                <div class="textos">
+                    <h2>Unidades de Saúde</h2>
+                    <p>Consulte os postos de saúde disponíveis na sua região.</p>
+                </div>
+                <a href="#">Explorar</a>
+            </div>
+        </div>
+    </section>
+
     <section id="startAppointment">
         <div class="container sa-content">
             <div class="texts-e-btn">
-                <h1>Comece a fazer seu agendamento.</h1>
-                <p>Clique no botão abaixo para ver os postos de saúde mais perto de você.</p>
+                <h1 id="title-sa">Comece a fazer seu agendamento.</h1>
+                <p id="text-sa">Clique no botão abaixo para ver os postos de saúde mais perto de você.</p>
                 <a id="btn-start" href="#">Começar</a>
             </div>
             <img src="./assets/img/home/doctor.png" alt="Foto genérica de um médico">
         </div>
     </section>
+
+    <footer id="footer">
+        <div class="container f-content">
+            <h2 id="copy"><span>&copy; 2025 AGEND+</span> Sistema de Agendamento de Saúde - Todos os direitos reservados.</h2>
+            <div class="links">
+                <a href="#">Política de Privacidade</a>
+                <div class="line"></div>
+                <a href="#">Termos de Uso</a>
+            </div>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
