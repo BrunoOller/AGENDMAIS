@@ -28,16 +28,25 @@
             align-items: center;
             background-color: #1f1f1f;
 
+            .l-content {
+                width: 50%;
+                height: auto;
+                padding: 2.25rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: .5rem;
+            }
+
             & .login {
                 width: 60%;
                 height: 100%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                flex-direction: column;
                 border-radius: 0 10rem 0 0;
                 background-color: #fff;
-                gap: .5rem;
 
                 & h1 {
                     display: flex;
@@ -72,9 +81,91 @@
                         }
                     }
 
+
                     & input:-webkit-autofill {
                         -webkit-box-shadow: 0 0 0 30px #aaaaaa inset;
                         -webkit-text-fill-color: #2b2b2b !important;
+                    }
+
+                }
+
+                & .keep-logged-in {
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    flex-direction: row;
+                    gap: .1rem;
+
+                    & input {
+                        width: 45px;
+                    }
+
+                    & p {
+                        font-size: .9rem;
+                        color: #646464;
+                    }
+
+                }
+
+                & #enter {
+                    font-size: 2.15rem;
+                    font-weight: 700;
+                    color: var(--cor-textos-01);
+                    background-color: var(--cor-header-titulos);
+                    box-shadow: 0 5px 10px #0000002e;
+                    padding: 12px 82px;
+                    border-radius: 15px;
+                    transition: .25s ease-out;
+
+                    &:hover {
+                        background-color: #6bd3a9;
+                        transition: .25s ease-in;
+                    }
+                }
+
+                & #forget {
+                    width: 100%;
+                    height: auto;
+                    font-size: .9rem;
+                    color: var(--cor-textos-footer-02);
+                    display: flex;
+                    margin-left: 30px;
+                }
+
+                & .other-ways {
+                    color: #B3B3B3;
+                    display: flex;
+                    flex-direction: row;
+                    gap: 15px;
+
+                    & .line {
+                        display: flex;
+                        align-self: center;
+                        width: 8rem;
+                        height: 1px;
+                        background-color: #B3B3B3;
+                    }
+                }
+
+                & .accounts {
+                    width: 100px;
+                    height: auto;
+                    display: flex;
+                    justify-content: space-around;
+                    gap: 10px;
+                    border: 1px solid #B2B2B2;
+
+                    & #google {
+                        font-weight: 600;
+                        display: flex;
+                        align-items: center;
+                        color: #5B8FE6;
+                        gap: 5px;
+
+                        & img {
+                            width: 1.5rem;
+                            height: auto;
+                        }
                     }
                 }
             }
@@ -133,7 +224,7 @@
             z-index: 1;
             top: 2.25rem;
             left: 2.25rem;
-            
+
             & i {
                 font-size: 2.5rem;
                 color: #2ABA81;
@@ -150,30 +241,37 @@
 
 <body>
     <main>
+        <!-- Área de Login -->
         <section class="login">
-            <h1>Entrar</h1>
-
-            <form>
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Senha">
-            </form>
-
-            <div class="keep-logged-in">
-                <input type="checkbox">
-                <p>Manter-me Logado</p>
+            <div class="l-content">
+                <h1>Entrar</h1>
+                <!-- Área de Preenchimento de Informações -->
+                <form>
+                    <div class="input-email">
+                        <img src="./assets/img/register-login/email.svg" alt="icone de email">
+                        <input type="email" placeholder="Email">
+                    </div>
+                    <div class="input-password">
+                        <img src="./assets/img/register-login/lock.svg" alt="icone de cadeado">
+                        <input type="password" placeholder="Senha">
+                    </div>
+                </form>
+                <div class="keep-logged-in">
+                    <input type="checkbox">
+                    <p>Manter-me Logado</p>
+                </div>
+                <a href="#" id="enter">ENTRAR</a>
+                <a href="#" id="forget">Esqueci a senha.</a>
+                <div class="other-ways">
+                    <div class="line"></div>
+                    <p>Ou</p>
+                    <div class="line"></div>
+                </div>
+                <div class="accounts">
+                    <a href="#" id="google"><img src="./assets/img/register-login/google.svg" alt="">GOOGLE</a>
+                    <a href="#" id="gov"><img src="./assets/img/register-login/gov.svg" alt=""></a>
+                </div>
             </div>
-
-            <a href="#">Entrar</a>
-            <a href="#">Esqueci a senha.</a>
-
-            <div class="other-ways">
-                <div class="line"></div>
-                <p>Ou</p>
-                <div class="line"></div>
-            </div>
-
-            <a href="#">GOOGLE</a>
-            <a href="#">gov.br</a>
         </section>
 
         <section class="not-account">
