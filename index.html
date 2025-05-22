@@ -29,6 +29,12 @@
             & #logo {
                 width: auto;
                 height: 60px;
+                transition: opacity .25s ease-out;
+
+                &:hover {
+                    opacity: .7;
+                    transition: opacity .25s ease-in;
+                }
             }
 
             & .navbar {
@@ -43,15 +49,16 @@
 
                     & li a {
                         font-weight: 500;
-                        padding: 10px 20px;
-                        font-size: 1.05rem;
+                        padding: 7px 20px;
+                        font-size: 1rem;
+                        border-radius: 5px;
                         text-transform: uppercase;
                         color: var(--cor-textos-02);
                         transition: all .25s ease-out;
 
                         &:hover {
                             color: var(--cor-textos-01);
-                            background: var(--cor-textos-02);
+                            background: var(--cor-header-titulos);
                             box-shadow: 0 5px 10px #0000002e;
                             transition: all .25s ease-in;
                         }
@@ -184,6 +191,76 @@
             }
         }
 
+        #popAppointments {
+            width: 100%;
+            height: auto;
+            margin: 5rem 0 0 0;
+            padding: 2.5rem 0;
+            background: var(--cor-fundo-02);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+
+            & h1 {
+                font-weight: 600;
+                color: var(--cor-header-titulos);
+            }
+
+            & .pa-blocks {
+                width: 60%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: .5rem 1.25rem;
+
+                & .pa-block {
+                    width: 45%;
+                    height: 6.85rem;
+                    box-shadow: 0 5px 10px #0000002e;
+                    border-radius: 5px;
+                    font-size: 1.25rem;
+                    font-weight: 600;
+                    color: var(--cor-textos-01);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transition: all .25s ease-out;
+
+                    &:nth-child(1) {
+                        background: url(./assets/img/home/1.png);
+                    }
+
+                    &:nth-child(2) {
+                        background: url(./assets/img/home/2.png);
+                    }
+
+                    &:nth-child(3) {
+                        background: url(./assets/img/home/3.png);
+                    }
+
+                    &:nth-child(4) {
+                        background: url(./assets/img/home/4.png);
+                    }
+
+                    &:nth-child(5) {
+                        background: url(./assets/img/home/5.png);
+                    }
+
+                    &:nth-child(6) {
+                        background: url(./assets/img/home/6.png);
+                    }
+
+                    &:hover {
+                        transform: scale(1.025);
+                        transition: all .25s ease-in;
+                    }
+                }
+            }
+        }
+
         #startAppointment {
             width: 100%;
             height: auto;
@@ -296,6 +373,18 @@
                 <img src="./assets/img/home/eye.svg" alt="Icone de atividade">
                 <p>Acompanhe seu agendamento em tempo real direto pelo site.</p>
             </div>
+        </div>
+    </section>
+
+    <section id="popAppointments">
+        <h1>Agendamentos mais Procurados</h1>
+        <div class="pa-blocks">
+            <a href="#" class="pa-block">Rotineiro</a>
+            <a href="#" class="pa-block">Hemograma</a>
+            <a href="#" class="pa-block">HIV</a>
+            <a href="#" class="pa-block">Raio-x</a>
+            <a href="#" class="pa-block">Eletrocardiograma</a>
+            <a href="#" class="pa-block">Urina</a>
         </div>
     </section>
 
