@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AGEND+ - Login</title>
+
+    <!-- Título do Site -->
+    <title>AGENDMAIS - Login</title>
+
+    <!-- Links CSS -->
     <link rel="stylesheet" href="./assets/css/color.css">
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/loginStyle.css">
-    
+
+    <!-- Link Favicon -->
+    <link rel="shortcut icon" href="./assets/img/agendm-fav.svg" type="image/x-icon">
+
+    <!-- Link Fontawesome -->
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v6.7.2/css/all.css">
+
     <style>
         main {
-            width: 100%;
-            height: 100%;
+            width: 100vw;
+            height: 100vh;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -19,80 +30,163 @@
 
             & .login {
                 width: 60%;
-                height: 100vh;
+                height: 100%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
+                border-radius: 0 10rem 0 0;
                 background-color: #fff;
-    
+                gap: .5rem;
+
                 & h1 {
                     display: flex;
-                    font-size: 40px;
-                    font-weight: 900;
+                    font-size: 3.5rem;
+                    font-weight: 800;
                     color: #4BC997;
+                    margin-bottom: 2.5rem;
                 }
-    
-                & form{
-                    width: 450px;
+
+                & form {
+                    width: 500px;
                     height: auto;
                     align-items: center;
                     justify-content: center;
                     display: flex;
                     flex-direction: column;
                     gap: .5rem;
-    
-                    
-                    & input {
-                        width: 90%;
+
+                    & input[type="password"],
+                    input[type="email"] {
+                        width: 100%;
                         display: flex;
-                        background-color: #BFBFBF;
+                        background: #BFBFBF;
                         color: #646464;
-                        padding: 15px;
+                        padding: 18px 25px;
                         border-radius: 5px;
-                        font-size: 15px;
-                        
-                        & :focus {
-                            border-color: #646464;
+                        font-size: 1.35rem;
+                        font-weight: 500;
+
+                        &:focus {
                             outline: none;
                         }
+                    }
+
+                    & input:-webkit-autofill {
+                        -webkit-box-shadow: 0 0 0 30px #aaaaaa inset;
+                        -webkit-text-fill-color: #2b2b2b !important;
+                    }
                 }
+            }
+
+            & .not-account {
+                width: 40%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                gap: 1rem;
+
+                & img {
+                    width: 300px;
+                    margin-bottom: -10px;
                 }
+
+                & h1 {
+                    width: 50%;
+                    font-size: 3.5rem;
+                    font-weight: 800;
+                    color: var(--cor-textos-01);
+                }
+
+                & p {
+                    width: 45%;
+                    font-size: 1.5rem;
+                    font-weight: 400;
+                    color: var(--cor-textos-01);
+                }
+
+                & a {
+                    font-size: 2.15rem;
+                    font-weight: 700;
+                    color: var(--cor-textos-01);
+                    background-color: var(--cor-header-titulos);
+                    box-shadow: 0 5px 10px #0000002e;
+                    border-radius: 35px;
+                    padding: 12px 45px;
+                    transition: .25s ease-out;
+
+                    &:hover {
+                        background-color: #6bd3a9;
+                        transition: .25s ease-in;
+                    }
+                }
+            }
         }
 
+        .go-back {
+            width: 4.5rem;
+            height: 4.5rem;
+            position: fixed;
+            z-index: 1;
+            top: 2.25rem;
+            left: 2.25rem;
+            
+            & i {
+                font-size: 2.5rem;
+                color: #2ABA81;
+                transition: color .25s ease-out;
+            }
+
+            &:hover i {
+                color: #000000;
+                transition: color .25s ease-in;
+            }
         }
     </style>
 </head>
+
 <body>
     <main>
         <section class="login">
             <h1>Entrar</h1>
+
             <form>
                 <input type="email" placeholder="Email">
                 <input type="password" placeholder="Senha">
             </form>
+
             <div class="keep-logged-in">
                 <input type="checkbox">
                 <p>Manter-me Logado</p>
             </div>
+
             <a href="#">Entrar</a>
-            <a href="#">Esqueci a minha enha</a>
-            <div class="ou">
+            <a href="#">Esqueci a senha.</a>
+
+            <div class="other-ways">
                 <div class="line"></div>
-                <p>ou</p>
+                <p>Ou</p>
                 <div class="line"></div>
             </div>
+
             <a href="#">GOOGLE</a>
             <a href="#">gov.br</a>
         </section>
+
         <section class="not-account">
             <img src="./assets/img/logo-dark.svg" alt="logo dark">
             <h1>Não possui uma conta?</h1>
             <p>Para criar uma conta clique no botão abaixo.</p>
             <a href="#">Cadastrar</a>
         </section>
+
+        <a class="go-back" href="./index.html"><i class="fa-solid fa-arrow-left"></i></a>
     </main>
 
     <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
