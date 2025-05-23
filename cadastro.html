@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Título do Site -->
-    <title>AGENDMAIS - Login</title>
+    <title>AGENDMAIS - Cadastro</title>
 
     <!-- Links CSS -->
     <link rel="stylesheet" href="./assets/css/color.css">
     <link rel="stylesheet" href="./assets/css/reset.css">
-    <link rel="stylesheet" href="./assets/css/loginStyle.css">
+    <link rel="stylesheet" href="./assets/css/registerStyle.css">
 
     <!-- Link Favicon -->
     <link rel="shortcut icon" href="./assets/img/agendm-fav.svg" type="image/x-icon">
@@ -22,12 +22,20 @@
 
 <body>
     <main>
-        <!-- Área de Login -->
-        <section class="login">
+        <section class="have-account">
+            <img src="./assets/img/logo-dark.svg" alt="logo dark">
+            <h1>Bem-vindo de volta!</h1>
+            <p>Para fazer login em uma conta ja existente clique no botão abaixo.</p>
+            <a href="./login.html">Entrar</a>
+        </section>
+
+        <!-- Área de Cadastro -->
+        <section class="register">
             <div class="l-content">
-                <h1>Entrar</h1>
+                <h1>Criar Conta</h1>
                 <!-- Área de Preenchimento de Informações -->
                 <form>
+                    <input type="text" placeholder="Nome">
                     <input type="email" placeholder="Email">
                     <input type="password" placeholder="Senha">
                 </form>
@@ -35,10 +43,7 @@
                     <input type="checkbox">
                     <p>Manter-me Logado</p>
                 </div>
-                <a href="#" id="enter">ENTRAR</a>
-                <div class="password">
-                    <a href="#" id="forget">Esqueci a senha.</a>
-                </div>
+                <a href="#" id="enter">Cadastrar</a>
                 <div class="other-ways">
                     <div class="line"></div>
                     <p>Ou</p>
@@ -51,12 +56,6 @@
             </div>
         </section>
 
-        <section class="not-account">
-            <img src="./assets/img/logo-dark.svg" alt="logo dark">
-            <h1>Não possui uma conta?</h1>
-            <p>Para criar uma conta clique no botão abaixo.</p>
-            <a href="./cadastro.html">Cadastrar</a>
-        </section>
 
         <a class="go-back" href="./index.html"><i class="fa-solid fa-arrow-left"></i></a>
     </main>
