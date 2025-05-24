@@ -5,6 +5,7 @@ body {
 .titulo-section {
     font-size: 1.7rem;
     font-weight: 600;
+    text-shadow: 0 5px 10px #00000017;
     color: var(--cor-header-titulos);
 }
 
@@ -77,20 +78,16 @@ nav {
     align-items: center;
     gap: 1.75rem;
 
-    & h1 {
-        font-weight: 600;
-        color: var(--cor-header-titulos);
-    }
-
     & .blocks {
         display: flex;
         justify-content: center;
         gap: 2rem;
 
         & .block {
-            width: 315px;
+            width: 345px;
             height: auto;
 
+            border: 1px solid #d3d3d3;
             border-radius: 20px;
             padding: 13px 2px 1px 2px;
             gap: .7rem;
@@ -146,7 +143,7 @@ nav {
 #popAppointments {
     width: 100%;
     height: auto;
-    padding: 5rem 0 5rem 0;
+    padding: 10rem 0 7rem 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -162,45 +159,40 @@ nav {
         gap: .5rem 1.25rem;
 
         & .pa-block {
+            position: relative;
             width: 45%;
             height: 6.85rem;
-            box-shadow: 0 5px 10px #0000002e;
+            overflow: hidden;
             border-radius: 5px;
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--cor-textos-01);
+            box-shadow: 0 5px 10px #0000002e;
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--cor-textos-01);
             transition: all .25s ease-out;
+            border: 1px solid #00000093;
 
-            &:nth-child(1) {
-                background: url(../img/home/1.png);
+            & img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                filter: brightness(100%) saturate(0);
+                z-index: 0;
+                transition: filter 0.3s ease;
             }
 
-            &:nth-child(2) {
-                background: url(../img/home/2.png);
+            & span {
+                position: relative;
+                z-index: 1;
             }
 
-            &:nth-child(3) {
-                background: url(../img/home/3.png);
-            }
-
-            &:nth-child(4) {
-                background: url(../img/home/4.png);
-            }
-
-            &:nth-child(5) {
-                background: url(../img/home/5.png);
-            }
-
-            &:nth-child(6) {
-                background: url(../img/home/6.png);
-            }
-
-            &:hover {
-                transform: scale(1.025);
-                transition: all .25s ease-in;
+            &:hover img {
+                filter: brightness(205%) saturate(1.5);
+                /* volta à cor normal */
             }
         }
     }
@@ -217,20 +209,16 @@ nav {
     background-color: var(--cor-fundo-01);
     gap: 1.75rem;
 
-    & h1 {
-        font-weight: 600;
-        color: var(--cor-header-titulos);
-    }
-
     & .blocks {
         display: flex;
         justify-content: center;
         gap: 2rem;
 
         & .block {
-            width: 345px;
+            width: 385px;
             height: auto;
 
+            border: 1px solid #d3d3d3;
             border-radius: 20px;
             padding: 13px 2px;
             gap: .5rem;
@@ -244,10 +232,12 @@ nav {
             background: #FFFFFF;
             box-shadow: 0 5px 10px #0000002e;
             transition: all .25s ease-out;
-            
+
             & img {
-                width: 40px;
-                height: 40px;
+                width: 42.5px;
+                height: 42.5px;
+                margin: 7px 0;
+                filter: drop-shadow(0 5px 10px #0000002e);
             }
 
             & .textos {
@@ -256,22 +246,22 @@ nav {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                gap: .05rem;
+                gap: .025rem;
 
                 & h2 {
                     width: 80%;
-    
+
                     text-align: center;
-                    font-size: 1.15rem;
+                    font-size: 1.25rem;
                     font-weight: 600;
                 }
-    
+
                 & p {
                     width: 85%;
-                    font-size: .9rem;
+                    font-size: 1rem;
                     font-weight: 400;
                     text-align: center;
-    
+
                     &:nth-child(3) {
                         width: 82%;
                     }
@@ -286,7 +276,7 @@ nav {
                 align-items: center;
                 color: var(--cor-textos-01);
                 background-color: var(--cor-header-titulos);
-                font-size: 1rem;
+                font-size: 1.05rem;
                 font-weight: 500;
                 border-radius: 40px;
                 transition: .25s ease-out;
@@ -295,6 +285,11 @@ nav {
                     background-color: #6bd3a9;
                     transition: .25s ease-in;
                 }
+            }
+
+            &:hover {
+                transform: translateY(-5px);
+                transition: transform .25s ease-in;
             }
         }
     }
@@ -351,7 +346,6 @@ nav {
                 margin-top: 5px;
 
                 &:hover {
-                    transform: scale(1.035);
                     background: #6bd3a9;
                     transition: all .25s ease-in;
                 }
@@ -362,6 +356,7 @@ nav {
             width: 45%;
             height: auto;
             border-radius: 15px;
+            border: 1px solid #d3d3d3;
             box-shadow: 0 6px 10px #0000002e;
         }
     }
