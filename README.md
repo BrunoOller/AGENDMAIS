@@ -1,2 +1,2 @@
-# SAPS
-Repositório para armazenar o PI (Projeto Interdiciplinar), SAPS ou Sistema de Agendamento de Postos de Saúde.
+# AGEND+
+Repositório para armazenar o PI (Projeto Interdiciplinar), AGEND+ Sistema de Agendamento de Saúde.
