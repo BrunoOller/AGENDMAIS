@@ -162,15 +162,12 @@ nav {
             position: relative;
             width: 45%;
             height: 6.85rem;
-            overflow: hidden;
             border-radius: 5px;
             box-shadow: 0 5px 10px #0000002e;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-transform: uppercase;
-            font-size: 1.35rem;
-            font-weight: 800;
+
             color: var(--cor-textos-01);
             transition: all .25s ease-out;
             border: 1px solid #00000093;
@@ -188,6 +185,9 @@ nav {
             & span {
                 position: relative;
                 z-index: 1;
+                font-size: 1.35rem;
+                font-weight: 800;
+                text-transform: uppercase;
             }
 
             &:hover img {
