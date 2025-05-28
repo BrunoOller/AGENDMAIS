@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título do site -->
+    <title>AGENDMAIS - Perfil</title>
+
+    <!-- Link Favicon -->
+    <link rel="shortcut icon" href="./assets/img/agendm-fav.svg" type="image/x-icon">
+
+    <!-- Link Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+
+    <!-- Links CSS -->
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/color.css">
+    <link rel="stylesheet" href="./assets/css/perfilStyle.css">
+    <link rel="stylesheet" href="./assets/css/globalStyle.css">
+
+    <!-- Link Fontawesome -->
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v6.7.2/css/all.css">
+
+    <style>
+        nav {
+            background: #E8E8E8;
+        }
+
+        #foto-perfil {
+            width: 100%;
+            height: auto;
+            background: #E8E8E8;
+            padding: 3rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: .75rem;
+
+            & h1 {
+                font-size: 1.8rem;
+                font-weight: 500;
+                color: var(--cor-header-titulos);
+            }
+
+            & #foto {
+                width: 355px;
+                height: 355px;
+                border-radius: 50%;
+                border: 1px solid #d3d3d3;
+                box-shadow: 0 5px 10px #0000002e;
+            }
+        }
+
+        #infos-perfil {
+            width: 100%;
+            height: auto;
+            padding: 2rem 0;
+
+            & .ip-content {
+                display: flex;
+                flex-direction: column;
+
+                & h2 {
+                    font-size: 1.4rem;
+                    font-weight: 600;
+                    color: var(--cor-header-titulos);
+                }
+
+                & .ip-dados {
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    gap: 1.2rem 0;
+
+                    & .info {
+                        width: 45%;
+                        height: auto;
+                        display: flex;
+                        flex-direction: column;
+
+                        & input {
+                            width: 100%;
+                            background: #F0F0F0;
+                            border: 1px solid #4BC997;
+                            color: #646464;
+                            padding: .5rem .75rem;
+                            font-size: .9rem;
+                            font-weight: 400;
+
+                            &:focus {
+                                outline: none;
+                            }
+                        }
+
+                        &:nth-child(4) .senha-input {
+                            width: 100%;
+                            height: auto;
+                            display: flex;
+
+                            & button {
+                                width: 30%;
+                                border: 1px solid #4BC997;
+                                background-color: #4BC997;
+                                color: var(--cor-textos-01);
+                                font-weight: 600;
+                            }
+
+                            & .input {
+                                width: 70%;
+                                height: auto;
+                                position: relative;
+
+                                & input {
+                                    width: 100%;
+                                } 
+
+                                & i {
+                                    position: absolute;
+                                    right: .5rem;
+                                    top: 1.3rem;
+                                    transform: translateY(-50%);
+                                    color: var(--cor-header-titulos);
+                                    text-shadow: 0 5px 10px #00000015;
+                                    font-size: 1.1rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid px-5">
+            <a class="navbar-brand" href="./index.html">
+                <img src="./assets/img/logo.svg" id="logo">
+            </a>
+
+            <!-- Botão para mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./login.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="foto-perfil">
+        <h1>Seu perfil</h1>
+        <img src="./assets/img/fotos-perfil/3.png" alt="Foto de Perfil" id="foto">
+    </section>
+
+    <section id="infos-perfil">
+        <div class="container ip-content">
+            <h2>Suas informações:</h2>
+            <div class="ip-dados">
+                <div id="nome" class="info">
+                    <label for="d-name">Nome*</label>
+                    <input type="text" value="Carlos dos Santos" name="name" id="d-name">
+                </div>
+                <div id="telefone" class="info">
+                    <label for="d-tel">Telefone*</label>
+                    <input type="tel" value="(xx) xxxxx-xxxx" name="tel" id="d-tel">
+                </div>
+                <div id="datanasc" class="info">
+                    <label for="d-date">Data de Nascimento*</label>
+                    <input type="date" value="1992-06-17" name="date" id="d-date">
+                </div>
+                <div id="senha" class="info">
+                    <label for="d-password">Senha*</label>
+                    <div class="senha-input">
+                        <div class="input">
+                            <input type="password" value="12345678" name="password" id="d-password">
+                            <i class="fa-solid fa-eye-slash"></i>
+                        </div>
+                        <button>Alterar senha</button>
+                    </div>
+                </div>
+                <div id="usucpf" class="info">
+                    <label for="d-cpf">CPF*</label>
+                    <input type="text" value="000.000.000-00" name="cpf" id="d-cpf">
+                </div>
+                <div id="e-mail" class="info">
+                    <label for="d-email">E-mail*</label>
+                    <input type="email" value="xxxxxxxx@gmail.com" name="email" id="d-email">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="appointmentHistory"></section>
+
+    <footer id="footer">
+        <div class="container f-content">
+            <h2 id="copy"><span>&copy; 2025 AGEND+</span> Sistema de Agendamento de Saúde - Todos os direitos
+                reservados.</h2>
+            <div class="links">
+                <a href="#">Política de Privacidade</a>
+                <div class="line"></div>
+                <a href="#">Termos de Uso</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

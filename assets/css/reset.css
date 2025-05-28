@@ -8,12 +8,18 @@
 }
 
 html {
+    height: 100%;
+    min-height: 100%;
     font-size: 1rem;
     scroll-behavior: smooth;
 }
 
 body {
     font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    height: auto;
 }
 
 a {

@@ -32,6 +32,7 @@ nav {
 }
 
 #footer {
+    margin-top: auto;
     width: 100%;
     height: auto;
     padding: 2rem 0;
