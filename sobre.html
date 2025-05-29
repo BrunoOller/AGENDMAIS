@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGEND+ - Sistema de Agendamento de Saúde</title>
+    <link rel="shortcut icon" href="./assets/img/saps-fav.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/color.css">
+    <link rel="stylesheet" href="./assets/css/globalStyle.css">
+
+    <style>
+        html {
+            height: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+            height: 100%;
+            background-color: #F3F2F2;
+        }
+
+        .container {
+            width: 85%;
+        }
+
+        header {
+            width: 100%;
+            height: 70px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 55px;
+
+            background: #F3F2F2;
+
+            & #logo {
+                width: auto;
+                height: 60px;
+                transition: opacity .25s ease-out;
+
+                &:hover {
+                    opacity: .7;
+                    transition: opacity .25s ease-in;
+                }
+            }
+
+            & .navbar {
+                width: 30%;
+                display: flex;
+                align-items: center;
+
+                & ul {
+                    width: 100%;
+                    display: flex;
+                    justify-content: end;
+
+                    & li a {
+                        font-weight: 500;
+                        padding: 7px 20px;
+                        font-size: 1rem;
+                        border-radius: 5px;
+                        text-transform: uppercase;
+                        color: var(--cor-textos-02);
+                        transition: all .25s ease-out;
+
+                        &:hover {
+                            color: var(--cor-textos-01);
+                            background: var(--cor-header-titulos);
+                            box-shadow: 0 5px 10px #0000002e;
+                            transition: all .25s ease-in;
+                        }
+                    }
+                }
+            }
+        }
+
+        .bemvindo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            & .box {
+                width: 78%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                & h1 {
+                    font-size: 48px;
+                    color: var(--cor-header-titulos);
+                    padding-top: 5rem;
+                    padding-bottom: 2rem;
+                }
+
+                & p {
+                    font-size: 24px;
+                    font-weight: 300;
+                    display: flex;
+                    text-align: center;
+                    padding-bottom: 10rem;
+                }
+            }
+        }
+
+        .sobreCardCima {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background: #fff;
+            padding: 6rem;
+            align-items: center;
+
+            & .sc-content {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 1.25rem;
+                width: 75%;
+                height: auto;
+
+                & .line {
+                    width: 2px;
+                    height: 15rem;
+                    background-color: var(--cor-header-titulos);
+                }
+
+                & .cardCima {
+                    width: 33.3%;
+                    height: 14rem;
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+                    align-items: center;
+                    gap: .35rem;
+                    justify-content: start;
+
+                    & h2 {
+                        color: var(--cor-header-titulos);
+                        font-size: 1.5rem;
+                        width: 90%;
+                    }
+
+                    .textos {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        text-align: start;
+
+                        & ul {
+                            width: 85%;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: start;
+
+                            & li {
+                                list-style: disc;
+                                font-size: 1.25rem;
+
+                                &::marker {
+                                    color: var(--cor-header-titulos);
+                                }
+                            }
+                        }
+
+                        & p {
+                            width: 85%;
+                            font-size: 1.25rem;
+                            font-weight: 250;
+                        }
+                    }
+                }
+
+                & p {
+                    font-size: 1.25rem;
+                }
+            }
+        }
+
+        .sobreCardBaixo {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            height: 20rem;
+            align-items: center;
+
+            & .sb-content {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 1.25rem;
+                width: 75%;
+                height: auto;
+
+                & .line {
+                    width: 2px;
+                    height: 15rem;
+                    background-color: var(--cor-header-titulos);
+                }
+
+                & .cardBaixo {
+                    height: 8.5rem;
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+                    align-items: center;
+                    gap: .35rem;
+                    width: 50%;
+
+                    & p {
+                        width: 80%;
+                        font-size: 1.25rem;
+                        text-align: right;
+                    }
+
+                    & li {
+                        font-size: 1.25rem;
+                        text-align: left;
+                    }
+
+                    & h2 {
+                        color: var(--cor-header-titulos);
+                        font-size: 1.5rem;
+                        width: 90%;
+                    }
+                }
+            }
+        }
+
+        .imgPag {
+            width: 100%;
+            height: auto;
+
+            & img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .lineHor {
+            height: auto;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5rem 0;
+
+            & .hor {
+                width: 50rem;
+                height: 3px;
+                background-color: var(--cor-header-titulos);
+            }
+        }
+
+        .t-sobrenos {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fff;
+            padding: 4.5rem;
+
+            & .box {
+                width: 78%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                & h2 {
+                    font-size: 2.5rem;
+                    color: var(--cor-header-titulos);
+                    padding-bottom: 1.25rem;
+                }
+
+                & ul {
+                    width: 100%;
+                    height: auto;
+                    font-size: 1.25rem;
+                    justify-items: center;
+
+                    & li {
+                        width: 90%;
+                    }
+                }
+            }
+        }
+
+        .t-nossocompro {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 4.5rem;
+
+            & .box {
+                width: 78%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                & h2 {
+                    font-size: 2.5rem;
+                    color: var(--cor-header-titulos);
+                    padding-bottom: 1.25rem;
+                }
+
+                & ul {
+                    width: 100%;
+                    height: auto;
+                    font-size: 1.25rem;
+                    justify-items: center;
+
+                    & li {
+                        width: 90%;
+                    }
+                }
+            }
+        }
+
+        .nossaEquipe {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            background-color: #fff;
+            padding: 4.5rem;
+
+            & .boxEquipe {
+                background-color: antiquewhite;
+                height: 78%;
+
+                & .t-equipe {
+                    background-color: aqua;
+
+                }
+
+                & .cardEquipe {
+                    background-color: aquamarine;
+                }
+            }
+        }
+
+        #nossaEquipe {
+            width: 100%;
+            height: auto;
+            margin: 4rem 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+
+            & h1 {
+
+                font-size: 2rem;
+                color: var(--cor-header-titulos);
+            }
+
+            & .equipe {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 2rem;
+
+                & .fotosquipe {
+                    width: 390px;
+                    height: auto;
+                    border-radius: 5px;
+                    padding: 15px;
+                    gap: 1rem;
+
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: start;
+                    align-items: center;
+                    cursor: default;
+
+                    background: #FFFFFF;
+                    box-shadow: 0 5px 10px #0000002e;
+
+                    .lineHor {
+                        height: auto;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 0 0 0 0;
+
+                        & .hor {
+                            width: 20rem;
+                            height: 2px;
+                            background-color: var(--cor-header-titulos);
+                        }
+                    }
+
+                    & img {
+                        width: 100%;
+                        height: auto;
+
+                    }
+
+                    & p {
+                        width: 90%;
+                        margin-top: 10px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+
+        footer {
+            margin-top: auto;
+        }
+    </style>
+</head>
+
+</style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <a href="./index.html"><img id="logo" src="./assets/img/logo.svg"
+                alt="Logo SAPS - Sistema de Agendamento de Postos de Saúde"></a>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Contato</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Bem-Vindo (vai se fuder com isso) -->
+    <section class="bemvindo">
+        <div class="box">
+            <h1>BEM VINDO(A) AO SAPS</h1>
+            <p>Agende seu atendimento nos postos de saúde de forma rápida e prática. Aqui você pode marcar consultas,
+                exames e vacinas sem precisar sair de casa. Simples, rápido e seguro.</p>
+        </div>
+    </section>
+
+    <!-- Cards do sobre -->
+    <section class="sobreCardCima">
+        <!-- Agendamento Online -->
+        <div class="container sc-content">
+            <div class="cardCima">
+                <h2>AGENDAMENTOS ONLINE</h2>
+                <p>Evite filas e economize tempo! Escolha o serviço desejado, selecione a unidade de saúde e agende no
+                    melhor horário para você.
+                <p>
+            </div>
+
+            <!-- Linha -->
+            <div class="line"></div>
+
+            <!-- SERVIÇOS DISPONÍVEIS -->
+            <div class="cardCima">
+                <h2>SERVIÇOS DISPONÍVEIS</h2>
+                <div class="textos">
+                    <ul>
+                        <li>Consultas médicas</li>
+                        <li>Aplicação de vacinas</li>
+                        <li>Exames laboratoriais</li>
+                        <li>Atendimento odontológico</li>
+                    </ul>
+                    <p>(Disponibilidade pode variar por unidade)</p>
+                </div>
+            </div>
+
+            <!-- Linha -->
+            <div class="line"></div>
+
+            <!-- ENCONTRE O POSTO MAIS PRÓXIMO -->
+            <div class="cardCima">
+                <h2>ENCONTRE O POSTO MAIS PRÓXIMO</h2>
+                <p>Use nossa ferramenta de localização para descobrir qual unidade está mais perto de você e veja os
+                    horários disponíveis.
+                <p>
+            </div>
+        </div>
+    </section>
+
+    <section class="sobreCardBaixo">
+        <div class="container sb-content">
+            <!-- COMO FUNCIONA? -->
+            <div class="cardBaixo">
+                <h2>COMO FUNCIONA?</h2>
+                <ul>
+                    <li>1 - Crie sua conta ou faça login</li>
+                    <li>2 - Escolha o serviço e o posto de saúde</li>
+                    <li>3 - Selecione a data e horário</li>
+                    <li>4 - Confirme o agendamento e pronto!</li>
+                </ul>
+            </div>
+
+            <!-- Linha -->
+            <div class="line"></div>
+
+            <div class="cardBaixo">
+                <h2>SERVIÇOS DISPONÍVEIS</h2>
+                <p>Seus dados estão protegidos. Utilizamos protocolos de segurança para garantir a confidencialidade das
+                    suas informações.
+                <p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVIÇOS DISPONÍVEIS -->
+
+    <!-- Imagem que fica no meio da tela -->
+    <div class="imgPag">
+        <img src="/assets/img/about-us/sobrePag.png" alt="">
+    </div>
+
+    <section class="lineHor">
+        <div class="hor"></div>
+    </section>
+
+    <!-- Mais texto da parte do sobre, abaixo da imagem -->
+    <div class="t-sobrenos">
+        <div class="box">
+            <div class="sobrenos">
+                <!-- Sobre nós -->
+                <h2>Sobre Nós</h2>
+                <ul>
+                    <li>O SAPS (Sistema de Agendamento de Postos de Saúde) é uma plataforma criada em 2025 com o
+                        objetivo de
+                        modernizar e facilitar o acesso aos serviços de saúde pública e privada em todo o Brasil.
+                        Desenvolvido
+                        com foco na eficiência e na inclusão digital, o SAPS proporciona uma experiência simples, segura
+                        e
+                        acessível para o agendamento de consultas em unidades de saúde.</li>
+                    <li>Além de beneficiar diretamente a população, o SAPS também apoia gestores e profissionais da
+                        saúde,
+                        oferecendo ferramentas que facilitam o controle de agendas, o planejamento da rotina de
+                        atendimentos
+                        e a
+                        redução de faltas por meio de notificações automáticas.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="t-nossocompro">
+        <div class="box">
+            <div class="nossocompro">
+                <!-- Nosso Compromisso -->
+                <h2>Nosso Compromisso</h2>
+                <ul>
+                    <li>Trabalhamos com seriedade para promover o acesso à saúde de maneira mais inteligente, humana e
+                        digital.
+                        Acreditamos que a tecnologia deve estar a serviço da vida — e é por isso que desenvolvemos
+                        soluções
+                        que
+                        fazem a diferença no dia a dia de quem precisa de atendimento e de quem trabalha para
+                        oferecê-lo.
+                    </li>
+                    <li>Estamos em constante evolução, ouvindo nossos usuários e aprimorando nossos recursos. O SAPS é
+                        mais
+                        do
+                        que um sistema de agendamento: é um passo importante rumo a uma saúde mais moderna, acessível e
+                        organizada para todos.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nossa Equipe -->
+    <section id="nossaEquipe">
+        <h1>Nossa Equipe</h1>
+        <div class="container equipe">
+            <div class="fotosquipe">
+                <img src="/assets/img/about-us/Bruno.png" alt="">
+                <section class="lineHor">
+                    <div class="hor"></div>
+                </section>
+                <p>Bruno Oller Brunelli</p>
+            </div>
+
+            <div class="fotosquipe">
+                <img src="/assets/img/about-us/surita.png" alt="Icone de atividade">
+                <section class="lineHor">
+                    <div class="hor"></div>
+                </section>
+                <p>João Pedro Surita</p>
+            </div>
+
+            <div class="fotosquipe">
+                <img src="/assets/img/about-us/doa.png" alt="Icone de atividade">
+                <section class="lineHor">
+                    <div class="hor"></div>
+                </section>
+                <p>Eduardo Petarnella Gabri</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="container f-content">
+            <h2 id="copy"><span>&copy; 2025 AGEND+</span> Sistema de Agendamento de Saúde - Todos os direitos
+                reservados.</h2>
+            <div class="links">
+                <a href="#">Política de Privacidade</a>
+                <div class="line"></div>
+                <a href="#">Termos de Uso</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
