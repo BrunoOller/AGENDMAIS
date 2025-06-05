@@ -1,2 +1,2 @@
 # AGEND+
-Repositório para armazenar o PI (Projeto Interdiciplinar), AGEND+ Sistema de Agendamento de Saúde.
+Repositório para armazenar o PI (Projeto Interdisciplinar), AGEND+ Sistema de Agendamento de Saúde.
