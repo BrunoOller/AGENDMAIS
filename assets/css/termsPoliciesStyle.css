@@ -1,3 +1,64 @@
 nav {
     background-color: #E8E8E8;
 }
+
+.title {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #E8E8E8;
+            gap: 10px;
+            padding-top: 25px;
+            padding-bottom: 1.5px;
+
+            & h1 {
+                text-align: center;
+                font-size: 2rem;
+                font-weight: 800;
+                color: var(--cor-textos-02);
+            }
+
+            & p {
+                text-align: center;
+                width: 45%;
+            }
+
+            & :nth-child(3) {
+                font-size: 1.5rem;
+            }
+        }
+
+        .terms-list {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            margin-bottom: 15px;
+            
+            ol {
+                width: 50%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                
+
+                & .list-title {
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    list-style: decimal !important;
+                }
+
+                & p {
+                    margin-left: .5rem;
+                }
+
+                & ul li {
+                    list-style: disc !important;    
+                }
+            }
+
+        }
