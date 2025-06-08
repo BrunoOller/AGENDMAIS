@@ -1,17 +1,21 @@
 main {
     width: 100%;
-    height: 100%;
+    height: auto;
+    min-height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
 
     & .c-content {
+        width: 1300px;
+        height: auto;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-around;
         align-items: center;
 
         & .fale-conosco {
-            width: 45%;
+            width: 600px;
             height: 30rem;
             display: flex;
             flex-direction: column;
@@ -73,6 +77,59 @@ main {
                     &:focus {
                         outline: none;
                     }
+                }
+            }
+        }
+
+        & .form {
+            width: 600px;
+            margin-top: 2rem;
+
+            & div {
+                margin-bottom: 20px;
+            }
+
+            & input,
+            textarea {
+                width: 100%;
+                padding: 12px;
+                border: 1px solid #4BC997;
+                font-size: 1rem;
+                background-color: #DEDEDE;
+                transition: border-color 0.3s ease;
+            }
+
+            & input:focus,
+            textarea:focus {
+                border-color: #000000;
+                outline: none;
+
+            }
+
+            & input:-webkit-autofill {
+                -webkit-box-shadow: 0 0 0 30px #DEDEDE inset;
+                -webkit-text-fill-color: #5a5a5a !important;
+            }
+
+            & textarea {
+                resize: none;
+                min-height: 220px;
+            }
+
+            & .button {
+                text-align: center;
+
+                & button {
+                    background-color: var(--cor-header-titulos);
+                    color: var(--cor-textos-01);
+                    border: none;
+                    padding: 12px 3rem;
+                    border-radius: 3rem;
+                    font-size: 1.4rem;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
                 }
             }
         }
