@@ -11,112 +11,70 @@ body {
     background-color: #F3F2F2;
 }
 
-header {
-    width: 100%;
-    height: 70px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 55px;
-
-    background: #F3F2F2;
-
-    & #logo {
-        width: auto;
-        height: 60px;
-        transition: opacity .25s ease-out;
-
-        &:hover {
-            opacity: .7;
-            transition: opacity .25s ease-in;
-        }
-    }
-
-    & .navbar {
-        width: 30%;
-        display: flex;
-        align-items: center;
-
-        & ul {
-            width: 100%;
-            display: flex;
-            justify-content: end;
-
-            & li a {
-                font-weight: 500;
-                padding: 7px 20px;
-                font-size: 1rem;
-                border-radius: 5px;
-                text-transform: uppercase;
-                color: var(--cor-textos-02);
-                transition: all .25s ease-out;
-
-                &:hover {
-                    color: var(--cor-textos-01);
-                    background: var(--cor-header-titulos);
-                    box-shadow: 0 5px 10px #0000002e;
-                    transition: all .25s ease-in;
-                }
-            }
-        }
-    }
+nav {
+    background: #E8E8E8;
 }
 
 .bemvindo {
+    width: 100%;
+    height: auto;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    padding: 5rem 0;
+    background: #E8E8E8;
 
     & .box {
-        width: 78%;
+        width: 65%;
+        height: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        gap: .5rem;
 
         & h1 {
-            font-size: 48px;
+            font-size: 2.2rem;
+            font-weight: 700;
             color: var(--cor-header-titulos);
-            padding-top: 5rem;
-            padding-bottom: 2rem;
         }
 
         & p {
-            font-size: 24px;
+            width: 90%;
+            font-size: 1.5rem;
             font-weight: 300;
-            display: flex;
             text-align: center;
-            padding-bottom: 10rem;
         }
     }
 }
 
 .sobreCardCima {
     width: 100%;
+    height: auto;
     display: flex;
     justify-content: center;
-    background: #fff;
-    padding: 6rem;
     align-items: center;
+    background: #fff;
+    padding: 6rem 0;
 
     & .sc-content {
+        width: 1450px;
+        height: auto;
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
         gap: 1.25rem;
-        width: 100%;
-        height: auto;
 
         & .line {
-            width: 2px;
+            width: 1px;
             height: 15rem;
             background-color: var(--cor-header-titulos);
         }
 
         & .cardCima {
-            width: 33.3%;
-            height: 14rem;
+            width: 450px;
+            height: auto;
             display: flex;
             flex-direction: column;
             text-align: center;
@@ -127,19 +85,22 @@ header {
             & h2 {
                 color: var(--cor-header-titulos);
                 font-size: 1.5rem;
-                width: 90%;
+                font-weight: 700;
+                width: 70%;
             }
 
             .textos {
-                width: 100%;
+                width: 80%;
+                
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 text-align: start;
 
                 & ul {
-                    width: 85%;
+                    width: 80%;
                     display: flex;
+                    
                     flex-direction: column;
                     align-items: start;
 
@@ -154,14 +115,17 @@ header {
                 }
 
                 & p {
-                    width: 85%;
+                    width: 80%;
                     font-size: 1.25rem;
-                    font-weight: 250;
+                    font-weight: 200;
+                    margin-left: 3rem;
+                    margin-top: -1rem;
                 }
             }
         }
 
         & p {
+            width: 70%;
             font-size: 1.25rem;
         }
     }
@@ -169,50 +133,64 @@ header {
 
 .sobreCardBaixo {
     width: 100%;
+    height: auto;
     display: flex;
     justify-content: center;
-    height: 20rem;
     align-items: center;
-    padding-top: 25px;
+    padding: 4rem 0;
 
     & .sb-content {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 1.25rem;
-        width: 75%;
+        width: 1100px;
         height: auto;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 3rem;
 
         & .line {
-            width: 2px;
+            width: 1px;
             height: 15rem;
             background-color: var(--cor-header-titulos);
         }
 
         & .cardBaixo {
-            height: 8.5rem;
+            width: 400px;
+            height: auto;
             display: flex;
             flex-direction: column;
             text-align: center;
-            align-items: center;
             gap: .35rem;
-            width: 50%;
 
-            & p {
-                width: 80%;
-                font-size: 1.25rem;
-                text-align: right;
+            &:nth-child(1) {
+                align-items: start;
+                
+                & li {
+                    width: 90%;
+                    font-size: 1.25rem;
+                    font-weight: 400;
+                    text-align: left;
+                    margin-left: -1.5rem;
+                }
             }
 
-            & li {
-                font-size: 1.25rem;
-                text-align: left;
+            &:nth-child(3) {
+                align-items: end;
+
+                & p {
+                    width: 60%;
+                    text-align: end;
+                    font-size: 1.25rem;
+                    font-weight: 400;
+                    margin-left: 5rem;
+                }
             }
 
+            
             & h2 {
                 color: var(--cor-header-titulos);
                 font-size: 1.5rem;
-                width: 90%;
+                font-weight: 700;
             }
         }
     }
@@ -221,7 +199,6 @@ header {
 .imgPag {
     width: 100%;
     height: auto;
-    padding: 25px 0;
 
     & img {
         width: 100%;
@@ -235,98 +212,45 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 5rem 0;
+    padding: 3rem 0 1rem 0;
+    background: #FFFFFF;
 
     & .hor {
         width: 50rem;
-        height: 3px;
+        height: 2px;
         background-color: var(--cor-header-titulos);
     }
 }
 
 .t-sobrenos {
+    background: #FFFFFF;
+}
+
+.t-sobrenos, .t-nossocompro {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #fff;
-    padding: 4.5rem;
+    padding: 4rem 0;
 
-    & .box {
-        width: 78%;
+    & .box, .nbox {
+        width: 65%;
+        height: auto;
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: center;
+        align-items: center;
 
-        & h2 {
+        & .title-sn, .title-nc {
             font-size: 2.5rem;
+            font-weight: 600;
             color: var(--cor-header-titulos);
-            padding-bottom: 1.25rem;
         }
 
-        & ul {
-            width: 100%;
+        & .text-sn, .text-nc {
+            width: 90%;
             height: auto;
             font-size: 1.25rem;
-            justify-items: center;
-
-            & li {
-                width: 90%;
-            }
-        }
-    }
-}
-
-.t-nossocompro {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 4.5rem;
-
-    & .box {
-        width: 78%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        & h2 {
-            font-size: 2.5rem;
-            color: var(--cor-header-titulos);
-            padding-bottom: 1.25rem;
-        }
-
-        & ul {
-            width: 100%;
-            height: auto;
-            font-size: 1.25rem;
-            justify-items: center;
-
-            & li {
-                width: 90%;
-            }
-        }
-    }
-}
-
-.nossaEquipe {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    background-color: #fff;
-    padding: 4.5rem;
-
-    & .boxEquipe {
-        background-color: antiquewhite;
-        height: 78%;
-
-        & .t-equipe {
-            background-color: aqua;
-
-        }
-
-        & .cardEquipe {
-            background-color: aquamarine;
+            margin-left: 2rem;
         }
     }
 }
@@ -339,61 +263,68 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
+    gap: .5rem;
 
-    & h1 {
+    & .title-ne {
+        width: 65%;
 
-        font-size: 2rem;
-        color: var(--cor-header-titulos);
+        & h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--cor-header-titulos);
+        }
     }
 
     & .equipe {
+        width: 75%;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 2rem;
+        gap: 1rem;
 
         & .fotosquipe {
-            width: 390px;
+            width: 450px;
             height: auto;
             border-radius: 5px;
-            padding: 15px;
-            gap: 1rem;
-
+            padding: 5px;
+            gap: .75rem;
             display: flex;
             flex-direction: column;
-            justify-content: start;
+            justify-content: center;
             align-items: center;
             cursor: default;
-
             background: #FFFFFF;
+            border: 1px solid #E8E8E8;
             box-shadow: 0 5px 10px #0000002e;
+            transition: transform .2s ease-out;
 
             .lineHor {
-                height: auto;
                 width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding: 0 0 0 0;
+                height: auto;
+                padding: 0;
 
                 & .hor {
-                    width: 20rem;
-                    height: 2px;
+                    width: 17rem;
+                    height: 1.5px;
                     background-color: var(--cor-header-titulos);
                 }
             }
 
             & img {
+                border-radius: 10px;
                 width: 100%;
                 height: auto;
-
             }
 
             & p {
                 width: 90%;
-                margin-top: 10px;
+                font-size: 1.2rem;
                 text-align: center;
+            }
+
+            &:hover {
+                transform: translateY(-5px);
+                transition: transform .2s ease-in;
             }
         }
     }
