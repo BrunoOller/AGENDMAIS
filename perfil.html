@@ -118,7 +118,7 @@
 
                                 & input {
                                     width: 100%;
-                                } 
+                                }
 
                                 & i {
                                     position: absolute;
@@ -132,6 +132,173 @@
                             }
                         }
                     }
+                }
+            }
+        }
+
+        #appointmentHistory {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 3rem 0;
+            gap: 1.5rem;
+
+            & h1 {
+                font-size: 1.5rem;
+                font-weight: 500;
+                color: var(--cor-texto-02);
+            }
+
+            & .ah-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: .75rem;
+
+                & .block {
+                    width: 90%;
+                    height: auto;
+
+                    display: flex;
+                    flex-direction: column;
+
+                    padding: .5rem 2rem;
+                    box-shadow: 0 5px 10px #0000002e;
+
+                    border-bottom: .65rem solid var(--cor-header-titulos);
+                    background-color: var(--cor-fundo-02);
+
+                    & .b-header {
+                        width: 100%;
+                        height: auto;
+                        display: flex;
+                        justify-content: space-between;
+
+                        & h2 {
+                            font-size: 1.15rem;
+                            font-weight: 500;
+                            color: #2e2e2e;
+
+                            & span {
+                                font-weight: 600;
+                            }
+                        }
+
+                        & .status {
+                            width: 18%;
+                            display: flex;
+                            justify-content: end;
+                            gap: .35rem;
+                        }
+                    }
+
+                    & .b-info {
+                        width: 100%;
+                        height: auto;
+                        display: flex;
+                        align-items: start;
+                        cursor: default;
+                        padding-bottom: 10px;
+
+                        & .i-image {
+                            width: 20%;
+                            height: auto;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            gap: .5rem;
+
+                            & .line {
+                                width: 100%;
+                                height: .15rem;
+                                background-color: var(--cor-header-titulos);
+                            }
+
+                            & #foto {
+                                width: 100%;
+                                height: auto;
+                                border: 1px solid #d3d3d3;
+                                box-shadow: 0 5px 10px #0000002e;
+                            }
+                        }
+
+                        & .i-infos {
+                            width: 30%;
+                            height: auto;
+                            padding-top: 1rem;
+                            padding-left: .4rem;
+
+                            & ul li {
+                                font-size: 1.1rem;
+                                list-style: disc;
+                                line-height: 1.8rem;
+                                color: #666666;
+
+                                & #emphasis {
+                                    font-weight: 600;
+                                }
+
+                                & #exam {
+                                    width: 500px;
+                                    background-color: #F4F4F4;
+                                    border: 1px solid #909090;
+                                    padding: 1px 5px;
+                                    font-size: 1rem;
+                                }
+
+                                &::marker {
+                                    color: var(--cor-header-titulos);
+                                }
+                            }
+                        }
+
+                        & .i-desc {
+                            width: 50%;
+                            height: auto;
+                            display: flex;
+                            flex-direction: column;
+                            padding-top: 1rem;
+
+                            & label {
+                                font-size: 1.1rem;
+                                color: #666666;
+                            }
+
+                            & #d-text {
+                                width: 100%;
+                                min-height: 9.65rem;
+                                max-height: 9.65rem;
+                                border: 1px solid #909090;
+                                background: #F4F4F4;
+                                color: #1f1f1f;
+                                display: flex;
+                                border-radius: 5px;
+                                padding: .5rem 1rem;
+                                font-size: 1rem;
+                                font-weight: 400;
+
+                                &:focus {
+                                    outline: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            & #see-more {
+                padding: .35rem 2.5rem;
+                background-color: var(--cor-header-titulos);
+                color: #FFFFFF;
+                border-radius: 35px;
+                box-shadow: 0 5px 10px #0000002e;
+                transition: background-color .25s ease-out;
+
+                &:hover {
+                    background-color: #6bd3a9;
+                    transition: background-color .25s ease-in;
                 }
             }
         }
@@ -210,7 +377,95 @@
         </div>
     </section>
 
-    <section id="appointmentHistory"></section>
+    <section id="appointmentHistory">
+        <h1>Histórico de Agendamentos</h1>
+        <div class="container ah-content">
+            <div class="block">
+                <div class="b-header">
+                    <h2><span>Agendamento #</span>001</h2>
+                    <div class="status">
+                        <h2>Status:</h2>
+                        <span id="3">Pendente</span>
+                    </div>
+                </div>
+                <div class="b-info">
+                    <div class="i-image">
+                        <div class="line"></div>
+                        <img src="./assets/img/fotos-perfil/appointmentHistory.png" alt="Foto de Agendamento Médico" id="foto">
+                    </div>
+                    <div class="i-infos">
+                        <ul>
+                            <li><span id="emphasis">CPF:</span> xxx.xxx.xxx-XX</li>
+                            <li><span id="emphasis">Horário escolhido:</span> 09:45</li>
+                            <li><span id="emphasis">Dia da consulta:</span> xx/xx/xxxx</li>
+                            <li><span id="emphasis">Consulta de:</span> <br> <span id="exam">XXXX</span></li>
+                        </ul>
+                    </div>
+                    <div class="i-desc">
+                        <label for="text">Descrição os sintomas:</label>
+                        <textarea name="text" id="d-text"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="b-header">
+                    <h2><span>Agendamento #</span>002</h2>
+                    <div class="status">
+                        <h2>Status:</h2>
+                        <span id="1">Realizada</span>
+                    </div>
+                </div>
+                <div class="b-info">
+                    <div class="i-image">
+                        <div class="line"></div>
+                        <img src="./assets/img/fotos-perfil/appointmentHistory.png" alt="Foto de Agendamento Médico" id="foto">
+                    </div>
+                    <div class="i-infos">
+                        <ul>
+                            <li><span id="emphasis">CPF:</span> xxx.xxx.xxx-XX</li>
+                            <li><span id="emphasis">Horário escolhido:</span> 09:45</li>
+                            <li><span id="emphasis">Dia da consulta:</span> xx/xx/xxxx</li>
+                            <li><span id="emphasis">Consulta de:</span> <br> <span id="exam">XXXX</span></li>
+                        </ul>
+                    </div>
+                    <div class="i-desc">
+                        <label for="text">Descrição os sintomas:</label>
+                        <textarea name="text" id="d-text"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="b-header">
+                    <h2><span>Agendamento #</span>003</h2>
+                    <div class="status">
+                        <h2>Status:</h2>
+                        <span id="1">Realizada</span>
+                    </div>
+                </div>
+                <div class="b-info">
+                    <div class="i-image">
+                        <div class="line"></div>
+                        <img src="./assets/img/fotos-perfil/appointmentHistory.png" alt="Foto de Agendamento Médico" id="foto">
+                    </div>
+                    <div class="i-infos">
+                        <ul>
+                            <li><span id="emphasis">CPF:</span> xxx.xxx.xxx-XX</li>
+                            <li><span id="emphasis">Horário escolhido:</span> 09:45</li>
+                            <li><span id="emphasis">Dia da consulta:</span> xx/xx/xxxx</li>
+                            <li><span id="emphasis">Consulta de:</span> <br> <span id="exam">XXXX</span></li>
+                        </ul>
+                    </div>
+                    <div class="i-desc">
+                        <label for="text">Descrição os sintomas:</label>
+                        <textarea name="text" id="d-text"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button id="see-more">Ver mais</button>
+    </section>
 
     <footer id="footer">
         <div class="container f-content">
