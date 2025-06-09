@@ -1,7 +1,3 @@
-nav {
-    background-color: #E8E8E8;
-}
-
 #s-solicitations {
     width: 100%;
     height: auto;
@@ -57,7 +53,6 @@ nav {
                 display: flex;
                 align-items: start;
                 cursor: default;
-                padding-bottom: 5px;
 
                 & .i-image {
                     width: 20%;
@@ -138,6 +133,38 @@ nav {
 
                         &:focus {
                             outline: none;
+                        }
+                    }
+                }
+            }
+
+            & .b-confirm {
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: end;
+                gap: .75rem;
+
+                & button {
+                    box-shadow: 0 5px 10px #0000002e;
+                    padding: .3rem 1.35rem;
+                    border-radius: 6px;
+                    color: #FFFFFF;
+                    font-weight: 00;
+                    background-color: var(--cor-header-titulos);
+                    transition: background-color .25s ease-out;
+
+                    &:nth-child(1):hover {
+                        background-color: #6bd3a9;
+                        transition: background-color .25s ease-in;
+                    }
+
+                    &:nth-child(2) {
+                        background-color: #666666;
+
+                        &:hover {
+                            background-color: #c76161;
+                            transition: background-color .25s ease-in;
                         }
                     }
                 }

@@ -7,7 +7,7 @@
 
     <!-- Título do site -->
     <title>AGENDMAIS - Sistema de Agendamento de Saúde</title>
-
+    
     <!-- Link Favicon -->
     <link rel="shortcut icon" href="./assets/img/agendm-fav.svg" type="image/x-icon">
 
@@ -18,56 +18,11 @@
     <!-- Links CSS -->
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/color.css">
-    <link rel="stylesheet" href="./assets/css/medicosStyle.css">
+    <link rel="stylesheet" href="./assets/css/postosStyle.css">
     <link rel="stylesheet" href="./assets/css/globalStyle.css">
 
     <!-- Link Fontawesome -->
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v6.7.2/css/all.css">
-
-    <style>
-        #s-editInfos {
-            width: 100%;
-            height: auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 3rem 0;
-            gap: 1.5rem;
-            background-color: #E8E8E8;
-
-            & h1 {
-                font-size: 1.5rem;
-                font-weight: 500;
-                color: var(--cor-texto-02);
-            }
-
-            & .ei-content {
-                display: flex;
-                justify-content: space-around;
-                align-items: center;
-                gap: .75rem;
-                background-color: #E8E8E8;
-
-                & .ei-01 {
-                    width: 500px;
-                    height: auto;
-                }
-
-                & .ei-02 {
-                    width: 400px;
-                    height: auto;
-
-                    & img {
-                        width: 325px;
-                        height: 325px;
-                        box-shadow: 0 5px 10px #0000002e;
-                        border: 1px solid #909090;
-                        border-radius: 100%;
-                    }
-                }
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -99,41 +54,9 @@
         </div>
     </nav>
 
-    <section id="s-editInfos">
-        <h1>Editar Informações importantes</h1>
-        <div class="container ei-content">
-            <div class="ei-01">
-                <div class="ip-dados">
-                    <div id="nome" class="info">
-                        <label for="d-name">Nome*</label>
-                        <input type="text" value="Carlos dos Santos" name="name" id="d-name">
-                    </div>
-                    <div id="telefone" class="info">
-                        <label for="d-tel">Telefone*</label>
-                        <input type="" value="(xx) xxxxx-xxxx" name="tel" id="d-tel">
-                    </div>
-                    <div id="usucpf" class="info">
-                        <label for="d-cpf">Especialidade*</label>
-                        <select id="i-dropdown" aria-placeholder="Clique">
-                            <option value="opcao1">Clique para selecionar</option>
-                            <option value="opcao2">Opção 2</option>
-                            <option value="opcao3">Opção 3</option>
-                        </select>
-                    </div>
-                    <div id="e-mail" class="info">
-                        <label for="d-email">E-mail*</label>
-                        <input type="email" value="xxxxxxxx@gmail.com" name="email" id="d-email">
-                    </div>
-                </div>
-            </div>
-            <div class="ei-02">
-                <img src="./assets/img/fotos-perfil/1.png" alt="">
-            </div>
-        </div>
-    </section>
 
     <section id="s-solicitations">
-        <h1>Informações dos Agendamentos</h1>
+        <h1>Agendamentos realizados recentemente</h1>
         <div class="container s-content">
             <div class="block">
                 <div class="b-header">
@@ -156,6 +79,10 @@
                         <label for="text">Descrição os sintomas:</label>
                         <textarea name="text" id="d-text"></textarea>
                     </div>
+                </div>
+                <div class="b-confirm">
+                    <button>Aceitar</button>
+                    <button>Recusar</button>
                 </div>
             </div>
 
@@ -181,6 +108,10 @@
                         <textarea name="text" id="d-text"></textarea>
                     </div>
                 </div>
+                <div class="b-confirm">
+                    <button>Aceitar</button>
+                    <button>Recusar</button>
+                </div>
             </div>
 
             <div class="block">
@@ -204,6 +135,10 @@
                         <label for="text">Descrição os sintomas:</label>
                         <textarea name="text" id="d-text"></textarea>
                     </div>
+                </div>
+                <div class="b-confirm">
+                    <button>Aceitar</button>
+                    <button>Recusar</button>
                 </div>
             </div>
         </div>
