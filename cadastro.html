@@ -18,47 +18,59 @@
 
     <!-- Link Fontawesome -->
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v6.7.2/css/all.css">
+
+    <style>
+        header {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 7px 20px;
+
+            & a {
+                width: 45px;
+                height: 45px;
+                position: absolute;
+                z-index: 1;
+                top: 0;
+                left: 0;
+
+                & i {
+                    color: #1f1f1f;
+                }
+            }
+
+            & #logo {
+                width: auto;
+                height: 60px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <main>
-        <section class="have-account">
-            <img src="./assets/img/logo-dark.svg" alt="logo dark">
-            <h1>Bem-vindo de volta!</h1>
-            <p>Para fazer login em uma conta ja existente clique no botão abaixo.</p>
-            <a href="./login.html">Entrar</a>
-        </section>
+    <header id="h-cadastro">
+        <a href="./index.html">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
+        <img src="./assets/img/logo.svg" alt="Logo AGEND+" id="logo">
+    </header>
 
-        <!-- Área de Cadastro -->
-        <section class="register">
-            <div class="l-content">
-                <h1>Criar Conta</h1>
-                <!-- Área de Preenchimento de Informações -->
-                <form>
-                    <input type="text" placeholder="Nome">
-                    <input type="email" placeholder="Email">
-                    <input type="password" placeholder="Senha">
-                </form>
-                <div class="keep-logged-in">
-                    <input type="checkbox">
-                    <p>Manter-me Logado</p>
-                </div>
-                <a href="#" id="enter">Cadastrar</a>
-                <div class="other-ways">
-                    <div class="line"></div>
-                    <p>Ou</p>
-                    <div class="line"></div>
-                </div>
-                <div class="accounts">
-                    <a href="#" id="google"><img src="./assets/img/register-login/google.svg" alt="">GOOGLE</a>
-                    <a href="#" id="gov"><img src="./assets/img/register-login/gov.svg" alt=""></a>
-                </div>
+    <section id="cadastros">
+        <div class="container c-content">
+            <div id="navegacao">
+                <a href="./cadastro-login/cadastro1.html" target="meuIframe">Usuário Comum</a>
+                <a href="./cadastro-login/cadastro2.html" target="meuIframe">Médicos</a>
+                <a href="./cadastro-login/cadastro3.html" target="meuIframe">Postos de Saúde</a>
             </div>
-        </section>
 
-
-        <a class="go-back" href="./index.html"><i class="fa-solid fa-arrow-left"></i></a>
-    </main>
+            <div id="conteudo">
+                <iframe name="meuIframe" src="./cadastro-login/cadastro1.html" width="500" height="300"></iframe>
+            </div>
+        </div>
+    </section>
 
     <script src="./assets/js/script.js"></script>
 </body>
