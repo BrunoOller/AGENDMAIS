@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGEND+ - Sistema de Agendamento de Saúde</title>
+    <link rel="shortcut icon" href="./assets/img/agendm-fav.svg" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/color.css">
+    <link rel="stylesheet" href="./assets/css/homeStyle.css">
+    <link rel="stylesheet" href="./assets/css/globalStyle.css">
+
+    <style>
+        .gradeAgendamento {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            background-color: #E8E8E8;
+            padding: 1.3rem 0;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+
+            & .line {
+                display: flex;
+                width: 70%;
+                height: .08rem;
+                background-color: #000;
+
+            }
+
+            & h2 {
+                font-size: 1.65rem;
+                font-weight: 700;
+            }
+        }
+
+
+        .gradeSelecione {
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding-top: 4rem;
+
+            & .arrumarH3 {
+                width: 55%;
+                height: auto;
+                padding-bottom: 1.2rem;
+
+                & h3 {
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+            }
+
+            & button {
+                display: flex;
+                flex-direction: row;
+                width: 53%;
+                height: auto;
+                justify-content: space-between;
+                align-content: space-between;
+                background-color: #fff;
+
+                & p {
+                    font-size: 16px;
+                    color: #1F1F1F;
+                }
+
+                & img {
+                    align-content: center;
+                }
+            }
+
+            .line {
+                width: 55%;
+            }
+        }
+
+        .postosReferentes {
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding-top: 4rem;
+
+            & .container {
+                display: flex;
+                flex-direction: column;
+                width: 73%;
+                height: auto;
+
+                & h3 {
+                    font-size: 1.5rem;
+                    font-weight: bolder;
+                }
+
+                & .agenSearch {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    height: auto;
+
+                    & .search {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        background-color: #EAEAEA;
+                        gap: 1rem;
+                        flex-direction: row;
+
+                        & .lupa {
+                            width: auto;
+                            height: 40px;
+                            background-color: #EAEAEA;
+                            padding: 0 1rem 0 1.2rem;
+
+                            & img {
+                                display: flex;
+                                height: 67%;
+                                width: auto;
+                            }
+                        }
+
+                        & .line {
+                            display: flex;
+                            height: 2rem;
+                            background-color: #ababab;
+                            width: .1rem;
+                        }
+
+                        & .searchFor {
+                            display: flex;
+                            width: 76%;
+                            height: 100%;
+
+
+                            & input {
+                                display: flex;
+                                width: 100%;
+                                height: auto;
+                                background-color: #EAEAEA;
+                                outline: none;
+                            }
+                        }
+
+                        & .filter {
+                            min-width: 5rem;
+                            display: flex;
+                            background-color: var(--cor-header-titulos);
+                            width: 14%;
+                            height: 3rem;
+                            justify-content: center;
+                            align-items: center;
+                            color: #fff;
+                            font-size: 1rem;
+                            font-weight: 500;
+
+
+                        }
+                    }
+
+                    & .searchResults {
+                        width: 100%;
+                        height: auto;
+                        display: flex;
+                        border: 1px solid #b8b7b7;
+                        flex-direction: column;
+
+                        & .resultsButton {
+                            width: 100%;
+                            height: auto;
+                            display: flex;
+                            padding-left: 1.5rem;
+                            padding-right: 1.5rem;
+                            gap: 1rem;
+                            background-color: #fff;
+                            border: #b8b7b7 solid .2px;
+                            align-items: center;
+                        }
+
+                        & p {
+                            color: #555555;
+                        }
+
+                        & h3 {
+                            font-size: 21px;
+                        }
+
+                        & .line {
+                            background-color: #8e8e8e;
+                            height: 1.5rem;
+                            width: 2px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .background {
+            margin: 1rem 0 1rem 0;
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            & .container {
+                display: flex;
+                flex-direction: column;
+                width: 73%;
+                height: auto;
+                border: 1px solid #000;
+                align-items: center;
+
+                & .infoX {
+                    width: 97%;
+                    height: auto;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    & .infoHosp {
+                        padding-top: 1rem;
+                    }
+
+                    & button {
+                        background-color: #fff;
+                        height: auto;
+                        width: auto;
+                        margin-bottom: 3.5rem;
+                    }
+                }
+
+                & .sectionCH {
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-around;
+                    align-items: center;
+                    gap: 2rem;
+
+                    & .calendario {
+                        min-width: 400px;
+                        width: 50%;
+                        height: 400px;
+                        display: flex;
+                        border: 1px solid #000;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+
+                        & .calMes {
+                            display: flex;
+                            height: 20%;
+                            width: 100%;
+                            background-color: var(--cor-header-titulos);
+                            align-items: center;
+                            justify-content: space-around;
+
+
+                            & .selectMes {
+                                display: flex;
+                                height: auto;
+                                width: auto;
+                                align-items: center;
+                                justify-content: center;
+                                background-color: var(--cor-header-titulos);
+                                color: #fff;
+                                font-size: 1.65rem;
+                                font-weight: 500;
+                            }
+
+                            & .selectMes:hover {
+                                transform: scale(1.1);
+                            }
+
+                            & .imgSeta {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                background-color: var(--cor-header-titulos);
+                                height: auto;
+                                width: auto;
+
+                                & img:hover {
+                                    transform: scale(1.25);
+                                }
+                            }
+                        }
+
+                        .calDias {
+                            display: flex;
+                            width: 95%;
+                            height: 66%;
+                            flex-direction: row;
+                            justify-content: space-around;
+                            align-items: start;
+
+                            & .calDia {
+                                display: flex;
+                                width: 10%;
+                                height: auto;
+                                margin-top: .8rem;
+                                font-weight: 600;
+                                gap: 1rem;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: center;
+
+                                & button {
+                                    background-color: #fff;
+                                    height: auto;
+                                    width: 30px;
+                                }
+
+                                & button:hover {
+                                    background-color: #e2e2e2;
+                                }
+                            }
+                        }
+
+                        & .calText {
+                            display: flex;
+                            height: 14%;
+                            width: 100%;
+                            background-color: var(--cor-header-titulos);
+                            justify-content: center;
+                            align-items: center;
+
+                            & p {
+                                display: flex;
+                                color: #fff;
+                                font-size: 1.3rem;
+                                font-weight: 600;
+                                margin-top: 12px;
+                            }
+                        }
+                    }
+
+                    & .horarios {
+                        display: flex;
+                        width: 400px;
+                        height: 200px;
+                        flex-wrap: wrap;
+                        align-items: center;
+
+
+                        & .horText {
+                            width: 100%;
+                            height: auto;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            & p {
+                                font-weight: 600;
+                            }
+                        }
+
+                        & .horDisp {
+                            border: #535353 1px solid;
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 3px;
+                            background-color: #F5F5F5;
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: start;
+
+                            & .horButtons {
+                                display: flex;
+                                width: 23%;
+                                height: 79%;
+                                flex-direction: column;
+                                align-items: center;
+                                gap: 1.7rem;
+
+
+                                & button {
+                                    display: flex;
+                                    font-size: 1.1rem;
+                                    border: #000 1px solid;
+                                    border-radius: 4px;
+                                    width: 4.2rem;
+                                    height: 2.5rem;
+                                    background-color: var(--cor-header-titulos);
+                                    justify-content: center;
+                                    align-items: center;
+                                    color: #fff;
+
+                                }
+
+                                & button:hover {
+                                    background-color: #199960;
+
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+                .backgroundTributos {
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: start;
+                    margin-top: 2rem;
+                    margin-bottom: 1rem;
+
+                    & .containerTributos {
+                        display: flex;
+                        margin-top: 3rem;
+                        width: 100%;
+                        height: auto;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: end;
+
+                        & .tributos {
+                            display: flex;
+                            width: 75%;
+                            height: auto;
+                            flex-direction: column;
+                            gap: 2rem;
+
+                            & .tipoAgendamento {
+                                max-width: 28rem;
+                                width: 100%;
+                                height: auto;
+
+                                & p {
+                                    font-weight: 700;
+                                }
+
+                                & {
+                                    select {
+                                        background-color: #DEDEDE;
+                                        border: 1px solid #4BC997;
+                                        border-radius: 1px;
+                                        width: 100%;
+                                        height: auto;
+                                        font-weight: 300;
+                                        color: #676767;
+                                    }
+                                }
+                            }
+
+                            & .descricao {
+                                width: 100%;
+                                height: auto;
+
+                                & textarea {
+                                    background-color: #DEDEDE;
+                                    border: 1px solid #4BC997;
+                                    border-radius: 1px;
+                                    width: 95%;
+                                    font-weight: 300;
+                                    color: #676767;
+                                    outline: none;
+                                    min-height: 16rem;
+                                    max-height: 16rem;
+                                }
+
+                                & p {
+                                    font-weight: 700;
+                                }
+                            }
+
+                        }
+
+                        & .buttons {
+                            width: 30%;
+                            height: auto;
+                            gap: 1rem;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: center;
+                            align-items: center;
+                            flex-wrap: wrap-reverse;
+
+                            & button:hover {
+                                transform: scale(1.1);
+                            }
+
+                            & :nth-child(1) {
+                                background-color: #CF3333;
+                            }
+
+                            & :nth-child(2) {
+                                background-color: var(--cor-header-titulos);
+                            }
+
+                            & button {
+                                height: auto;
+                                width: 8rem;
+                                border-radius: 3px;
+                                color: #fff;
+                                font-weight: 700;
+                            }
+
+
+                        }
+                    }
+                }
+            }
+        }
+
+        .background {
+
+            & .popUpConcluido {
+                border: 1px solid #000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 57%;
+                height: auto;
+                background-color: #F6F6F6;
+
+                & .concluido{
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    gap: 1rem;
+
+                    & .line{
+                        background-color: #AEAEAE;
+                        width: 80%;
+                        height: 1px;
+                    }
+
+                    & p{
+                        font-weight: 500;
+                        font-size: 18px;
+                        width: 50%;
+                        text-align: center;
+                    }
+
+                    & h3{
+                        margin-top: 2rem;
+                        font-weight: 700;
+                        width: 50%;
+                        text-align: center;
+                    }
+
+                    & button{
+                        background-color: var(--cor-header-titulos);
+                        width: 8rem;
+                        height: 2rem;
+                        color: #fff;
+                        font-weight: 700;
+                        margin-bottom: 2rem;
+                    }
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid px-5">
+            <a class="navbar-brand" href="#">
+                <img src="./assets/img/logo.svg" id="logo">
+            </a>
+
+            <!-- Botão para mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/sobre.html">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contato.html">Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./login.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="gradeAgendamento">
+        <div class="line"></div>
+        <h2>AGENDAMENTO DE CONSULTA:</h2>
+    </div>
+
+    <div class="gradeSelecione">
+        <div class="arrumarH3">
+            <h3>SELECIONE UM EXAME*</h3>
+        </div>
+        <button>
+            <p>Clique para selecionar.</p>
+            <img src="/assets/img/agendamentoIMG/triangulo.svg" alt="">
+        </button>
+        <div class="line"></div>
+    </div>
+
+    <div class="postosReferentes">
+        <div class="container">
+            <h3>POSTOS/HOPITAIS REFERENTES DISPONÍVEIS:</h3>
+            <div class="agenSearch">
+                <div class="search">
+                    <button class="lupa">
+                        <img src="./assets/img/agendamentoIMG/Lupa.png" alt="">
+                    </button>
+
+                    <div class="line"></div>
+
+                    <div class="searchFor">
+                        <input type="search" placeholder="Pesquise por.">
+                    </div>
+
+                    <button class="filter">
+                        Filtrar por.
+                    </button>
+                </div>
+                <div class="searchResults">
+                    <button class="resultsButton">
+                        <h3>Hospital do Coração</h3>
+                        <div class="line"></div>
+                        <p>endereço rua josé cleiton da silva, 369, bairro água da caixa.</p>
+                    </button>
+                    <button class="resultsButton">
+                        <h3>Hospital do Coração</h3>
+                        <div class="line"></div>
+                        <p>endereço rua josé cleiton da silva, 369, bairro água da caixa.</p>
+                    </button>
+                    <button class="resultsButton">
+                        <h3>Hospital do Coração</h3>
+                        <div class="line"></div>
+                        <p>endereço rua josé cleiton da silva, 369, bairro água da caixa.</p>
+                    </button>
+                    <button class="resultsButton">
+                        <h3>Hospital do Coração</h3>
+                        <div class="line"></div>
+                        <p>endereço rua josé cleiton da silva, 369, bairro água da caixa.</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- card do agendamento -->
+    <div class="background">
+        <div class="container">
+            <!-- Informações do hospital e o X -->
+            <div class="infoX">
+                <!-- Informações do hospital -->
+                <div class="infoHosp">
+                    <h3>Hospital do coração n°1</h3>
+                    <p> rua josé cleiton da silva, 369, <br> bairro água da caixa.</p>
+                </div>
+
+                <!-- Botão pra fechar -->
+                <div class="close">
+                    <button><img src="/assets/img/agendamentoIMG/x.svg" alt="X"></button>
+                </div>
+            </div>
+
+            <!-- Calendario e horários disponiveis -->
+            <div class="sectionCH">
+                <!-- Calendario -->
+                <div class="calendario">
+                    <!-- Mes de cima -->
+                    <div class="calMes">
+                        <button class="imgSeta">
+                            <img src="/assets/img/agendamentoIMG/setaEsquerda.svg" alt="">
+                        </button>
+
+                        <button class="selectMes">
+                            JUNHO
+                        </button>
+
+                        <button class="imgSeta">
+                            <img src="/assets/img/agendamentoIMG/setaDireita.svg" alt="">
+                        </button>
+                    </div>
+                    <!-- Dia do meio -->
+                    <div class="calDias">
+                        <ul class="calDia">
+                            <li>Dom.</li>
+                            <li><button>1</button></li>
+                            <li><button>8</button></li>
+                            <li><button>15</button></li>
+                            <li><button>22</button></li>
+                            <li><button>29</button></li>
+                        </ul>
+
+                        <ul class="calDia">
+                            <li>Seg.</li>
+                            <li><button>2</button></li>
+                            <li><button>9</button></li>
+                            <li><button>16</button></li>
+                            <li><button>23</button></li>
+                            <li><button>30</button></li>
+                        </ul>
+
+                        <ul class="calDia">
+                            <li>Ter.</li>
+                            <li><button>3</button></li>
+                            <li><button>10</button></li>
+                            <li><button>17</button></li>
+                            <li><button>24</button></li>
+                        </ul>
+
+                        <ul class="calDia">
+                            <li>Qua.</li>
+                            <li><button>4</button></li>
+                            <li><button>11</button></li>
+                            <li><button>18</button></li>
+                            <li><button>25</button></li>
+                        </ul>
+
+                        <ul class="calDia">
+                            <li>Qui.</li>
+                            <li><button>5</button></li>
+                            <li><button>12</button></li>
+                            <li><button>19</button></li>
+                            <li><button>26</button></li>
+                        </ul>
+
+                        <ul class="calDia">
+                            <li>Sex.</li>
+                            <li><button>6</button></li>
+                            <li><button>13</button></li>
+                            <li><button>20</button></li>
+                            <li><button>27</button></li>
+                        </ul>
+
+                        <ul class="calDia">
+                            <li>Sab.</li>
+                            <li><button>7</button></li>
+                            <li><button>14</button></li>
+                            <li><button>21</button></li>
+                            <li><button>28</button></li>
+                        </ul>
+
+
+                    </div>
+                    <!-- Texto de baixo -->
+                    <div class="calText">
+                        <p>Selecione um dia disponível.</p>
+                    </div>
+                </div>
+
+                <!-- Horario -->
+                <div class="horarios">
+                    <!-- Texto de cima -->
+                    <div class="horText">
+                        <p>HORÁRIOS DISPONÍVEIS EM 17/06/2025</p>
+                    </div>
+                    <!-- Horarios disponiveis de baixo -->
+                    <div class="horDisp">
+                        <ul class="horButtons">
+                            <li><button>09:45</button></li>
+                            <li><button>12:45</button></li>
+                            <li><button>15:45</button></li>
+                        </ul>
+                        <ul class="horButtons">
+                            <li><button>10:30</button></li>
+                            <li><button>13:30</button></li>
+                            <li><button>16:30</button></li>
+                        </ul>
+                        <ul class="horButtons">
+                            <li><button>11:15</button></li>
+                            <li><button>14:15</button></li>
+                            <li><button>17:15</button></li>
+                        </ul>
+                        <ul class="horButtons">
+                            <li><button>12:00</button></li>
+                            <li><button>15:00</button></li>
+                            <li><button>18:00</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="backgroundTributos">
+                <!-- Botões Agendamento -->
+                <div class="containerTributos">
+                    <!-- mexer nos tipos de agendamento e descrição -->
+                    <div class="tributos">
+                        <!-- tipos de agendamento -->
+                        <div class="tipoAgendamento">
+                            <p>Selecione um dos tipos de agendamento disponiveis:</p>
+                            <select name="tipoAgendamento" id="">
+                                <option value="Nenhum" disabled selected>Nenhum tipo selecionado</option>
+                                <option value="Rotineiro">Rotineiro</option>
+                                <option value="Urina">Urina</option>
+                                <option value="HIV">Hiv</option>
+                                <option value="Raio-X">Raio-X</option>
+                                <option value="Electrocariograma">Electrocariograma</option>
+                                <option value="Hemograma">Hemograma</option>
+                            </select>
+                        </div>
+
+                        <!-- descrição -->
+                        <div class="descricao">
+                            <p>Faça uma breve descrição dos sintomas que esta sentindo:</p>
+                            <textarea name="" id="" placeholder="Descreva os sintomas:"></textarea>
+                        </div>
+                    </div>
+                    <!-- botoes -->
+                    <div class="buttons">
+                        <button>Cancelar</button>
+                        <button>Agendar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="background">
+        <div class="popUpConcluido">
+            <div class="concluido">
+                <h3>Agendamento Solicitado!</h3>
+                <div class="line"></div>
+                <p>ATENÇÃO AS NOTIFICAÇÕES PARA SABER SE SEU AGENDAMENTO FOI ACEITO OU NÃO</p>
+                <div class="line"></div>
+                <button>OK</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

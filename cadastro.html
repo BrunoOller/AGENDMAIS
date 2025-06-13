@@ -28,23 +28,92 @@
             align-items: center;
             position: relative;
             padding: 7px 20px;
+            background-color: #1f1f1f;
 
             & a {
                 width: 45px;
                 height: 45px;
                 position: absolute;
                 z-index: 1;
-                top: 0;
-                left: 0;
+                top: 27%;
+                left: 2rem;
 
                 & i {
-                    color: #1f1f1f;
+                    color: var(--cor-header-titulos);
+                    font-size: 1.8rem;
+                    transition: all .25s ease-out;
+                }
+
+                &:hover i {
+                    color: #FFF;
+                    transition: all .25s ease-in;
                 }
             }
 
             & #logo {
                 width: auto;
-                height: 60px;
+                height: 70px;
+            }
+        }
+
+        #h-content {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #1f1f1f;
+            gap: 1.5rem;
+
+            & .line {
+                width: 70%;
+                height: 1px;
+                background-color: #585858;
+            }
+
+            & .text {
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: .5rem;
+
+                & h1 {
+                    color: #FFF;
+                }
+
+                & p,
+                span {
+                    color: #c0c0c0;
+                }
+
+                & span {
+                    font-size: 1.3rem;
+                }
+            }
+
+            & #navegacao {
+                width: 40%;
+                height: auto;
+                display: flex;
+                justify-content: space-around;
+
+                & a {
+                    color: #f0f0f0;
+                    font-weight: 500;
+                    padding: 0 15px 10px 15px;
+                    border-bottom: .3rem solid transparent;
+                    transition: all .25s ease-out;
+
+                    &:hover {
+                        color: #ffffff;
+                        border-bottom: .3rem solid var(--cor-header-titulos);
+                        transition: all .25s ease-in;
+                    }
+                }
             }
         }
     </style>
@@ -55,21 +124,62 @@
         <a href="./index.html">
             <i class="fa-solid fa-arrow-left"></i>
         </a>
-        <img src="./assets/img/logo.svg" alt="Logo AGEND+" id="logo">
+        <img src="./assets/img/logo-dark.svg" alt="Logo AGEND+" id="logo">
     </header>
 
-    <section id="cadastros">
-        <div class="container c-content">
-            <div id="navegacao">
-                <a href="./cadastro-login/cadastro1.html" target="meuIframe">Usuário Comum</a>
-                <a href="./cadastro-login/cadastro2.html" target="meuIframe">Médicos</a>
-                <a href="./cadastro-login/cadastro3.html" target="meuIframe">Postos de Saúde</a>
-            </div>
-
-            <div id="conteudo">
-                <iframe name="meuIframe" src="./cadastro-login/cadastro1.html" width="500" height="300"></iframe>
-            </div>
+    <section id="h-content">
+        <div class="line"></div>
+        <div class="text">
+            <h1>Crie seu Cadastro</h1>
+            <p>Para criar sua conta, basta primeiro indicar quem você é.</p>
+            <span>...</span>
         </div>
+        <div id="navegacao">
+            <a href="./cadastro-login/cadastro1.html">Usuário Comum</a>
+            <a href="./cadastro-login/cadastro2.html">Médicos</a>
+            <a href="./cadastro-login/cadastro3.html">Postos de Saúde</a>
+        </div>
+    </section>
+
+    <section id="content">
+        <form>
+            <div class="f-nome">
+                <label for="nome">Nome Completo<span class="required">*</span></label>
+                <input type="text" placeholder="" name="nome" id="nome">
+            </div>
+            <div class="f-email">
+                <label for="email">E-mail<span class="required">*</span></label>
+                <input type="email" placeholder="Ex: nomeexemplo@gmail.com" name="email" id="email">
+            </div>
+            <div class="f-data">
+                <label for="data">Data de Nascimento<span class="required">*</span></label>
+                <input type="date" name="data" id="data">
+            </div>
+            <div class="f-cpf">
+                <label for="nome">CPF<span class="required">*</span></label>
+                <input type="number" placeholder="" name="cpf" id="cpf">
+            </div>
+            <div class="f-tel">
+                <label for="nome">Telefone<span class="required">*</span></label>
+                <input type="tel" placeholder="" name="tel" id="tel">
+            </div>
+            <div class="f-cep">
+                <label for="cep">CEP<span class="required">*</span></label>
+                <input type="number" placeholder="" name="cep" id="cep">
+            </div>
+            <div class="f-end">
+                <label for="end">Endereço<span class="required">*</span></label>
+                <input type="text" placeholder="" name="end" id="end">
+            </div>
+            <div class="f-sen">
+                <label for="sen">Senha<span class="required">*</span></label>
+                <input type="password" placeholder="" name="sen" id="sen">
+            </div>
+            <div class="f-conf">
+                <label for="conf">Confirmar Senha<span class="required">*</span></label>
+                <input type="password" placeholder="" name="conf" id="conf">
+            </div>
+        </form>
     </section>
 
     <script src="./assets/js/script.js"></script>
