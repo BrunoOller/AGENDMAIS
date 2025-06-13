@@ -21,101 +21,281 @@
     <link rel="stylesheet" href="./assets/css/globalStyle.css">
 
     <style>
+        body {
+            background: linear-gradient(to bottom, #4BC997 30%, var(--cor-fundo-03) 40%, var(--cor-fundo-03) 100%);
+            background-repeat: no-repeat;
 
+            & main {
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+
+                & .a-nav {
+                    width: 100%;
+                    height: auto;
+                    margin-top: 15px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: relative;
+
+                    & .h-admin {
+                        width: 250px;
+                        height: auto;
+                        color: var(--cor-textos-01);
+                        position: absolute;
+                        z-index: 1;
+                        top: 10px;
+                        right: 15px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-around;
+
+                        & .circle {
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 100%;
+                            background-color: var(--cor-textos-01);
+                        }
+
+                        & p {
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            justify-content: space-around;
+                        }
+                    }
+
+                    & .logo {
+                        width: 130px;
+                    }
+                }
+
+                & .general {
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    flex-direction: wrap;
+
+                    & .offcanva {
+                        position: fixed;
+                        width: 22%;
+                        height: 100%;
+                        background-color: var(--cor-textos-footer-01);
+                        color: var(--cor-textos-01);
+                        border-radius: 0 45px 0 0;
+                    }
+
+                    & .a-infos {
+                        width: 75%;
+                        height: auto;
+                        display: flex;
+                        margin-left: 26.5%;
+                        flex-direction: column;
+
+                        & .a-container {
+                            height: auto;
+                            display: flex;
+                            margin: 2rem 0 2rem 0;
+                            gap: 20px;
+
+                            & .users {
+                                width: 450px;
+                                height: auto;
+                                padding: 20px 0 20px 0;
+                                display: flex;
+                                justify-content: space-between;
+                                background-color: #61DAAA;
+                                border: 1px solid var(--cor-textos-01);
+                                color: var(--cor-textos-01);
+                                border-radius: 5px;
+                                box-shadow: 0 5px 10px #0000002e;
+
+                                & .duo {
+                                    width: 100%;
+                                    height: auto;
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: center;
+                                    margin: 20px 0 0 20px;
+                                    gap: 0.5rem;
+
+                                    & img {
+                                        width: 2.2rem;
+                                        height: auto;
+                                    }
+
+                                    & p {
+                                        font-size: 17.5px;
+                                        font-weight: 600;
+                                    }
+                                }
+
+                                & .number {
+                                    width: 100%;
+                                    height: auto;
+                                    display: flex;
+                                    justify-content: end;
+                                    align-items: end;
+                                    margin-right: 50px;
+                                    font-size: 35px;
+                                    font-weight: 600;
+                                }
+                            }
+
+                            & .agends {
+                                width: 450px;
+                                height: auto;
+                                padding: 20px 0 20px 0;
+                                display: flex;
+                                justify-content: space-between;
+                                background-color: #61DAAA;
+                                border: 1px solid var(--cor-textos-01);
+                                color: var(--cor-textos-01);
+                                border-radius: 5px;
+                                box-shadow: 0 5px 10px #0000002e;
+
+                                & .duo {
+                                    width: 100%;
+                                    height: auto;
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: center;
+                                    margin: 20px 0 0 20px;
+                                    gap: 0.5rem;
+
+                                    & img {
+                                        width: 2.2rem;
+                                        height: auto;
+                                    }
+
+                                    & p {
+                                        font-size: 17.5px;
+                                        font-weight: 600;
+                                    }
+                                }
+
+                                & .number {
+                                    width: 100%;
+                                    height: auto;
+                                    display: flex;
+                                    justify-content: end;
+                                    align-items: end;
+                                    margin-right: 50px;
+                                    font-size: 35px;
+                                    font-weight: 600;
+                                }
+                            }
+                        }
+
+                        & .a-general-data {
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+                }
+            }
+        }
     </style>
 
 </head>
 
 <body>
-
-    <section class="a-nav">
-        <img src="./assets/img/logo-full-white.svg" alt="logo">
-        <div class="h-admin">
-            <p>Olá, ADMIN!</p>
-            <div class="circle"></div>
-        </div>
-    </section>
-
-    <!-- Barrinha que fica na lateral da tela -->
-    <section class="offcanvas">
-        <div class="a-profile">
-            <div class="a-photo">
+    <main>
+        <section class="a-nav">
+            <img class="logo" src="./assets/img/logo-full-white.svg" alt="logo">
+            <div class="h-admin">
+                <p>Olá, ADMIN!</p>
+                <div class="circle"></div>
             </div>
-            <h3>ADMINISTRADOR</h3>
-        </div>
-        <div class="live"></div>
-        <div class="a-list">
-            <ul>
-                <li>Dashboard</li>
-                <li>Análises</li>
-                <li>Solicitações de Cadastro</li>
-                <li>Usuários</li>
-            </ul>
-        </div>
-    </section>
+        </section>
 
-    <section class="a-infos">
-        <div class="a-container">
-            <div class="users">
-                <img src="./assets/img/admin/person.svg" alt="Ícone de Pessoa">
-                <p>Usuários</p>
-                <p>1025</p>
-            </div>
-            <div class="agends">
-                <img src="./assets/img/admin/sino.svg" alt="Ícone de Sino">
-                <p>Agendamentos</p>
-                <p>3.574</p>
-            </div>
-        </div>
-
-        <div class="a-general-data">
-            <div class="caption">
-                <p>Dados gerais da ultima semana.</p>
-                <div class="filter">
-                    <p>Filtrar por.</p>
-                    <img src="./assets/img/admin/filtro.svg" alt="Ícone de Filtro">
+        <div class="general">
+            <!-- Barrinha que fica na lateral da tela -->
+            <section class="offcanva">
+                <div class="a-options">
+                    <div class="a-profile">
+                        <div class="a-photo">
+                        </div>
+                        <h3>ADMINISTRADOR</h3>
+                    </div>
+                    <div class="line"></div>
+                    <div class="a-list">
+                        <ul>
+                            <li>Dashboard</li>
+                            <li>Análises</li>
+                            <li>Solicitações de Cadastro</li>
+                            <li>Usuários</li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div class="u-week">
-                <p>Usuários Cadastrados <span>+84%</span></p>
-                <img src="./assets/img/admin/grafico-usuarios.svg" alt="Gráfico em Pizza">
-            </div>
+            </section>
 
-            <div class="appointments">
-                <p>Agendamentos Realizados <span>+10.2%</span></p>
-                <img src="./assets/img/admin/grafico-horizontal.svg" alt="Gráfico Horizontal">
-            </div>
-        </div>
-
-        <div class="u-registered">
-            <div class="caption">
-                <p>Usuários Cadastrados</p>
-                <div class="filter">
-                    <p>Filtrar por.</p>
-                    <img src="./assets/img/admin/filtro.svg" alt="Ícone de Filtro">
+            <section class="a-infos">
+                <div class="a-container">
+                    <!-- Número de Usuários no Sistema -->
+                    <div class="users">
+                        <div class="duo">
+                            <img src="./assets/img/admin/person.svg" alt="Ícone de Pessoa">
+                            <p>Usuários</p>
+                        </div>
+                        <p class="number">1.025</p>
+                    </div>
+                    <!-- Número de Agendamentos no Sistema -->
+                    <div class="agends">
+                        <div class="duo">
+                            <img src="./assets/img/admin/sino.svg" alt="Ícone de Sino">
+                            <p>Agendamentos</p>
+                        </div>
+                        <p class="number">3.574</p>
+                    </div>
                 </div>
-            </div>
-
-            <div class="patients">
-                <p>Pacientes <span>+10%</span></p>
-                <img src="./assets/img/admin/g-patients.svg" alt="Gráfico de Pacientes">
-            </div>
-
-            <div class="medics">
-                <p>Pacientes <span>+9.1%</span></p>
-                <img src="./assets/img/admin/g-medics.svg" alt="Gráfico de Médicos">
-            </div>
-
-            <div class="posts">
-                <p>Pacientes <span>+6.7%</span></p>
-                <img src="./assets/img/admin/g-posts.svg" alt="Gráfico de Postos">
-            </div>
+                <div class="a-general-data">
+                    <div class="caption">
+                        <p>Dados gerais da ultima semana.</p>
+                        <div class="filter">
+                            <p>Filtrar por.</p>
+                            <img src="./assets/img/admin/filtro.svg" alt="Ícone de Filtro">
+                        </div>
+                    </div>
+                    <div class="u-week">
+                        <p>Usuários Cadastrados <span>+84%</span></p>
+                        <img src="./assets/img/admin/grafico-usuarios.svg" alt="Gráfico em Pizza">
+                    </div>
+                    <div class="appointments">
+                        <p>Agendamentos Realizados <span>+10.2%</span></p>
+                        <img src="./assets/img/admin/grafico-horizontal.svg" alt="Gráfico Horizontal">
+                    </div>
+                </div>
+                <div class="u-registered">
+                    <div class="caption">
+                        <p>Usuários Cadastrados</p>
+                        <div class="filter">
+                            <p>Filtrar por.</p>
+                            <img src="./assets/img/admin/filtro.svg" alt="Ícone de Filtro">
+                        </div>
+                    </div>
+                    <div class="patients">
+                        <p>Pacientes <span>+10%</span></p>
+                        <img src="./assets/img/admin/g-patients.svg" alt="Gráfico de Pacientes">
+                    </div>
+                    <div class="medics">
+                        <p>Pacientes <span>+9.1%</span></p>
+                        <img src="./assets/img/admin/g-medics.svg" alt="Gráfico de Médicos">
+                    </div>
+                    <div class="posts">
+                        <p>Pacientes <span>+6.7%</span></p>
+                        <img src="./assets/img/admin/g-posts.svg" alt="Gráfico de Postos">
+                    </div>
+                </div>
+            </section>
         </div>
-    </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
-        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+            crossorigin="anonymous"></script>
+    </main>
 </body>
 
 </html>
