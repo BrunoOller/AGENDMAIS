@@ -100,51 +100,7 @@
                             margin: 2rem 0 2rem 0;
                             gap: 20px;
 
-                            & .users {
-                                width: 450px;
-                                height: auto;
-                                padding: 20px 0 20px 0;
-                                display: flex;
-                                justify-content: space-between;
-                                background-color: #61DAAA;
-                                border: 1px solid var(--cor-textos-01);
-                                color: var(--cor-textos-01);
-                                border-radius: 5px;
-                                box-shadow: 0 5px 10px #0000002e;
-
-                                & .duo {
-                                    width: 100%;
-                                    height: auto;
-                                    display: flex;
-                                    flex-direction: column;
-                                    justify-content: center;
-                                    margin: 20px 0 0 20px;
-                                    gap: 0.5rem;
-
-                                    & img {
-                                        width: 2.2rem;
-                                        height: auto;
-                                    }
-
-                                    & p {
-                                        font-size: 17.5px;
-                                        font-weight: 600;
-                                    }
-                                }
-
-                                & .number {
-                                    width: 100%;
-                                    height: auto;
-                                    display: flex;
-                                    justify-content: end;
-                                    align-items: end;
-                                    margin-right: 50px;
-                                    font-size: 35px;
-                                    font-weight: 600;
-                                }
-                            }
-
-                            & .agends {
+                            & .accesses {
                                 width: 450px;
                                 height: auto;
                                 padding: 20px 0 20px 0;
@@ -192,6 +148,101 @@
                         & .a-general-data {
                             width: 100%;
                             height: auto;
+
+                            & .caption {
+                                width: 100%;
+                                height: auto;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                margin-top: 20px;
+
+
+                                & #data {
+                                    font-weight: 600;
+                                }
+
+                                & .filter {
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 10px;
+                                    margin-right: 70px;
+
+                                    & img {
+                                        width: 22px;
+                                        height: auto;
+                                    }
+                                }
+                            }
+
+                            & .info-container {
+                                width: 100%;
+                                height: auto;
+                                display: flex;
+                                gap: 20px;
+
+                                & .u-week {
+                                    width: 350px;
+                                    height: auto;
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    background-color: #FAFAFA;
+                                    border: 1px solid #BEBEBE;
+                                    border-radius: 5px;
+                                    box-shadow: 0 5px 10px #0000002e;
+                                    padding: 10px;
+
+                                    & img {
+                                        width: 300px;
+                                        height: auto;
+                                    }
+
+                                    & p {
+                                        font-size: 13px;
+
+                                        & span {
+                                            width: 100%;
+                                            height: auto;
+                                            color: var(--cor-textos-01);
+                                            background-color: #00E68B;
+                                            padding: 3px;
+                                            border-radius: 3.5px;
+                                        }
+                                    }
+                                }
+
+                                & .appointments {
+                                    width: 550px;
+                                    height: auto;
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    padding: 10px;
+                                    gap: 25px;
+                                    background-color: #FAFAFA;
+                                    border: 1px solid #BEBEBE;
+                                    border-radius: 5px;
+                                    box-shadow: 0 5px 10px #0000002e;
+
+                                    & img {
+                                        width: 530px;
+                                    }
+
+                                    & p {
+                                        font-size: 13px;
+
+                                        & span {
+                                            width: 100%;
+                                            height: auto;
+                                            color: var(--cor-textos-01);
+                                            background-color: #00E68B;
+                                            padding: 3px;
+                                            border-radius: 3.5px;
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -235,7 +286,7 @@
             <section class="a-infos">
                 <div class="a-container">
                     <!-- Número de Usuários no Sistema -->
-                    <div class="users">
+                    <div class="accesses">
                         <div class="duo">
                             <img src="./assets/img/admin/person.svg" alt="Ícone de Pessoa">
                             <p>Usuários</p>
@@ -243,7 +294,7 @@
                         <p class="number">1.025</p>
                     </div>
                     <!-- Número de Agendamentos no Sistema -->
-                    <div class="agends">
+                    <div class="accesses">
                         <div class="duo">
                             <img src="./assets/img/admin/sino.svg" alt="Ícone de Sino">
                             <p>Agendamentos</p>
@@ -253,19 +304,21 @@
                 </div>
                 <div class="a-general-data">
                     <div class="caption">
-                        <p>Dados gerais da ultima semana.</p>
+                        <p id="data">Dados gerais da ultima semana.</p>
                         <div class="filter">
                             <p>Filtrar por.</p>
                             <img src="./assets/img/admin/filtro.svg" alt="Ícone de Filtro">
                         </div>
                     </div>
-                    <div class="u-week">
-                        <p>Usuários Cadastrados <span>+84%</span></p>
-                        <img src="./assets/img/admin/grafico-usuarios.svg" alt="Gráfico em Pizza">
-                    </div>
-                    <div class="appointments">
-                        <p>Agendamentos Realizados <span>+10.2%</span></p>
-                        <img src="./assets/img/admin/grafico-horizontal.svg" alt="Gráfico Horizontal">
+                    <div class="info-container">
+                        <div class="u-week">
+                            <p>Usuários Cadastrados <span>+84%</span></p>
+                            <img src="./assets/img/admin/grafico-usuarios.svg" alt="Gráfico em Pizza">
+                        </div>
+                        <div class="appointments">
+                            <p>Agendamentos Realizados <span>+10.2%</span></p>
+                            <img src="./assets/img/admin/grafico-horizontal.svg" alt="Gráfico Horizontal">
+                        </div>
                     </div>
                 </div>
                 <div class="u-registered">
