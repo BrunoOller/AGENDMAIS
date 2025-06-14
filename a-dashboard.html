@@ -20,15 +20,14 @@
     <link rel="stylesheet" href="./assets/css/color.css">
     <link rel="stylesheet" href="./assets/css/globalStyle.css">
 
+    <!-- Link Fontawesome -->
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v6.7.2/css/all.css">
+
     <style>
         body {
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom,
-             #4BC997 30%,
-              var(--cor-fundo-03) 40%,
-               var(--cor-fundo-03) 100%);
-            background-repeat: no-repeat;
+            background: var(--cor-fundo-03);
 
             & main {
                 width: 100%;
@@ -36,14 +35,15 @@
                 display: flex;
                 flex-direction: column;
 
-                & .a-nav {
+                & .a-header {
                     width: 100%;
                     height: auto;
-                    margin-top: 15px;
+                    padding: 15px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     position: relative;
+                    background-color: #4BC997;
 
                     & .h-admin {
                         width: 250px;
@@ -77,27 +77,117 @@
                     }
                 }
 
+                & .offcanva {
+                    position: fixed;
+                    width: 22%;
+                    height: 90%;
+                    z-index: 1;
+                    bottom: 0;
+                    background-color: var(--cor-textos-footer-01);
+                    color: var(--cor-textos-01);
+                    border-radius: 0 45px 0 0;
+
+                    & .profile {
+                        width: 100%;
+                        height: auto;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        & .a-profile {
+                            width: 80%;
+                            height: auto;
+                            padding: 1.5rem 5px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            gap: 1rem;
+                            border-bottom: 1px solid #4D4D4D;
+
+                            & .a-photo {
+                                width: 150px;
+                                height: 150px;
+                                background-color: #fff;
+                                border-radius: 50%;
+                            }
+
+                            & h3 {
+                                font-size: 1.25rem;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+
+                    & .a-nav {
+                        width: 100%;
+                        height: auto;
+                        margin-top: 10px;
+                        display: flex;
+                        justify-content: center;
+
+                        & ul {
+                            width: 100%;
+                            height: auto;
+                            display: flex;
+                            flex-direction: column;
+                            padding: 0;
+                            align-items: center;
+                            gap: 2.5px;
+
+                            & li {
+                                width: 100%;
+                                height: auto;
+                                
+                                & a {
+                                    display: block;
+                                    width: 100%;
+                                    padding: 10px 2.5rem;
+                                    height: auto;
+                                    font-size: 1.15rem;
+                                    color: #D4D4D4;
+
+                                    & i {
+                                        color: #D4D4D4;
+                                        margin-right: 5px;
+                                    } 
+                                }
+
+                                &:nth-child(1) a {
+                                    background-color: #00E68B;
+                                    color: #FFFF;
+                                    font-weight: 600;
+
+                                    & i {
+                                        color: #FFF;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
                 & .general {
                     width: 100%;
                     height: auto;
                     display: flex;
-                    flex-direction: wrap;
+                    background: linear-gradient(to bottom,
+                            #4BC997 30%,
+                            var(--cor-fundo-03) 40%,
+                            var(--cor-fundo-03) 100%);
+                    background-repeat: no-repeat;
 
-                    & .offcanva {
-                        position: fixed;
-                        width: 22%;
+                    & .fundo-offcanva {
+                        width: 25%;
                         height: 100%;
-                        background-color: var(--cor-textos-footer-01);
-                        color: var(--cor-textos-01);
-                        border-radius: 0 45px 0 0;
                     }
 
                     & .a-infos {
-                        width: 100%;
+                        width: 75%;
                         height: auto;
                         display: flex;
-                        margin-left: 26.5%;
                         flex-direction: column;
+                        align-items: center;
 
                         & .a-container {
                             height: auto;
@@ -254,6 +344,12 @@
                             width: 100%;
                             height: auto;
                             background-color: var(--cor-fundo-03);
+
+                            & .graphics {
+                                width: 100%;
+                                height: auto;
+                                display: flex;
+                            }
                         }
                     }
                 }
@@ -265,7 +361,7 @@
 
 <body>
     <main>
-        <section class="a-nav">
+        <section class="a-header">
             <img class="logo" src="./assets/img/logo-full-white.svg" alt="logo">
             <div class="h-admin">
                 <p>Olá, ADMIN!</p>
@@ -273,26 +369,30 @@
             </div>
         </section>
 
-        <div class="general">
-            <!-- Barrinha que fica na lateral da tela -->
-            <section class="offcanva">
-                <div class="a-options">
+        <section class="offcanva">
+            <div class="a-options">
+                <div class="profile">
                     <div class="a-profile">
                         <div class="a-photo">
                         </div>
                         <h3>ADMINISTRADOR</h3>
                     </div>
-                    <div class="line"></div>
-                    <div class="a-list">
-                        <ul>
-                            <li>Dashboard</li>
-                            <li>Análises</li>
-                            <li>Solicitações de Cadastro</li>
-                            <li>Usuários</li>
-                        </ul>
-                    </div>
                 </div>
-            </section>
+                <div class="a-nav">
+                    <ul>
+                        <li><a href="#"><i class="fa-solid fa-chart-pie"></i> Dashboard</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chart-simple"></i> Análises</a></li>
+                        <li><a href="#"><i class="fa-solid fa-bell"></i> Solicitações de cadastro</a></li>
+                        <li><a href="#"><i class="fa-solid fa-person"></i> Usuários</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="general">
+            <!-- Barrinha que fica na lateral da tela -->
+            <div class="fundo-offcanva"></div>
+
 
             <section class="a-infos">
                 <div class="a-container">
@@ -340,17 +440,19 @@
                             <img src="./assets/img/admin/filtro.svg" alt="Ícone de Filtro">
                         </div>
                     </div>
-                    <div class="patients">
-                        <p>Pacientes <span>+10%</span></p>
-                        <img src="./assets/img/admin/g-patients.svg" alt="Gráfico de Pacientes">
-                    </div>
-                    <div class="medics">
-                        <p>Pacientes <span>+9.1%</span></p>
-                        <img src="./assets/img/admin/g-medics.svg" alt="Gráfico de Médicos">
-                    </div>
-                    <div class="posts">
-                        <p>Pacientes <span>+6.7%</span></p>
-                        <img src="./assets/img/admin/g-posts.svg" alt="Gráfico de Postos">
+                    <div class="graphics">
+                        <div class="patients">
+                            <p>Pacientes <span>+10%</span></p>
+                            <img src="./assets/img/admin/g-patients.svg" alt="Gráfico de Pacientes">
+                        </div>
+                        <div class="medics">
+                            <p>Pacientes <span>+9.1%</span></p>
+                            <img src="./assets/img/admin/g-medics.svg" alt="Gráfico de Médicos">
+                        </div>
+                        <div class="posts">
+                            <p>Pacientes <span>+6.7%</span></p>
+                            <img src="./assets/img/admin/g-posts.svg" alt="Gráfico de Postos">
+                        </div>
                     </div>
                 </div>
             </section>
