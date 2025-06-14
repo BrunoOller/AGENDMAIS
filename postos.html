@@ -7,7 +7,7 @@
 
     <!-- Título do site -->
     <title>AGENDMAIS - Sistema de Agendamento de Saúde</title>
-    
+
     <!-- Link Favicon -->
     <link rel="shortcut icon" href="./assets/img/agendm-fav.svg" type="image/x-icon">
 
@@ -23,6 +23,233 @@
 
     <!-- Link Fontawesome -->
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v6.7.2/css/all.css">
+
+    <style>
+        nav {
+            background: #E8E8E8;
+        }
+
+        #s-solicitations {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 3rem 0;
+            gap: 1.5rem;
+
+            & h1 {
+                font-size: 1.5rem;
+                font-weight: 500;
+                color: var(--cor-texto-02);
+            }
+
+            & .s-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: .75rem;
+
+                & .block {
+                    width: 90%;
+                    height: auto;
+
+                    display: flex;
+                    flex-direction: column;
+
+                    padding: .5rem 2rem;
+                    box-shadow: 0 5px 10px #0000002e;
+
+                    border-bottom: .65rem solid var(--cor-header-titulos);
+                    background-color: var(--cor-fundo-02);
+
+                    & .b-header {
+                        width: 100%;
+                        height: auto;
+
+                        & h2 {
+                            font-size: 1.15rem;
+                            font-weight: 500;
+                            color: #2e2e2e;
+
+                            & span {
+                                font-weight: 600;
+                            }
+                        }
+                    }
+
+                    & .b-info {
+                        width: 100%;
+                        height: auto;
+                        display: flex;
+                        align-items: start;
+                        cursor: default;
+
+                        & .i-image {
+                            width: 20%;
+                            height: auto;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            gap: .5rem;
+
+                            & .line {
+                                width: 100%;
+                                height: .15rem;
+                                background-color: var(--cor-header-titulos);
+                            }
+
+                            & #foto-usuario {
+                                width: 100%;
+                                height: auto;
+                                border: 1px solid #d3d3d3;
+                                box-shadow: 0 5px 10px #0000002e;
+                            }
+                        }
+
+                        & .i-infos {
+                            width: 30%;
+                            height: auto;
+                            padding-top: 1rem;
+                            padding-left: .4rem;
+
+                            & ul li {
+                                font-size: 1.1rem;
+                                list-style: disc;
+                                line-height: 1.8rem;
+                                color: #666666;
+
+                                & #emphasis {
+                                    font-weight: 600;
+                                }
+
+                                & #exam {
+                                    width: 500px;
+                                    background-color: #F4F4F4;
+                                    border: 1px solid #909090;
+                                    padding: 1px 5px;
+                                    font-size: 1rem;
+                                }
+
+                                &::marker {
+                                    color: var(--cor-header-titulos);
+                                }
+                            }
+                        }
+
+                        & .i-desc {
+                            width: 50%;
+                            height: auto;
+                            display: flex;
+                            flex-direction: column;
+                            padding-top: 1rem;
+
+                            & label {
+                                font-size: 1.1rem;
+                                color: #666666;
+                            }
+
+                            & #d-text {
+                                width: 100%;
+                                min-height: 9.65rem;
+                                max-height: 9.65rem;
+                                border: 1px solid #909090;
+                                background: #F4F4F4;
+                                color: #1f1f1f;
+                                display: flex;
+                                border-radius: 5px;
+                                padding: .5rem 1rem;
+                                font-size: 1rem;
+                                font-weight: 400;
+
+                                &:focus {
+                                    outline: none;
+                                }
+                            }
+                        }
+                    }
+
+                    & .b-confirm {
+                        width: 100%;
+                        height: auto;
+                        display: flex;
+                        justify-content: end;
+                        gap: .75rem;
+
+                        & .btn-accept,
+                        .btn-no {
+                            box-shadow: 0 5px 10px #0000002e;
+                            padding: .3rem 1.35rem;
+                            border-radius: 6px;
+                            color: #FFFFFF;
+                            font-weight: 00;
+                            transition: background-color .25s ease-out;
+                        }
+                        
+                        & .btn-accept {
+                            background-color: var(--cor-header-titulos);
+                            
+                            &:hover {
+                                background-color: #6bd3a9;
+                                transition: background-color .25s ease-in;
+                            }
+                        }
+                        
+                        & .btn-no {
+                            background-color: #666666;
+                            
+                            &:hover {
+                                background-color: #c76161;
+                                transition: background-color .25s ease-in;
+                            }
+                        }
+                        
+                        & .btn:nth-child(1) {
+                            background-color: #666666;
+                            color: #FFFFFF;
+                            transition: all .25s ease-out;
+                            
+                            &:hover {
+                                background-color: #c76161;
+                                transition: background-color .25s ease-in;
+                            }
+                        }
+                        
+                        & .btn:nth-child(2) {
+                            background-color: var(--cor-header-titulos);
+                            color: #FFFFFF;
+                            transition: all .25s ease-out;
+
+                            &:hover {
+                                background-color: #6bd3a9;
+                                transition: background-color .25s ease-in;
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            & #see-more {
+                padding: .35rem 2.5rem;
+                background-color: var(--cor-header-titulos);
+                color: #FFFFFF;
+                border-radius: 35px;
+                box-shadow: 0 5px 10px #0000002e;
+                transition: background-color .25s ease-out;
+
+                &:hover {
+                    background-color: #6bd3a9;
+                    transition: background-color .25s ease-in;
+                }
+            }
+        }
+
+        #footer {
+            background-color: #FFFFFF;
+            margin-top: auto;
+        }
+    </style>
 </head>
 
 <body>
@@ -81,8 +308,49 @@
                     </div>
                 </div>
                 <div class="b-confirm">
-                    <button>Aceitar</button>
-                    <button>Recusar</button>
+                    <button class="btn-accept" data-bs-toggle="modal" data-bs-target="#ModalAceitar">Aceitar</button>
+
+                    <div class="modal fade" id="ModalAceitar" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmação</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Tem certeza que deseja aceitar essa consulta?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn" data-bs-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="btn" data-bs-dismiss="modal">Sim</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn-no" data-bs-toggle="modal" data-bs-target="#ModalRecusar">Recusar</button>
+
+                    <div class="modal fade" id="ModalRecusar" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmação</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Tem certeza que deseja recusar essa consulta?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn" data-bs-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="btn" data-bs-dismiss="modal">Sim</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -109,8 +377,49 @@
                     </div>
                 </div>
                 <div class="b-confirm">
-                    <button>Aceitar</button>
-                    <button>Recusar</button>
+                    <button class="btn-accept" data-bs-toggle="modal" data-bs-target="#ModalAceitar">Aceitar</button>
+
+                    <div class="modal fade" id="ModalAceitar" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmação</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Tem certeza que deseja aceitar essa consulta?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn" data-bs-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="btn" data-bs-dismiss="modal">Sim</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn-no" data-bs-toggle="modal" data-bs-target="#ModalRecusar">Recusar</button>
+
+                    <div class="modal fade" id="ModalRecusar" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmação</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Tem certeza que deseja recusar essa consulta?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn" data-bs-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="btn" data-bs-dismiss="modal">Sim</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -137,8 +446,49 @@
                     </div>
                 </div>
                 <div class="b-confirm">
-                    <button>Aceitar</button>
-                    <button>Recusar</button>
+                    <button class="btn-accept" data-bs-toggle="modal" data-bs-target="#ModalAceitar">Aceitar</button>
+
+                    <div class="modal fade" id="ModalAceitar" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmação</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Tem certeza que deseja aceitar essa consulta?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn" data-bs-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="btn" data-bs-dismiss="modal">Sim</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn-no" data-bs-toggle="modal" data-bs-target="#ModalRecusar">Recusar</button>
+
+                    <div class="modal fade" id="ModalRecusar" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmação</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Tem certeza que deseja recusar essa consulta?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn" data-bs-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="btn" data-bs-dismiss="modal">Sim</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

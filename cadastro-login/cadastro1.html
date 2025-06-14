@@ -116,6 +116,50 @@
                 }
             }
         }
+
+        #content {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 3.5rem;
+
+            & form {
+                width: 50%;
+                height: auto;
+                display: flex;
+                flex-wrap: wrap;
+                gap: .75rem;
+
+                & div {
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    flex-direction: column;
+
+                    & input {
+                        width: 100%;
+                        background: #F4F4F4;
+                        border: 1px solid #1F1F1F;
+                        color: #5B5B5B;
+                        padding: .5rem .75rem;
+                        font-size: 1rem;
+                        font-weight: 400;
+                        text-overflow: ellipsis;
+
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+
+                    & input:-webkit-autofill {
+                        -webkit-box-shadow: 0 0 0 30px #F4F4F4 inset;
+                        -webkit-text-fill-color: #1F1F1F !important;
+                    }
+                }
+            }
+        }
     </style>
 </head>
 

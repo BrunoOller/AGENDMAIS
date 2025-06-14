@@ -52,6 +52,11 @@
                 border-radius: 50%;
                 border: 1px solid #d3d3d3;
                 box-shadow: 0 5px 10px #0000002e;
+                cursor: pointer;
+
+                &:hover {
+                    filter: brightness(70%);
+                }
             }
         }
 
@@ -185,7 +190,7 @@
                                 font-weight: 600;
                             }
                         }
-
+                        
                         & .status {
                             width: 18%;
                             display: flex;
@@ -384,8 +389,7 @@
                 <div class="b-header">
                     <h2><span>Agendamento #</span>001</h2>
                     <div class="status">
-                        <h2>Status:</h2>
-                        <span id="3">Pendente</span>
+                        <h2>Status: <span class="badge text-bg-warning">Pendente</span></h2>
                     </div>
                 </div>
                 <div class="b-info">
@@ -412,8 +416,7 @@
                 <div class="b-header">
                     <h2><span>Agendamento #</span>002</h2>
                     <div class="status">
-                        <h2>Status:</h2>
-                        <span id="1">Realizada</span>
+                        <h2>Status: <span class="badge text-bg-success">Realizada</span></h2>
                     </div>
                 </div>
                 <div class="b-info">
@@ -440,8 +443,7 @@
                 <div class="b-header">
                     <h2><span>Agendamento #</span>003</h2>
                     <div class="status">
-                        <h2>Status:</h2>
-                        <span id="1">Realizada</span>
+                        <h2>Status: <span class="badge text-bg-success">Realizada</span></h2>
                     </div>
                 </div>
                 <div class="b-info">
