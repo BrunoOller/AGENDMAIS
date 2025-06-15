@@ -274,13 +274,56 @@
                         <a class="nav-link" href="#">Contato</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./login.html">Login</a>
+                        <a class="nav-link" href="./cadastro-login/login.html">Login</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    <section id="s-editInfos">
+        <h1>Editar Informações importantes</h1>
+        <div class="container ei-content">
+            <div class="ei">
+                <div class="ei-dados">
+                    <div id="telefone" class="info">
+                        <label for="d-tel">Telefone*</label>
+                        <input type="" placeholder="Ex: 14999999999" value="14990987677" name="tel" id="d-tel">
+                    </div>
+                    <div id="esp" class="info">
+                        <label for="i-dropdown">Especialidades*</label>
+                        <select id="i-dropdown">
+                            <option value="0" disabled selected>Clique para selecionar</option>
+                            <option value="1">Clínico Geral</option>
+                            <option value="2">Odontologia</option>
+                            <option value="3">Ginecologia</option>
+                            <option value="4">Geriatria</option>
+                            <option value="5">Psiquiatria</option>
+                            <option value="6">Pediatria</option>
+                        </select>
+                    </div>
+                    <div id="end" class="info">
+                        <label for="d-end">Endereço*</label>
+                        <input type="text" placeholder="Ex: Rua Mar Azul, 1200 - Nova Estância, Bauru - SP"
+                            value="Rua Mar Azul, 1200 - Nova Estância, Bauru - SP" name="d-end" id="d-end">
+                    </div>
+                    <div id="cep" class="info">
+                        <label for="d-cep">CEP*</label>
+                        <input type="number" placeholder="Ex: 14000100" value="14000100" name="d-cep" id="d-cep">
+                    </div>
+                    <div id="posto" class="info">
+                        <label for="d-posto">Posto de Saúde Associado*</label>
+                        <input type="text" placeholder="Ex: Posto do Coração" value="Posto do Coração" name="d-posto"
+                            id="d-posto">
+                    </div>
+                </div>
+            </div>
+            <div class="ei-02">    
+                <img src="./assets/img/fotos-perfil/3.png" alt="Foto de perfil">
+                <h2>Foto de Perfil</h2>
+            </div>
+        </div>
+    </section>
 
     <section id="s-solicitations">
         <h1>Agendamentos realizados recentemente</h1>

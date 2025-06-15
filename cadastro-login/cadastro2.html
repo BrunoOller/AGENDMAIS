@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título do Site -->
+    <title>AGENDMAIS - Cadastro</title>
+
+    <!-- Link Favicon -->
+    <link rel="shortcut icon" href="./../assets/img/agendm-fav.svg" type="image/x-icon">
+
+    <!-- Links CSS -->
+    <link rel="stylesheet" href="./../assets/css/color.css">
+    <link rel="stylesheet" href="./../assets/css/reset.css">
+    <link rel="stylesheet" href="./../assets/css/registerStyle.css">
+
+    <!-- Link Fontawesome -->
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v6.7.2/css/all.css">
+
+    <style>
+        .required {
+            color: var(--cor-header-titulos);
+        }
+
+        header {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 7px 20px;
+            background-color: #1f1f1f;
+
+            & a {
+                width: 45px;
+                height: 45px;
+                position: absolute;
+                z-index: 1;
+                top: 27%;
+                left: 2rem;
+
+                & i {
+                    color: var(--cor-header-titulos);
+                    font-size: 1.8rem;
+                    transition: all .25s ease-out;
+                }
+
+                &:hover i {
+                    color: #FFF;
+                    transition: all .25s ease-in;
+                }
+            }
+
+            & #logo {
+                width: auto;
+                height: 70px;
+            }
+        }
+
+        #h-content {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #1f1f1f;
+            gap: 1.5rem;
+
+            & .line {
+                width: 70%;
+                height: 1px;
+                background-color: #585858;
+            }
+
+            & .text {
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: .5rem;
+
+                & h1 {
+                    color: #FFF;
+                }
+
+                & p,
+                span {
+                    color: #c0c0c0;
+                }
+
+                & span {
+                    font-size: 1.3rem;
+                }
+            }
+
+            & #navegacao {
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                gap: 5rem;
+
+                & a:nth-child(2) {
+                    color: #FFF;
+                    font-weight: 500;
+                    padding: 0 15px 10px 15px;
+                    border-bottom: .3rem solid var(--cor-header-titulos);
+                }
+
+                & a {
+                    color: #e2e2e2;
+                    font-weight: 400;
+                    padding: 0 15px 10px 15px;
+                    transition: all .25s ease-out;
+                    border-bottom: .3rem solid transparent;
+
+                    &:hover {
+                        color: #ffffff;
+                        border-bottom: .3rem solid var(--cor-header-titulos);
+                        transition: all .25s ease-in;
+                    }
+                }
+            }
+        }
+
+        #content {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 0;
+
+            & form {
+                width: 42.5%;
+                height: auto;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                gap: .75rem;
+
+                & div {
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    flex-direction: column;
+                    gap: .35rem;
+                    
+                    & label {
+                        font-weight: 500;
+                    }
+
+                    & input[type="date"] {
+                        padding: .45rem .75rem;
+                    }
+
+                    & input,
+                    select {
+                        width: 100%;
+                        background: #F4F4F4;
+                        border: 1px solid #1F1F1F;
+                        color: #202020;
+                        padding: .5rem .75rem;
+                        font-size: 1rem;
+                        font-weight: 400;
+                        text-overflow: ellipsis;
+                        border-radius: 3px;
+
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+
+                    & input:-webkit-autofill {
+                        -webkit-box-shadow: 0 0 0 30px #F4F4F4 inset;
+                        -webkit-text-fill-color: #1F1F1F !important;
+                    }
+                }
+
+                & .f-crm {
+                    width: 36%;
+                }
+
+                & .f-crmuf {
+                    width: 22%;
+                }
+
+                & .f-esp {
+                    width: 38%;
+                }
+
+                & .f-tel, .f-pa {
+                    width: 49%;
+                }
+            }
+
+            & .agree {
+                width: 42.5%;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 1rem 0;
+                gap: .75rem;
+
+                & input[type="checkbox"] {
+                    font-size: 1rem;
+                    background-color: #575757;
+                }
+
+                & p,
+                a {
+                    color: #646464;
+                }
+
+                & a {
+                    text-decoration: underline;
+                    transition: color .25s ease-out;
+
+                    &:hover {
+                        color: #2c2c2c;
+                        transition: color .25s ease-in;
+                    }
+                }
+            }
+
+            & .btn {
+                width: 42.5%;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                & button {
+                    width: 100%;
+                    height: 2.1rem;
+                    background-color: var(--cor-header-titulos);
+                    color: var(--cor-textos-01);
+                    font-family: 'Montserrat';
+                    font-weight: 600;
+                    font-size: 1rem;
+                    transition: background-color .25s ease-out;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: #6bd3a9;
+                        transition: background-color .25s ease-in;
+                    }
+                }
+            }
+
+            & .haveAccount {
+                width: 42.5%;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 1rem 0;
+                gap: .75rem;
+
+                & p {
+                    color: #646464;
+
+                    & a {
+                        color: #131313;
+                        font-weight: 600;
+                        text-decoration: underline;
+                        transition: color .25s ease-out;
+
+                        &:hover {
+                            color: #575757;
+                            transition: color .25s ease-in;
+                        }
+                    }
+                }
+            }
+        }
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type=number] {
+            appearance: textfield;
+        }
+
+        input[type=number] {
+            appearance: textfield;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="h-cadastro">
+        <a href="./../index.html">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
+        <img src="./../assets/img/logo-dark.svg" alt="Logo AGEND+" id="logo">
+    </header>
+
+    <section id="h-content">
+        <div class="line"></div>
+        <div class="text">
+            <h1>Crie seu Cadastro</h1>
+            <p>Para criar sua conta, basta primeiro indicar quem você é.</p>
+            <span>...</span>
+        </div>
+        <div id="navegacao">
+            <a href="./cadastro1.html">Usuário Comum</a>
+            <a href="#">Médico</a>
+            <a href="./cadastro3.html">Posto de Saúde</a>
+        </div>
+    </section>
+
+    <section id="content">
+        <form>
+            <div class="f-nome">
+                <label for="nome">Nome Completo<span class="required">*</span></label>
+                <input type="text" placeholder="" name="nome" id="nome">
+            </div>
+            <div class="f-email">
+                <label for="email">E-mail<span class="required">*</span></label>
+                <input type="email" placeholder="Ex: nomeexemplo@gmail.com" name="email" id="email">
+            </div>
+            <div class="f-crm">
+                <label for="crm">Registro Profissional (CRM)<span class="required">*</span></label>
+                <input type="text" placeholder="Ex: 00000000" name="crm" id="crm">
+            </div>
+            <div class="f-crmuf">
+                <label for="crmuf" class="form-label">UF<span class="required">*</span></label>
+                <select class="form-select" id="crmuf">
+                    <option value="" disabled selected>UF</option>
+                    <option value="AC">AC</option>
+                    <option value="AL">AL</option>
+                    <option value="AP">AP</option>
+                    <option value="AM">AM</option>
+                    <option value="BA">BA</option>
+                    <option value="CE">CE</option>
+                    <option value="DF">DF</option>
+                    <option value="ES">ES</option>
+                    <option value="GO">GO</option>
+                    <option value="MA">MA</option>
+                    <option value="MT">MT</option>
+                    <option value="MS">MS</option>
+                    <option value="MG">MG</option>
+                    <option value="PA">PA</option>
+                    <option value="PB">PB</option>
+                    <option value="PR">PR</option>
+                    <option value="PE">PE</option>
+                    <option value="PI">PI</option>
+                    <option value="RJ">RJ</option>
+                    <option value="RN">RN</option>
+                    <option value="RS">RS</option>
+                    <option value="RO">RO</option>
+                    <option value="RR">RR</option>
+                    <option value="SC">SC</option>
+                    <option value="SP">SP</option>
+                    <option value="SE">SE</option>
+                    <option value="TO">TO</option>
+                </select>
+            </div>
+            <div class="f-esp">
+                <label for="esp">Especialidade*</label>
+                <select id="esp">
+                    <option value="0" disabled selected>Clique para selecionar</option>
+                    <option value="1">Clínico Geral</option>
+                    <option value="2">Odontologia</option>
+                    <option value="3">Ginecologia</option>
+                    <option value="4">Geriatria</option>
+                    <option value="5">Psiquiatria</option>
+                    <option value="6">Pediatria</option>
+                </select>
+            </div>
+            <div class="f-tel">
+                <label for="tel">Telefone<span class="required">*</span></label>
+                <input type="tel" placeholder="Ex: 14999999999" name="tel" id="tel">
+            </div>
+            <div class="f-pa">
+                <label for="pa">Posto de Saúde Associado<span class="required">*</span></label>
+                <select id="pa">
+                    <option value="0" disabled selected>Clique para selecionar</option>
+                    <option value="1">UBS Dr. Moacir Barreto</option>
+                    <option value="2">UBS Dr. Ângelo de Biaggi</option>
+                    <option value="3">UBS Dr. Mário Covas</option>
+                    <option value="4">UBS Dr. Raul Silva</option>
+                    <option value="5">UBS Dr. Edgard Silveira</option>
+                    <option value="6">UBS Dr. Nelson Barbieri</option>
+                </select>
+            </div>
+            <div class="f-sen">
+                <label for="sen">Senha<span class="required">*</span></label>
+                <input type="password" placeholder="" name="sen" id="sen">
+            </div>
+            <div class="f-conf">
+                <label for="conf">Confirmar Senha<span class="required">*</span></label>
+                <input type="password" placeholder="" name="conf" id="conf">
+            </div>
+        </form>
+
+        <div class="agree">
+            <input type="checkbox" name="check" id="check">
+            <p>Concordo com os <a href="./../termos.html">Termos de Uso</a>, e com as <a
+                    href="./../politicas.html">Políticas de Privacidade</a>.</p>
+        </div>
+
+        <div class="btn"><button>Cadastrar</button></div>
+
+        <div class="haveAccount">
+            <p>Já possui uma conta? <a href="./login.html">Entrar</a></p>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <script src="./../assets/js/script.js"></script>
+</body>
+
+</html>

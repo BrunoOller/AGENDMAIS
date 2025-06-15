@@ -14,7 +14,7 @@
     <!-- Links CSS -->
     <link rel="stylesheet" href="./../assets/css/color.css">
     <link rel="stylesheet" href="./../assets/css/reset.css">
-    <link rel="stylesheet" href="./../assets/css/registerStyle.css">
+    <link rel="stylesheet" href="./../assets/css/loginStyle.css">
 
     <!-- Link Fontawesome -->
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v6.7.2/css/all.css">
@@ -84,6 +84,7 @@
                 justify-content: center;
                 align-items: center;
                 gap: .5rem;
+                padding-bottom: 2rem;
 
                 & h1 {
                     color: #FFF;
@@ -98,35 +99,6 @@
                     font-size: 1.3rem;
                 }
             }
-
-            & #navegacao {
-                width: 100%;
-                height: auto;
-                display: flex;
-                justify-content: center;
-                gap: 5rem;
-
-                & a:nth-child(1) {
-                    color: #FFF;
-                    font-weight: 500;
-                    padding: 0 15px 10px 15px;
-                    border-bottom: .3rem solid var(--cor-header-titulos);
-                }
-                
-                & a {
-                    color: #e2e2e2;
-                    font-weight: 400;
-                    padding: 0 15px 10px 15px;
-                    transition: all .25s ease-out;
-                    border-bottom: .3rem solid transparent;
-    
-                    &:hover {
-                        color: #ffffff;
-                        border-bottom: .3rem solid var(--cor-header-titulos);
-                        transition: all .25s ease-in;
-                    }
-                }
-            }
         }
 
         #content {
@@ -136,10 +108,10 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 2rem 0;
+            padding: 5rem 0 0 0;
 
             & form {
-                width: 42.5%;
+                width: 30%;
                 height: auto;
                 display: flex;
                 flex-wrap: wrap;
@@ -152,17 +124,12 @@
                     display: flex;
                     flex-direction: column;
                     gap: .35rem;
-
+                    
                     & label {
                         font-weight: 500;
                     }
 
-                    & input[type="date"] {
-                        padding: .45rem .75rem;
-                    }
-
-                    & input,
-                    select {
+                    & input {
                         width: 100%;
                         background: #F4F4F4;
                         border: 1px solid #1F1F1F;
@@ -183,46 +150,21 @@
                         -webkit-text-fill-color: #1F1F1F !important;
                     }
                 }
-
-                & .f-data,
-                .f-cpf {
-                    width: 49%;
-                }
-
-                & .f-tel {
-                    width: 68%;
-                }
-
-                & .f-cep,
-                .f-cidade {
-                    width: 30%;
-                }
-
-                & .f-rua {
-                    width: 78%;
-                }
-
-                & .f-num {
-                    width: 20%;
-                }
-
-                & .f-bairro {
-                    width: 50%;
-                }
-
-                & .f-estado {
-                    width: 16%;
-                }
             }
 
             & .agree {
-                width: 42.5%;
+                width: 26%;
                 height: auto;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 padding: 1rem 0;
                 gap: .75rem;
+
+                & input[type="checkbox"] {
+                    font-size: 1rem;
+                    background-color: #575757;
+                }
 
                 & p,
                 a {
@@ -241,7 +183,7 @@
             }
 
             & .btn {
-                width: 42.5%;
+                width: 30%;
                 height: auto;
                 display: flex;
                 justify-content: center;
@@ -266,7 +208,7 @@
             }
 
             & .haveAccount {
-                width: 42.5%;
+                width: 30%;
                 height: auto;
                 display: flex;
                 justify-content: center;
@@ -319,99 +261,20 @@
     <section id="h-content">
         <div class="line"></div>
         <div class="text">
-            <h1>Crie seu Cadastro</h1>
-            <p>Para criar sua conta, basta primeiro indicar quem você é.</p>
+            <h1>Entre na sua Conta</h1>
             <span>...</span>
-        </div>
-        <div id="navegacao">
-            <a href="#">Usuário Comum</a>
-            <a href="./cadastro2.html">Médico</a>
-            <a href="./cadastro3.html">Posto de Saúde</a>
         </div>
     </section>
 
     <section id="content">
         <form>
             <div class="f-nome">
-                <label for="nome">Nome Completo<span class="required">*</span></label>
+                <label for="nome">E-mail<span class="required">*</span></label>
                 <input type="text" placeholder="" name="nome" id="nome">
-            </div>
-            <div class="f-email">
-                <label for="email">E-mail<span class="required">*</span></label>
-                <input type="email" placeholder="Ex: nomeexemplo@gmail.com" name="email" id="email">
-            </div>
-            <div class="f-data">
-                <label for="data">Data de Nascimento<span class="required">*</span></label>
-                <input type="date" name="data" id="data">
-            </div>
-            <div class="f-cpf">
-                <label for="cpf">CPF<span class="required">*</span></label>
-                <input type="number" placeholder="Ex: 10020030040" name="cpf" id="cpf">
-            </div>
-            <div class="f-tel">
-                <label for="tel">Telefone<span class="required">*</span></label>
-                <input type="tel" placeholder="Ex: 14999999999" name="tel" id="tel">
-            </div>
-            <div class="f-cep">
-                <label for="cep">CEP<span class="required">*</span></label>
-                <input type="number" placeholder="Ex: 14000100" name="cep" id="cep">
-            </div>
-            <div class="f-rua">
-                <label for="rua">Rua<span class="required">*</span></label>
-                <input type="text" placeholder="" name="rua" id="rua">
-            </div>
-            <div class="f-num">
-                <label for="num">Número<span class="required">*</span></label>
-                <input type="number" placeholder="" name="num" id="num">
-            </div>
-            <div class="f-bairro">
-                <label for="bairro">Bairro<span class="required">*</span></label>
-                <input type="text" placeholder="" name="bairro" id="bairro">
-            </div>
-            <div class="f-cidade">
-                <label for="cidade">Cidade<span class="required">*</span></label>
-                <input type="text" placeholder="" name="cidade" id="cidade">
-            </div>
-            <div class="f-estado">
-                <label for="estado" class="form-label">Estado<span class="required">*</span></label>
-                <select class="form-select" id="estado">
-                    <option value="" disabled selected>UF</option>
-                    <option value="AC">AC</option>
-                    <option value="AL">AL</option>
-                    <option value="AP">AP</option>
-                    <option value="AM">AM</option>
-                    <option value="BA">BA</option>
-                    <option value="CE">CE</option>
-                    <option value="DF">DF</option>
-                    <option value="ES">ES</option>
-                    <option value="GO">GO</option>
-                    <option value="MA">MA</option>
-                    <option value="MT">MT</option>
-                    <option value="MS">MS</option>
-                    <option value="MG">MG</option>
-                    <option value="PA">PA</option>
-                    <option value="PB">PB</option>
-                    <option value="PR">PR</option>
-                    <option value="PE">PE</option>
-                    <option value="PI">PI</option>
-                    <option value="RJ">RJ</option>
-                    <option value="RN">RN</option>
-                    <option value="RS">RS</option>
-                    <option value="RO">RO</option>
-                    <option value="RR">RR</option>
-                    <option value="SC">SC</option>
-                    <option value="SP">SP</option>
-                    <option value="SE">SE</option>
-                    <option value="TO">TO</option>
-                </select>
             </div>
             <div class="f-sen">
                 <label for="sen">Senha<span class="required">*</span></label>
                 <input type="password" placeholder="" name="sen" id="sen">
-            </div>
-            <div class="f-conf">
-                <label for="conf">Confirmar Senha<span class="required">*</span></label>
-                <input type="password" placeholder="" name="conf" id="conf">
             </div>
         </form>
 
@@ -424,7 +287,7 @@
         <div class="btn"><button>Cadastrar</button></div>
 
         <div class="haveAccount">
-            <p>Já possui uma conta? <a href="./login.html">Entrar</a></p>
+            <p>Não possui uma conta? <a href="./cadastro1.html">Criar</a></p>
         </div>
     </section>
 

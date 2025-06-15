@@ -90,15 +90,6 @@
                             width: 42%;
                         }
 
-                        & #end {
-                            width: 70%;
-                            height: auto;
-                        }
-
-                        & #cep {
-                            width: 27%;
-                        }
-
                         & #posto {
                             width: 100%;
                             height: auto;
@@ -144,7 +135,7 @@
         }
 
         input[type=number] {
-            -moz-appearance: textfield;
+            appearance: textfield;
         }
 
         input[type=number] {
@@ -175,7 +166,7 @@
                         <a class="nav-link" href="#">Contato</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./login.html">Login</a>
+                        <a class="nav-link" href="./cadastro-login/login.html">Login</a>
                     </li>
                 </ul>
             </div>
@@ -203,19 +194,17 @@
                             <option value="6">Pediatria</option>
                         </select>
                     </div>
-                    <div id="end" class="info">
-                        <label for="d-end">Endereço*</label>
-                        <input type="text" placeholder="Ex: Rua Mar Azul, 1200 - Nova Estância, Bauru - SP"
-                            value="Rua Mar Azul, 1200 - Nova Estância, Bauru - SP" name="d-end" id="d-end">
-                    </div>
-                    <div id="cep" class="info">
-                        <label for="d-cep">CEP*</label>
-                        <input type="number" placeholder="Ex: 14000100" value="14000100" name="d-cep" id="d-cep">
-                    </div>
-                    <div id="posto" class="info">
-                        <label for="d-posto">Posto de Saúde Associado*</label>
-                        <input type="text" placeholder="Ex: Posto do Coração" value="Posto do Coração" name="d-posto"
-                            id="d-posto">
+                    <div class="f-pa">
+                        <label for="pa">Posto de Saúde Associado<span class="required">*</span></label>
+                        <select id="pa">
+                            <option value="0" disabled selected>Clique para selecionar</option>
+                            <option value="1">UBS Dr. Moacir Barreto</option>
+                            <option value="2">UBS Dr. Ângelo de Biaggi</option>
+                            <option value="3">UBS Dr. Mário Covas</option>
+                            <option value="4">UBS Dr. Raul Silva</option>
+                            <option value="5">UBS Dr. Edgard Silveira</option>
+                            <option value="6">UBS Dr. Nelson Barbieri</option>
+                        </select>
                     </div>
                 </div>
             </div>
