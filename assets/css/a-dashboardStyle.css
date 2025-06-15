@@ -20,7 +20,7 @@
                     background-color: #4BC997;
 
                     & .h-admin {
-                        width: 250px;
+                        width: 170px;
                         height: auto;
                         color: var(--cor-textos-01);
                         position: absolute;
@@ -39,10 +39,7 @@
                         }
 
                         & p {
-                            width: 100%;
-                            height: 100%;
-                            display: flex;
-                            justify-content: space-around;
+                            margin: 0;
                         }
                     }
 
@@ -213,37 +210,41 @@
                     }
 
                     & .a-general-data {
-                        width: 100%;
+                        width: 920px;
                         height: auto;
 
                         & .caption {
-                            width: 100%;
+                            width: 920px;
                             height: auto;
                             display: flex;
                             justify-content: space-between;
                             align-items: center;
-                            margin-top: 20px;
-
+                            margin-bottom: 10px;
+                            padding: 0 15px;
 
                             & #data {
                                 font-weight: 600;
+                                margin: 0;
                             }
 
                             & .filter {
+                                height: auto;
                                 display: flex;
                                 align-items: center;
                                 gap: 10px;
-                                margin-right: 70px;
 
-                                & img {
-                                    width: 22px;
-                                    height: auto;
+                                & p {
+                                    margin: 0;
+                                }
+
+                                & i {
+                                    font-size: 1rem;
                                 }
                             }
                         }
 
                         & .info-container {
-                            width: 100%;
+                            width: 920px;
                             height: auto;
                             display: flex;
                             gap: 20px;
@@ -313,46 +314,50 @@
                     }
 
                     & .u-registered {
-                        width: 100%;
+                        width: 920px;
                         height: auto;
                         background-color: var(--cor-fundo-03);
-                        margin-bottom: 4rem;
+                        margin-top: 2rem;
 
                         & .graphics {
                             width: 100%;
                             height: auto;
                             display: flex;
-                            gap: 45px;
+                            justify-content: space-between;
                         }
 
                         & .caption {
-                            width: 100%;
+                            width: 920px;
                             height: auto;
                             display: flex;
                             justify-content: space-between;
                             align-items: center;
-                            margin-top: 50px;
-
+                            margin-bottom: 10px;
+                            padding: 0 15px;
 
                             & #data {
                                 font-weight: 600;
+                                margin: 0;
                             }
 
                             & .filter {
+                                height: auto;
                                 display: flex;
                                 align-items: center;
                                 gap: 10px;
-                                margin-right: 70px;
 
-                                & img {
-                                    width: 22px;
-                                    height: auto;
+                                & p {
+                                    margin: 0;
+                                }
+
+                                & i {
+                                    font-size: 1rem;
                                 }
                             }
                         }
 
                         & .u-graphic {
-                            width: 275px;
+                            width: 295px;
                             height: auto;
                             display: flex;
                             flex-direction: column;
@@ -361,7 +366,7 @@
                             border: 1px solid #BEBEBE;
                             border-radius: 5px;
                             box-shadow: 0 5px 10px #0000002e;
-                            padding: 10px 20px 20px 20px;
+                            padding: 20px;
                             gap: 10px;
 
 
