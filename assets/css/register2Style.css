@@ -84,7 +84,7 @@ header {
         justify-content: center;
         gap: 5rem;
 
-        & a:nth-child(1) {
+        & a:nth-child(2) {
             color: #FFF;
             font-weight: 500;
             padding: 0 15px 10px 15px;
@@ -162,34 +162,21 @@ header {
             }
         }
 
-        & .f-data,
-        .f-cpf {
+        & .f-crm {
+            width: 36%;
+        }
+
+        & .f-crmuf {
+            width: 22%;
+        }
+
+        & .f-esp {
+            width: 38%;
+        }
+
+        & .f-tel,
+        .f-pa {
             width: 49%;
-        }
-
-        & .f-tel {
-            width: 68%;
-        }
-
-        & .f-cep,
-        .f-cidade {
-            width: 30%;
-        }
-
-        & .f-rua {
-            width: 78%;
-        }
-
-        & .f-num {
-            width: 20%;
-        }
-
-        & .f-bairro {
-            width: 50%;
-        }
-
-        & .f-estado {
-            width: 16%;
         }
     }
 
@@ -201,6 +188,11 @@ header {
         align-items: center;
         padding: 1rem 0;
         gap: .75rem;
+
+        & input[type="checkbox"] {
+            font-size: 1rem;
+            background-color: #575757;
+        }
 
         & p,
         a {
