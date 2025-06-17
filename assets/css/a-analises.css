@@ -1,4 +1,4 @@
-body {
+        body {
             width: 100%;
             height: 100%;
             background: var(--cor-fundo-03);
@@ -136,7 +136,10 @@ body {
                 }
             }
 
-            & .general {
+            .general {
+                flex-direction: column;
+                align-items: end;
+                justify-content: center;
                 width: 100%;
                 height: auto;
                 display: flex;
@@ -146,162 +149,130 @@ body {
                         var(--cor-fundo-03) 100%);
                 background-repeat: no-repeat;
 
-                & .fundo-offcanva {
-                    width: 25%;
-                    height: 100%;
-                }
 
-                & .a-infos {
-                    width: 75%;
+                & .containerAnal {
                     height: auto;
+                    width: 78%;
                     display: flex;
-                    flex-direction: column;
                     align-items: center;
+                    justify-content: center;
 
-                    & .a-container {
-                        height: 120px;
-                        width: 100%;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        margin: 2rem 0 2rem 0;
-                        gap: 20px;
+                    & .analContent {
+                        height: auto;
+                        width: 85%;
 
-                        & .accesses {
-                            width: 320px;
-                            height: 100%;
+                        & .analText {
                             display: flex;
                             justify-content: space-between;
-                            background-color: #61DAAA;
-                            border: 1px solid var(--cor-textos-01);
-                            color: var(--cor-textos-01);
-                            border-radius: 5px;
-                            box-shadow: 0 5px 10px #0000002e;
+                            height: auto;
 
                             & p {
-                                font-size: 20px;
-                                font-weight: 600;
-                                display: flex;
-                                margin-left: 10px;
-                                margin-top: 12px;
-                                height: 80%;
-                                width: auto;
-                                align-items: end;
-                            }
-
-                            & .number {
-                                width: auto;
-                                height: 65%;
-                                display: flex;
-                                justify-content: end;
-                                align-items: end;
-                                margin-right: 50px;
-                                font-size: 35px;
+                                font-size: 18px;
                                 font-weight: 700;
-                            }
-                        }
-                    }
-                }
-
-                & .a-general-data {
-                    width: 90%;
-                    height: auto;
-                    display: flex;
-                    flex-direction: column;
-
-                    & p, h5 {
-                        height: auto;
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        padding: 0 15px;
-                        margin: 0;
-                        font-weight: 600;
-                    }
-
-                    & .geren-container {
-                        padding: .3rem 0 ;
-                        border: 1px solid #A7A7A7;
-                        background-color: #dddddd;
-                        width: 100%;
-                        height: auto;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-
-                        & p {
-                            font-weight: 500;
-                            color: #4B4B4B;
-                            width: 28%;
-                            height: auto;
-                            display: flex;
-                            align-items: center;
-                            justify-content: end;
-                        }
-
-                        & .duo {
-                            display: flex;
-                            gap: 1rem;
-                            margin-right: 10px;
-                            height: 70%;
-                            width: auto;
-                            margin-left: 6rem;
-
-                            & button {
-                                display: flex;
-                                justify-content: space-between;
-                                background-color: #dddddd;
-                                height: 100%;
-                                width: auto;
-                            }
-                        }
-                    }
-
-                    & .gerenInfo-container {
-                        border: 1px solid #A7A7A7;
-                        background-color: #ffffff;
-                        width: 100%;
-                        height: auto;
-
-                        & .geren-info {
-                            width: 100%;
-                            height: 40px;
-                            display: flex;
-                            align-items: center;
-
-                            & .geren-info-nome{
-                                width: 23.3%;
-                                height: auto;
-                            }
-
-                            & .geren-info-tipo{
-                                width: 16%;
-                                height: auto;
-                                display: flex;
-                                justify-content: center;
-                            }
-
-                            & .geren-info-detalhes{
-                                margin-left: 3rem;
-                                width: 20%;
-                                height: auto;
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
                             }
 
                             & button{
-                                margin-left: 6rem;
-                                width: 12%;
-                                height: 30px;
-                                border-radius: 5px;
-                                background-color: #DD4343;
-                                color: #fff;
-                                font-weight: 600;
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
+                                background-color: #4BC997;
+
+                                & .duo {
+                                    display: flex;
+                                    align-items: start;
+                                    flex-direction: row;
+                                    height: 30px;
+                                    width: auto;
+    
+                                    & p {
+                                        font-weight: 500;
+                                    }
+                                }
                             }
+                        }
+
+                    }
+
+                    & .analGraficos {
+                        display: flex;
+                        flex-direction: row;
+                        height: 100%;
+                        width: 100%;
+                        gap: 2rem;
+
+                        & .analGraficosEsq {
+                            display: flex;
+                            flex-direction: column;
+                            height: 530px;
+                            width: 38%;
+                            gap: 1rem;
+
+                            & .graficoEsq {
+                                height: auto;
+                                width: 100%;
+                                background-color: #fff;
+                                border-radius: 10px;
+                                box-shadow: 0 5px 10px #0000002e;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                                & img {
+                                    height: auto;
+                                    width: 90%;
+                                }
+                            }
+                        }
+
+                        & .analGraficoDir {
+                            height: 500px;
+                            width: 60%;
+                            background-color: #fff;
+                            border-radius: 10px;
+                            box-shadow: 0 5px 10px #0000002e;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+
+                            & img {
+                                height: 80%;
+                                width: 100%;
+                            }
+
+                            & h4 {
+                                font-size: 15px;
+                                font-weight: 600;
+                            }
+                        }
+
+                    }
+
+                    & .analGraficoBaixo {
+                        box-shadow: 0 5px 10px #0000002e;
+                        height: 150px;
+                        width: 100%;
+                        background-color: #fff;
+                        display: flex;
+                        border-radius: 10px;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 5rem;
+                        margin-bottom: 5rem;
+
+                        & p {
+                            height: 50%;
+                            width: 15%;
+                            font-size: 18px;
+                            font-weight: 700;
+                        }
+
+                        & .line {
+                            height: 60%;
+                            width: 3px;
+                            background-color: #D8D8D8;
+                        }
+
+                        & img {
+                            width: 60%;
+                            height: auto;
                         }
                     }
                 }
