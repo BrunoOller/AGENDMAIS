@@ -240,7 +240,7 @@ graph TD
 [Voltar para o início](#inicio)
 
 # 7. Aplicação
-- ### Link para o nosso repositório do GitHub: [Repositório - BoraRachão](https://github.com/eullerlourenco/bora-rachao/)
+- ### Link para o nosso repositório do GitHub: [Repositório - AGENDMAIS](https://github.com/BrunoOller/AGENDMAIS)
   
 - ### Figura 4 - Página Home:
 <div align="center">
