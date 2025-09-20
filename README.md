@@ -2,7 +2,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="resources/assets/images/logos/logo-bora-rachao-white.png">
     <source media="(prefers-color-scheme: light)" srcset="resources/assets/images/logos/logo-bora-rachao-black.png">
-    <img alt="Logo BoraRachão White" src="resources/assets/images/logos/logo-bora-rachao-white.png" width="550">
+    <img alt="Logo AGENDMAIS" src="assets/img/logo-dark.svg" width="550">
   </picture>
   
   # Sistema de Agendamento de Radiologias Odontológicas
