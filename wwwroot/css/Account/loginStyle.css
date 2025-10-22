@@ -2,39 +2,45 @@
     color: var(--cor-header-titulos);
 }
 
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-voltar {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    z-index: 1;
+    top: 6%;
+    left: 2rem;
+
+    & i {
+        color: var(--cor-header-titulos);
+        font-size: 1.8rem;
+        transition: all .25s ease-out;
+    }
+
+    &:hover i {
+        color: #FFF;
+        transition: all .25s ease-in;
+    }
+}
+
 header {
     width: 100%;
     height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
     padding: 7px 20px;
-    background-color: #1f1f1f;
-
-    & a {
-        width: 45px;
-        height: 45px;
-        position: absolute;
-        z-index: 1;
-        top: 27%;
-        left: 2rem;
-
-        & i {
-            color: var(--cor-header-titulos);
-            font-size: 1.8rem;
-            transition: all .25s ease-out;
-        }
-
-        &:hover i {
-            color: #FFF;
-            transition: all .25s ease-in;
-        }
-    }
 
     & #logo {
         width: auto;
-        height: 70px;
+        height: 6rem;
     }
 }
 
@@ -45,11 +51,10 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #1f1f1f;
     gap: 1.5rem;
 
     & .line {
-        width: 70%;
+        width: 30%;
         height: 1px;
         background-color: #585858;
     }
@@ -62,47 +67,20 @@ header {
         justify-content: center;
         align-items: center;
         gap: .5rem;
+        padding-bottom: 2rem;
 
         & h1 {
-            color: #FFF;
+            color: #111111;
+            font-size: 1.5rem;
         }
 
         & p,
         span {
-            color: #c0c0c0;
+            color: #b3b3b3;
         }
 
         & span {
             font-size: 1.3rem;
-        }
-    }
-
-    & #navegacao {
-        width: 100%;
-        height: auto;
-        display: flex;
-        justify-content: center;
-        gap: 5rem;
-
-        & a:nth-child(1) {
-            color: #FFF;
-            font-weight: 500;
-            padding: 0 15px 10px 15px;
-            border-bottom: .3rem solid var(--cor-header-titulos);
-        }
-
-        & a {
-            color: #e2e2e2;
-            font-weight: 400;
-            padding: 0 15px 10px 15px;
-            transition: all .25s ease-out;
-            border-bottom: .3rem solid transparent;
-
-            &:hover {
-                color: #ffffff;
-                border-bottom: .3rem solid var(--cor-header-titulos);
-                transition: all .25s ease-in;
-            }
         }
     }
 }
@@ -114,10 +92,10 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2rem 0;
+    padding: 1rem 0 0 0;
 
     & form {
-        width: 42.5%;
+        width: 30%;
         height: auto;
         display: flex;
         flex-wrap: wrap;
@@ -135,12 +113,7 @@ header {
                 font-weight: 500;
             }
 
-            & input[type="date"] {
-                padding: .45rem .75rem;
-            }
-
-            & input,
-            select {
+            & input {
                 width: 100%;
                 background: #F4F4F4;
                 border: 1px solid #1F1F1F;
@@ -161,46 +134,21 @@ header {
                 -webkit-text-fill-color: #1F1F1F !important;
             }
         }
-
-        & .f-data,
-        .f-cpf {
-            width: 49%;
-        }
-
-        & .f-tel {
-            width: 68%;
-        }
-
-        & .f-cep,
-        .f-cidade {
-            width: 30%;
-        }
-
-        & .f-rua {
-            width: 78%;
-        }
-
-        & .f-num {
-            width: 20%;
-        }
-
-        & .f-bairro {
-            width: 50%;
-        }
-
-        & .f-estado {
-            width: 16%;
-        }
     }
 
     & .agree {
-        width: 42.5%;
+        width: 29%;
         height: auto;
         display: flex;
         justify-content: center;
         align-items: center;
         padding: 1rem 0;
         gap: .75rem;
+
+        & input[type="checkbox"] {
+            font-size: 1rem;
+            background-color: #575757;
+        }
 
         & p,
         a {
@@ -219,7 +167,7 @@ header {
     }
 
     & .btn {
-        width: 42.5%;
+        width: 30%;
         height: auto;
         display: flex;
         justify-content: center;
@@ -240,14 +188,14 @@ header {
             align-items: center;
 
             &:hover {
-                background-color: #6bd3a9;
+                background-color: #c17786;
                 transition: background-color .25s ease-in;
             }
         }
     }
 
     & .haveAccount {
-        width: 42.5%;
+        width: 30%;
         height: auto;
         display: flex;
         justify-content: center;

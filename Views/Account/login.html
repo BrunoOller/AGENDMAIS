@@ -9,29 +9,30 @@
     <title>AGENDMAIS - Login</title>
 
     <!-- Link Favicon -->
-    <link rel="shortcut icon" href="./../assets/img/agendm-fav.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="/wwwroot/img/agendm-fav.svg" type="image/x-icon">
 
     <!-- Links CSS -->
-    <link rel="stylesheet" href="./../assets/css/color.css">
-    <link rel="stylesheet" href="./../assets/css/reset.css">
-    <link rel="stylesheet" href="./../assets/css/loginStyle.css">
+    <link rel="stylesheet" href="/wwwroot/css/color.css">
+    <link rel="stylesheet" href="/wwwroot/css/reset.css">
+    <link rel="stylesheet" href="/wwwroot/css/Account/loginStyle.css">
 
     <!-- Link Fontawesome -->
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v6.7.2/css/all.css">
 </head>
 
 <body>
+    <a class="btn-voltar" href="/Views/Home/index.html">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
     <header id="h-cadastro">
-        <a href="./../index.html">
-            <i class="fa-solid fa-arrow-left"></i>
-        </a>
-        <img src="./../assets/img/logo-dark.svg" alt="Logo AGEND+" id="logo">
+        <img src="/wwwroot/img/logo.svg" alt="Logo AGEND+" id="logo">
     </header>
 
     <section id="h-content">
         <div class="line"></div>
         <div class="text">
-            <h1>Entre na sua Conta</h1>
+            <h1>LOGIN</h1>
             <span>...</span>
         </div>
     </section>
@@ -50,21 +51,21 @@
 
         <div class="agree">
             <input type="checkbox" name="check" id="check">
-            <p>Concordo com os <a href="./../termos.html">Termos de Uso</a>, e com as <a
-                    href="./../politicas.html">Políticas de Privacidade</a>.</p>
+            <p>Concordo com os <a href="/Views/Home/termos.html">Termos de Uso</a>, e com as <a
+                    href="/Views/Home/politicas.html">Políticas de Privacidade</a>.</p>
         </div>
 
-        <div class="btn"><a href="./../index.html">Entrar</a></div>
+        <div class="btn"><a href="/Views/Home/index.html">Entrar</a></div>
 
         <div class="haveAccount">
-            <p>Não possui uma conta? <a href="./cadastro1.html">Criar</a></p>
+            <p>Não possui uma conta? <a href="/Views/Account/register.html">Criar</a></p>
         </div>
     </section>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
-    <script src="./../assets/js/script.js"></script>
+    <script src="/wwwroot/js/script.js"></script>
 </body>
 
 </html>
