@@ -54,9 +54,9 @@ header {
     gap: 1.5rem;
 
     & .line {
-        width: 30%;
+        width: 25rem;
         height: 1px;
-        background-color: #585858;
+        background-color: #929292;
     }
 
     & .text {
@@ -95,6 +95,7 @@ header {
     padding: 1rem 0 0 0;
 
     & form {
+        max-width: 45rem;
         width: 30%;
         height: auto;
         display: flex;
@@ -106,15 +107,21 @@ header {
             width: 100%;
             height: auto;
             display: flex;
+            align-items: center;
             flex-direction: column;
             gap: .35rem;
 
             & label {
+                width: 100%;
+                max-width: 30rem;
+                min-width: 22rem;
                 font-weight: 500;
             }
 
             & input {
                 width: 100%;
+                max-width: 30rem;
+                min-width: 22rem;
                 background: #F4F4F4;
                 border: 1px solid #1F1F1F;
                 color: #202020;
@@ -137,7 +144,9 @@ header {
     }
 
     & .agree {
-        width: 29%;
+        width: 30%;
+        max-width: 30rem;
+        min-width: 22rem;
         height: auto;
         display: flex;
         justify-content: center;
@@ -168,6 +177,8 @@ header {
 
     & .btn {
         width: 30%;
+        max-width: 30rem;
+        min-width: 22rem;
         height: auto;
         display: flex;
         justify-content: center;
@@ -196,6 +207,8 @@ header {
 
     & .haveAccount {
         width: 30%;
+        max-width: 30rem;
+        min-width: 22rem;
         height: auto;
         display: flex;
         justify-content: center;

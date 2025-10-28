@@ -59,8 +59,7 @@ nav {
             transition: all .25s ease-out;
 
             &:hover {
-                transform: translateY(-4px);
-                background-color: #6bd3a9;
+                background-color: #c17786;
                 transition: all .25s ease-in;
             }
         }
@@ -237,7 +236,7 @@ nav {
                 width: 42.5px;
                 height: 42.5px;
                 margin: 7px 0;
-                filter: drop-shadow(0 5px 10px #0000002e);
+                filter: drop-shadow(0 5px 10px #0000002e) hue-rotate(190deg) saturate(80%);
             }
 
             & .textos {
@@ -282,7 +281,7 @@ nav {
                 transition: .25s ease-out;
 
                 &:hover {
-                    background-color: #6bd3a9;
+                    background-color: #c17786;
                     transition: .25s ease-in;
                 }
             }
@@ -346,7 +345,7 @@ nav {
                 margin-top: 5px;
 
                 &:hover {
-                    background: #6bd3a9;
+                    background: #c17786;
                     transition: all .25s ease-in;
                 }
             }
