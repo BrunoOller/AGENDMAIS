@@ -47,6 +47,12 @@ nav {
                 font-weight: 700;
                 color: var(--cor-textos-02);
             }
+
+            & #subphrase {
+                font-weight: 500;
+                font-size: 1rem;
+                color: #424242;
+            }
         }
 
         & a {
@@ -71,6 +77,7 @@ nav {
     width: 100%;
     height: auto;
     margin: 4rem 0 0 0;
+    padding-bottom: 5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -100,6 +107,17 @@ nav {
             background: #FFFFFF;
             box-shadow: 0 5px 10px #0000002e;
             transition: all .25s ease-out;
+            position: relative;
+
+            & .num-passo {
+                position: absolute;
+                top: 7%;
+                left: 5%;
+                text-shadow: 0 5px 10px #0000002e;
+                color: var(--cor-header-titulos);
+                font-weight: 600;
+                font-size: 17pt;
+            }
 
             & h2 {
                 width: 80%;
@@ -107,6 +125,7 @@ nav {
                 text-align: center;
                 font-size: 1.45rem;
                 font-weight: 600;
+                margin-top: 5px;
             }
 
             & img {
@@ -142,57 +161,92 @@ nav {
 #popAppointments {
     width: 100%;
     height: auto;
-    padding: 10rem 0 7rem 0;
+    padding: 3rem 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
 
     & .pa-blocks {
-        width: 60%;
+        width: 100%;
+        height: auto;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        gap: .5rem 1.25rem;
+        gap: 1rem;
+        padding: 15px;
 
         & .pa-block {
-            position: relative;
-            width: 45%;
-            height: 6.85rem;
-            border-radius: 5px;
-            box-shadow: 0 5px 10px #0000002e;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            gap: 1rem;
+            width: 480px;
+            height: 220px;
+            align-items: flex-start;
+            background: var(--card-bg, #fff);
+            border-radius: 12px;
+            padding: 1rem;
+            box-shadow: 0 5px 10px #0000002e;
+            transition: transform .18s ease, box-shadow .18s ease;
+            border: 1px solid #d3d3d3;
 
-            color: var(--cor-textos-01);
-            transition: all .25s ease-out;
-            border: 1px solid #00000093;
-
-            & img {
-                position: absolute;
-                width: 100%;
+            & .img {
+                width: 20%;
                 height: 100%;
-                object-fit: cover;
-                filter: brightness(100%) saturate(0);
-                z-index: 0;
-                transition: filter 0.3s ease;
+                display: flex;
+                justify-content: start;
+                align-items: start;
+                padding: 2px;
+
+                & img {
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 5px;
+                    object-fit: cover;
+                    box-shadow: 0 5px 10px #0000002e;
+                    border: 1px solid #d3d3d3;
+                }
             }
 
-            & span {
-                position: relative;
-                z-index: 1;
-                font-size: 1.35rem;
-                font-weight: 800;
-                text-transform: uppercase;
+            & .texts {
+                width: 80%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: start;
+                padding: 10px;
+
+                & h2 {
+                    font-size: 1.3rem;
+                    font-weight: 600;
+                    color: #666666;
+                }
+
+                & span {
+                    font-size: 1rem;
+                    font-weight: 500;
+                    color: #666666;
+                }
+
+                & a {
+                    font-weight: 500;
+                    font-size: 12pt;
+                    border-radius: 4px;
+                    padding: .5rem 2rem;
+                    background-color: var(--cor-header-titulos);
+                    box-shadow: 0 5px 10px #0000002e;
+                    color: #fff;
+                    margin-top: 10px;
+                    transition: all .25s ease-out;
+
+                    &:hover {
+                        background-color: #c17786;
+                        transition: all .25s ease-in;
+                    }
+                }
             }
 
-            &:hover img {
-                filter: brightness(205%) saturate(1.5);
-                /* volta à cor normal */
-            }
         }
     }
 }
