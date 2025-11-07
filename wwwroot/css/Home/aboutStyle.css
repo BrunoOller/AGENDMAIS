@@ -21,7 +21,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 5rem 0;
+    padding: 3.5rem 0;
     background: #E8E8E8;
 
     & .box {
@@ -34,15 +34,15 @@ nav {
         gap: .5rem;
 
         & h1 {
-            font-size: 2.2rem;
+            font-size: 2rem;
             font-weight: 700;
             color: var(--cor-header-titulos);
         }
 
         & p {
             width: 90%;
-            font-size: 1.5rem;
-            font-weight: 300;
+            font-size: 1.2rem;
+            font-weight: 400;
             text-align: center;
         }
     }
@@ -241,7 +241,7 @@ nav {
         align-items: center;
 
         & .title-sn, .title-nc {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 600;
             color: var(--cor-header-titulos);
         }
@@ -269,14 +269,14 @@ nav {
         width: 65%;
 
         & h1 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 600;
             color: var(--cor-header-titulos);
         }
     }
 
     & .equipe {
-        width: 75%;
+        width: 95%;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;

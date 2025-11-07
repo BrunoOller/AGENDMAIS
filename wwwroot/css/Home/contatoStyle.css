@@ -93,7 +93,7 @@ main {
             textarea {
                 width: 100%;
                 padding: 12px;
-                border: 1px solid #4BC997;
+                border: 1px solid var(--cor-header-titulos);
                 font-size: 1rem;
                 background-color: #DEDEDE;
                 transition: border-color 0.3s ease;
@@ -122,14 +122,20 @@ main {
                 & button {
                     background-color: var(--cor-header-titulos);
                     color: var(--cor-textos-01);
+                    box-shadow: 0 5px 10px #0000002e;
                     border: none;
-                    padding: 12px 3rem;
+                    padding: 9px 3rem;
                     border-radius: 3rem;
                     font-size: 1.4rem;
                     text-transform: uppercase;
                     font-weight: 600;
                     cursor: pointer;
-                    transition: background-color 0.3s ease;
+                    transition: background-color 0.3s ease-out;
+
+                    &:hover {
+                        background-color: #c17786;
+                        transition: all .3s ease-in;
+                    }
                 }
             }
         }
