@@ -1,186 +1,99 @@
+nav {
+    background: #E8E8E8;
+}
+
 .gradeAgendamento {
     width: 100%;
     height: auto;
     display: flex;
     justify-content: center;
     background-color: #E8E8E8;
-    padding: 1.3rem 0;
+    padding: 1rem 0 0 0;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: .05rem;
 
     & h2 {
         font-size: 1.5rem;
-        font-weight: 600;
+        font-weight: 700;
+        color: var(--cor-texto-02);
+    }
+
+    & p {
+        font-size: 1.1rem;
+        font-weight: 400;
         color: var(--cor-texto-02);
     }
 }
 
-.gradeSelecione {
+span {
     width: 100%;
     height: auto;
     display: flex;
-    align-items: center;
     justify-content: center;
-    flex-direction: column;
-    padding-top: 4rem;
-
-    & .arrumarH3 {
-        width: 50%;
-        height: auto;
-        padding-bottom: .4rem;
-
-        & h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-        }
-    }
-
-    & #selecao {
-        width: 50%;
-        height: auto;
-
-        & select {
-            width: 100%;
-            padding: 1rem .55rem;
-            outline: none;
-            border-bottom: 1px solid black;
-        }
-    }
+    font-size: 2rem;
+    cursor: default;
+    color: #9e9e9e;
+    background-color: #E8E8E8;
+    padding-bottom: .75rem;
 }
 
-.postosReferentes {
+.selections {
     width: 100%;
     height: auto;
     display: flex;
-    align-items: center;
     justify-content: center;
-    flex-direction: column;
-    padding-top: 4rem;
+    align-items: center;
 
-    & .container {
-        display: flex;
-        flex-direction: column;
+    & .s-section {
         width: 60%;
         height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        padding: 3rem .5rem;
 
-        & .title {
-            font-size: 1.35rem;
-            font-weight: 600;
-            margin-left: 10px;
-        }
-
-        & .agenSearch {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
+        & .s-exame,
+        .s-unidade {
+            width: 40%;
             height: auto;
+            padding: 5px;
 
-            & .search {
-                width: 100%;
-                height: 100%;
+            & h2 {
+                font-size: 1.15rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                color: var(--cor-texto-02);
+            }
+
+            & .selection {
                 display: flex;
-                align-items: center;
-                position: relative;
-                background-color: #EAEAEA;
-                padding: .6rem 0;
-                gap: 1rem;
+                flex-direction: column;
 
-                & .lupa {
-                    width: auto;
-                    height: 30px;
-                    background-color: #EAEAEA;
-                    padding: 0 1rem 0 1.2rem;
+                & select {
+                    width: 100%;
+                    background: #F4F4F4;
+                    border: 1px solid #1F1F1F;
+                    box-shadow: 0 5px 10px #00000011;
+                    color: #5B5B5B;
+                    padding: .5rem .75rem;
+                    border-radius: 2px;
+                    font-size: 1rem;
+                    font-weight: 400;
+                    text-overflow: ellipsis;
+                    cursor: pointer;
 
-                    & img {
-                        display: flex;
-                        height: 67%;
-                        width: auto;
-                    }
-                }
-
-                & .line {
-                    display: flex;
-                    height: 1.5rem;
-                    background-color: #ababab;
-                    width: .1rem;
-                }
-
-                & .searchFor {
-                    display: flex;
-                    width: 76%;
-                    height: 100%;
-
-                    & input {
-                        display: flex;
-                        width: 100%;
-                        height: auto;
-                        background-color: #EAEAEA;
+                    &:focus {
                         outline: none;
                     }
                 }
-
-                & .filter {
-                    min-width: 5rem;
-                    display: flex;
-                    background-color: var(--cor-header-titulos);
-                    width: 14%;
-                    height: 3rem;
-                    position: absolute;
-                    right: 0;
-                    justify-content: center;
-                    align-items: center;
-                    color: #fff;
-                    font-size: 1rem;
-                    font-weight: 500;
-                }
-            }
-
-            & .searchResults {
-                width: 100%;
-                min-height: 350px;
-                max-height: 350px;
-                overflow: auto;
-                display: flex;
-                border: 1px solid #b8b7b7;
-                flex-direction: column;
-
-                & .resultsButton {
-                    width: 100%;
-                    height: auto;
-                    display: flex;
-                    padding: .75rem 1rem;
-                    gap: .5rem;
-                    background-color: #fff;
-                    border: #b8b7b7 solid .2px;
-                    align-items: center;
-
-                    &:hover {
-                        background-color: #f0f0f0;
-                    }
-                }
-
-                & p {
-                    color: #555555;
-                    margin: 0;
-                }
-
-                & h3 {
-                    font-size: 1.1rem;
-                    margin: 0;
-                }
-
-                & .line {
-                    background-color: #8e8e8e;
-                    height: 1px;
-                    width: .4rem;
-                }
             }
         }
     }
 }
 
-.background {
+/* .background {
     margin: 5rem 0 0 0;
     padding: 0 0 4rem 0;
     width: 100%;
@@ -520,4 +433,4 @@
             }
         }
     }
-}
+} */

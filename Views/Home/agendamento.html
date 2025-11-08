@@ -54,318 +54,38 @@
         <p>Agende aqui de forma rápida e simples!</p>
     </div>
 
-    <div class="gradeSelecione">
-        <div class="arrumarH3">
-            <h3>SELECIONE UM EXAME*</h3>
-        </div>
-        <div id="selecao" class="info">
-            <select id="i-dropdown">
-                <option value="0" disabled selected>Clique para selecionar</option>
-                <option value="1">Urina</option>
-                <option value="2">Hemograma</option>
-                <option value="3">Raio-x</option>
-                <option value="4">Rotineiro</option>
-                <option value="5">HIV</option>
-                <option value="6">Fezes</option>
-                <option value="7">Glicemia</option>
-            </select>
-        </div>
-    </div>
+    <span>...</span>
 
-    <div class="postosReferentes">
-        <div class="container">
-            <h3 class="title">POSTOS/HOPITAIS REFERENTES DISPONÍVEIS:</h3>
-            <div class="agenSearch">
-                <div class="search">
-                    <button class="lupa">
-                        <img src="/wwwroot/img/agendamentoIMG/Lupa.png" alt="">
-                    </button>
-
-                    <div class="line"></div>
-
-                    <div class="searchFor">
-                        <input type="search" placeholder="Pesquise por.">
-                    </div>
-
-                    <button class="filter">Filtrar por.</button>
+    <div class="selections">
+        <div class="container s-section">
+            <div class="s-exame">
+                <h2>Selecione um exame*</h2>
+                <div class="selection">
+                    <select id="exames" required>
+                        <option value="0" disabled selected>Clique para selecionar</option>
+                        <option value="1">Exame</option>
+                        <option value="2">Exame</option>
+                        <option value="3">Exame</option>
+                        <option value="4">Exame</option>
+                        <option value="5">Exame</option>
+                    </select>
                 </div>
-                <div class="searchResults">
-                    <button class="resultsButton">
-                        <h3>Hospital do Coração</h3>
-                        <div class="line"></div>
-                        <p>endereço rua josé cleiton da silva, 369, bairro água da caixa.</p>
-                    </button>
-
-                    <button class="resultsButton">
-                        <h3>Hospital do Coração</h3>
-                        <div class="line"></div>
-                        <p>endereço rua josé cleiton da silva, 369, bairro água da caixa.</p>
-                    </button>
-
-                    <button class="resultsButton">
-                        <h3>Hospital do Coração</h3>
-                        <div class="line"></div>
-                        <p>endereço rua josé cleiton da silva, 369, bairro água da caixa.</p>
-                    </button>
-
-                    <button class="resultsButton">
-                        <h3>Hospital do Coração</h3>
-                        <div class="line"></div>
-                        <p>endereço rua josé cleiton da silva, 369, bairro água da caixa.</p>
-                    </button>
-
-                    <button class="resultsButton">
-                        <h3>Hospital do Coração</h3>
-                        <div class="line"></div>
-                        <p>endereço rua josé cleiton da silva, 369, bairro água da caixa.</p>
-                    </button>
-
-                    <button class="resultsButton">
-                        <h3>Hospital do Coração</h3>
-                        <div class="line"></div>
-                        <p>endereço rua josé cleiton da silva, 369, bairro água da caixa.</p>
-                    </button>
-
-                    <button class="resultsButton">
-                        <h3>Hospital do Coração</h3>
-                        <div class="line"></div>
-                        <p>endereço rua josé cleiton da silva, 369, bairro água da caixa.</p>
-                    </button>
-
-                    <button class="resultsButton">
-                        <h3>Hospital do Coração</h3>
-                        <div class="line"></div>
-                        <p>endereço rua josé cleiton da silva, 369, bairro água da caixa.</p>
-                    </button>
-
-                    <button class="resultsButton">
-                        <h3>Hospital do Coração</h3>
-                        <div class="line"></div>
-                        <p>endereço rua josé cleiton da silva, 369, bairro água da caixa.</p>
-                    </button>
-
-                    <button class="resultsButton">
-                        <h3>Hospital do Coração</h3>
-                        <div class="line"></div>
-                        <p>endereço rua josé cleiton da silva, 369, bairro água da caixa.</p>
-                    </button>
+            </div>
+            <div class="s-unidade">
+                <h2>Selecione a unidade desejada*</h2>
+                <div class="selection">
+                    <select id="exames" required>
+                        <option value="0" disabled selected>Clique para selecionar</option>
+                        <option value="1">Exame</option>
+                        <option value="2">Exame</option>
+                    </select>
                 </div>
             </div>
         </div>
     </div>
+
 
     <!-- card do agendamento -->
-    <div class="background">
-        <div class="container">
-            <!-- Informações do hospital e o X -->
-            <div class="infoX">
-                <!-- Informações do hospital -->
-                <div class="infoHosp">
-                    <h3>Hospital do coração n°1</h3>
-                    <p> rua josé cleiton da silva, 369, <br> bairro água da caixa.</p>
-                </div>
-
-                <!-- Botão pra fechar -->
-                <div class="close">
-                    <button><img src="/wwwroot/img/agendamentoIMG/x.svg" alt="X"></button>
-                </div>
-            </div>
-
-            <!-- Calendario e horários disponiveis -->
-            <div class="sectionCH">
-                <!-- Calendario -->
-                <div class="calendario">
-                    <!-- Mes de cima -->
-                    <div class="calMes">
-                        <button class="imgSeta">
-                            <img src="/wwwroot/img/agendamentoIMG/setaEsquerda.svg" alt="">
-                        </button>
-
-                        <button class="selectMes">
-                            JUNHO
-                        </button>
-
-                        <button class="imgSeta">
-                            <img src="/wwwroot/img/agendamentoIMG/setaDireita.svg" alt="">
-                        </button>
-                    </div>
-                    <!-- Dia do meio -->
-                    <div class="calDias">
-                        <ul class="calDia">
-                            <li>Dom.</li>
-                            <li><button>1</button></li>
-                            <li><button>8</button></li>
-                            <li><button>15</button></li>
-                            <li><button>22</button></li>
-                            <li><button>29</button></li>
-                        </ul>
-
-                        <ul class="calDia">
-                            <li>Seg.</li>
-                            <li><button>2</button></li>
-                            <li><button>9</button></li>
-                            <li><button>16</button></li>
-                            <li><button>23</button></li>
-                            <li><button>30</button></li>
-                        </ul>
-
-                        <ul class="calDia">
-                            <li>Ter.</li>
-                            <li><button>3</button></li>
-                            <li><button>10</button></li>
-                            <li><button>17</button></li>
-                            <li><button>24</button></li>
-                        </ul>
-
-                        <ul class="calDia">
-                            <li>Qua.</li>
-                            <li><button>4</button></li>
-                            <li><button>11</button></li>
-                            <li><button>18</button></li>
-                            <li><button>25</button></li>
-                        </ul>
-
-                        <ul class="calDia">
-                            <li>Qui.</li>
-                            <li><button>5</button></li>
-                            <li><button>12</button></li>
-                            <li><button>19</button></li>
-                            <li><button>26</button></li>
-                        </ul>
-
-                        <ul class="calDia">
-                            <li>Sex.</li>
-                            <li><button>6</button></li>
-                            <li><button>13</button></li>
-                            <li><button>20</button></li>
-                            <li><button>27</button></li>
-                        </ul>
-
-                        <ul class="calDia">
-                            <li>Sab.</li>
-                            <li><button>7</button></li>
-                            <li><button>14</button></li>
-                            <li><button>21</button></li>
-                            <li><button>28</button></li>
-                        </ul>
-
-
-                    </div>
-                    <!-- Texto de baixo -->
-                    <div class="calText">
-                        <p>Selecione um dia disponível.</p>
-                    </div>
-                </div>
-
-                <!-- Horario -->
-                <div class="horarios">
-                    <!-- Texto de cima -->
-                    <div class="horText">
-                        <p>HORÁRIOS DISPONÍVEIS EM 17/06/2025</p>
-                    </div>
-                    <!-- Horarios disponiveis de baixo -->
-                    <div class="horDisp">
-                        <ul class="horButtons">
-                            <li><button>09:45</button></li>
-                            <li><button>12:45</button></li>
-                            <li><button>15:45</button></li>
-                        </ul>
-                        <ul class="horButtons">
-                            <li><button>10:30</button></li>
-                            <li><button>13:30</button></li>
-                            <li><button>16:30</button></li>
-                        </ul>
-                        <ul class="horButtons">
-                            <li><button>11:15</button></li>
-                            <li><button>14:15</button></li>
-                            <li><button>17:15</button></li>
-                        </ul>
-                        <ul class="horButtons">
-                            <li><button>12:00</button></li>
-                            <li><button>15:00</button></li>
-                            <li><button>18:00</button></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="backgroundTributos">
-                <!-- Botões Agendamento -->
-                <div class="containerTributos">
-                    <!-- mexer nos tipos de agendamento e descrição -->
-                    <div class="tributos">
-                        <!-- tipos de agendamento -->
-                        <div class="tipoAgendamento">
-                            <p>Selecione um dos tipos de agendamento disponiveis:</p>
-                            <select name="tipoAgendamento" id="">
-                                <option value="Nenhum" disabled selected>Nenhum tipo selecionado</option>
-                                <option value="Rotineiro">Rotineiro</option>
-                                <option value="Urina">Urina</option>
-                                <option value="HIV">Hiv</option>
-                                <option value="Raio-X">Raio-X</option>
-                                <option value="Electrocariograma">Electrocariograma</option>
-                                <option value="Hemograma">Hemograma</option>
-                            </select>
-                        </div>
-
-                        <!-- descrição -->
-                        <div class="descricao">
-                            <p>Faça uma breve descrição dos sintomas que esta sentindo:</p>
-                            <textarea name="" id="" placeholder="Descreva os sintomas:"></textarea>
-                        </div>
-                    </div>
-                    <!-- botoes -->
-                    <div class="buttons">
-                        <button class="btn-cance" data-bs-toggle="modal"
-                            data-bs-target="#ModalCancelar">Cancelar</button>
-
-                        <div class="modal fade" id="ModalCancelar" tabindex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmação</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        Tem certeza que deseja cancelar esse agendamento?
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn" data-bs-dismiss="modal">Cancelar</button>
-                                        <button type="button" class="btn" data-bs-dismiss="modal">Sim</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <button class="btn-agendar" data-bs-toggle="modal"
-                            data-bs-target="#ModalAgendar">Agendar</button>
-
-                        <div class="modal fade" id="ModalAgendar" tabindex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmação</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        Tem certeza que deseja agendar essa consulta?
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn" data-bs-dismiss="modal">Cancelar</button>
-                                        <button type="button" class="btn" data-bs-dismiss="modal">Sim</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </body>
 
 </html>
