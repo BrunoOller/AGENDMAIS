@@ -14,50 +14,6 @@
     <link rel="stylesheet" href="/wwwroot/css/color.css">
     <link rel="stylesheet" href="/wwwroot/css/Home/agendamento.css">
     <link rel="stylesheet" href="/wwwroot/css/globalStyle.css">
-
-    <style>
-        .text-image {
-            width: 100%;
-            height: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            display: none;
-            padding: 2rem 0;
-
-            & .ti-section {
-                width: 45%;
-                height: auto;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: .5rem;
-
-                & #info-title {
-                    font-size: 1.15rem;
-                    font-weight: 800;
-                    text-transform: uppercase;
-                    color: var(--cor-texto-02);
-                }
-
-                & #info-desc {
-                    width: 70%;
-                    font-size: 1rem;
-                    font-weight: 500;
-                    color: #1a1a1a;
-                }
-
-                & #info-image {
-                    width: 400px;
-                    border-radius: 5px;
-                    box-shadow: 0 5px 10px #0000002e;
-                    border: 1px solid #636363;
-                    margin-bottom: 10px;
-                }
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -120,8 +76,9 @@
                 <div class="selection">
                     <select id="exames" required>
                         <option value="0" disabled selected>Clique para selecionar</option>
-                        <option value="1">Exame</option>
-                        <option value="2">Exame</option>
+                        <option value="1">Barra Bonita</option>
+                        <option value="2">Jaú</option>
+                        <option value="3">Bariri</option>
                     </select>
                 </div>
             </div>
@@ -136,48 +93,16 @@
         </div>
     </div>
 
-    <script>
-        const dadosExame = {
-            tomografia: {
-                titulo: "Tomografia Computadorizada (TC)",
-                descricao: "A TC odontológica oferece imagens 3D detalhadas dos ossos maxilares, dentes e estruturas adjacentes, sendo crucial para o planejamento de implantes e cirurgias.",
-                imagemUrl: "/wwwroot/img/home/radiografia-periapical-4.jpeg"
-            },
-            panoramica: {
-                titulo: "Radiografia Panorâmica",
-                descricao: "Uma visão geral de todos os dentes, maxilares e articulações. É um exame fundamental para avaliações ortodônticas e identificação de problemas gerais.",
-                imagemUrl: "https://i.imgur.com/sF2aJ5N.jpeg"
-            },
-            periapical: {
-                titulo: "Radiografia Periapical",
-                descricao: "Mostra o dente inteiro, da coroa à raiz. Ideal para detectar cáries, problemas na raiz e na estrutura óssea ao redor do dente.",
-                imagemUrl: "https://i.imgur.com/r7b4e8A.jpeg"
-            }
-        }
+    <div class="observacao">
+        <div class="container obs-section">
+            <h2>Observações:</h2>
+            <textarea name="obs" placeholder="Coloque aqui, Informações como Horario de Disponibilidade e Data."
+                id="obs"></textarea>
+            <button class="btn-submit" type="submit">Agendar</button>
+        </div>
+    </div>
 
-        const selectExame = document.getElementById("select-exame");
-        const infoContainer = document.getElementById("info-exam");
-        const infoTitulo = document.getElementById("info-title");
-        const infoImagem = document.getElementById("info-image");
-        const infoDescricao = document.getElementById("info-desc");
-
-        selectExame.addEventListener('change', function () {
-            const exameSelecionado = this.value;
-
-            if (dadosExame[exameSelecionado]) {
-                const dados = dadosExame[exameSelecionado];
-
-                infoTitulo.textContent = dados.titulo;
-                infoImagem.src = dados.imagemUrl;
-                infoImagem.alt = `Imagem do exame ${dados.titulo}`;
-                infoDescricao.textContent = dados.descricao;
-
-                infoContainer.style.display = 'block';
-            } else {
-                infoContainer.style.display = 'none';
-            }
-        });
-    </script>
+    <script src="/wwwroot/js/agendamento-script.js"></script>
 
     <!-- card do agendamento -->
 </body>
