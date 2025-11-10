@@ -14,6 +14,64 @@
     <link rel="stylesheet" href="/wwwroot/css/color.css">
     <link rel="stylesheet" href="/wwwroot/css/Home/agendamento.css">
     <link rel="stylesheet" href="/wwwroot/css/globalStyle.css">
+
+    <style>
+        .choose {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            & .c-section {
+                width: 50%;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                padding: 3rem .5rem;
+
+                & .s-data,
+                .s-horario {
+                    width: 40%;
+                    height: auto;
+                    padding: 5px;
+
+                    & h2 {
+                        font-size: 1.15rem;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        color: var(--cor-texto-02);
+                    }
+
+                    & .selection {
+                        display: flex;
+                        flex-direction: column;
+
+                        & input[type="date"],
+                        input[type="time"] {
+                            width: 100%;
+                            background: #F4F4F4;
+                            border: 1px solid #1F1F1F;
+                            box-shadow: 0 5px 10px #00000011;
+                            color: #5B5B5B;
+                            padding: .5rem .75rem;
+                            border-radius: 2px;
+                            font-size: 1rem;
+                            font-weight: 400;
+                            text-overflow: ellipsis;
+                            cursor: pointer;
+
+                            &:focus {
+                                outline: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -74,12 +132,20 @@
             <div class="s-unidade">
                 <h2>Selecione a unidade desejada*</h2>
                 <div class="selection">
-                    <select id="exames" required>
-                        <option value="0" disabled selected>Clique para selecionar</option>
-                        <option value="1">Barra Bonita</option>
-                        <option value="2">Jaú</option>
-                        <option value="3">Bariri</option>
+                    <select id="select-unidade" required>
+                        <option value="" disabled selected>Clique para selecionar</option>
+                        <!-- Certifique-se que os 'value' são simples e únicos -->
+                        <option value="barra_bonita">Barra Bonita</option>
+                        <option value="bariri">Bariri</option>
+                        <option value="jau">Jaú</option>
                     </select>
+                </div>
+
+                <!-- NOVO CONTAINER PARA O ENDEREÇO -->
+                <!-- Ele começa escondido e será preenchido e exibido pelo JavaScript -->
+                <div id="info-unidade" class="info-box"
+                    style="display: none; margin-top: 15px; padding: 10px; background-color: #f4f4f4; border-radius: 5px;">
+                    <p id="info-endereco" style="margin: 0; font-style: italic;"></p>
                 </div>
             </div>
         </div>
@@ -93,18 +159,37 @@
         </div>
     </div>
 
-    <div class="observacao">
-        <div class="container obs-section">
-            <h2>Observações:</h2>
-            <textarea name="obs" placeholder="Coloque aqui, Informações como Horario de Disponibilidade e Data."
-                id="obs"></textarea>
-            <button class="btn-submit" type="submit">Agendar</button>
+    <div class="choose">
+        <div class="container c-section">
+            <div class="s-data">
+                <h2>Escolha o dia da consulta*</h2>
+                <div class="selection">
+                    <input type="date" id="data-agendamento" name="data_agendamento" required>
+                </div>
+            </div>
+            <div class="s-horario">
+                <h2>Qual horário você prefere?*</h2>
+                <div class="selection">
+                    <input type="time" id="horario-agendamento" name="horario_agendamento" required>
+                </div>
+            </div>
         </div>
     </div>
 
-    <script src="/wwwroot/js/agendamento-script.js"></script>
+    <div class="observacao">
+        <div class="container obs-section">
+            <h2>Observações (Opcional):</h2>
+            <textarea name="obs" placeholder="Coloque suas observações aqui." id="obs"></textarea>
+        </div>
+    </div>
 
-    <!-- card do agendamento -->
+    <div class="btn-submit"><input type="submit" value="Agendar"></div>
+
+    <!-- Links JS -->
+    <script src="/wwwroot/js/agendamento/script-exame.js"></script>
+    <script src="/wwwroot/js/agendamento/script-unidades.js"></script>
+    <script src="/wwwroot/js/agendamento/script-data-hora.js"></script>
+    <script src="/wwwroot/js/agendamento/script-popExame.js"></script>
 </body>
 
 </html>
