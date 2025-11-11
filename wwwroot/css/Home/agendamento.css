@@ -182,7 +182,7 @@ span {
     align-items: center;
     padding: 0 0 2rem 0;
 
-    & input[type="submit"] {
+    & #s-button {
         padding: .5rem 1.5rem;
         background-color: var(--cor-header-titulos);
         color: #fff;

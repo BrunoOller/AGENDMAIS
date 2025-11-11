@@ -183,7 +183,29 @@
         </div>
     </div>
 
-    <div class="btn-submit"><input type="submit" value="Agendar"></div>
+    <div class="btn-submit">
+        <button type="button" id="s-button" class="btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop">
+            Agendar
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Agendamento solicitado</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Você solicitou seu agendamento, fique atento ao email, que mais cedo ou mais tarde chegará a
+                        confirmação ou não.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Links JS -->
     <script src="/wwwroot/js/agendamento/script-exame.js"></script>
