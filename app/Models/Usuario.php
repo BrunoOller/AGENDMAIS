@@ -72,7 +72,7 @@
             $this->usu_telefone = $usu_telefone;
         }
 
-        public function isUsuIsAdmin(): bool {
+        public function getUsuIsAdmin(): bool {
             return $this->usu_is_admin;
         }
         public function setUsuIsAdmin(bool $usu_is_admin): void {
