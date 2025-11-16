@@ -1,0 +1,26 @@
+<?php
+    spl_autoload_register(function ($class) {
+        $file = str_replace('\\', DIRECTORY_SEPARATOR, $class) . '.php';
+        if (file_exists($file)) {
+            require $file;
+        }
+    });
+
+    $controllerName = $_GET['controller'] ?? 'Home';
+    $actionName = $_GET['action'] ?? 'index';
+
+    $controllerClass = 'App\\Controllers\\' . $controllerName . 'Controller';
+
+    if (!class_exists($controllerClass)) {
+        $controllerClass = 'App\\Controllers\\HomeController';
+        $actionName = 'index';
+    }
+
+    $controller = new $controllerClass();
+
+    if (!method_exists($controller, $actionName)) {
+        die("Ação '$actionName' não encontrada.");
+    }
+
+    $controller->$actionName();
+?>

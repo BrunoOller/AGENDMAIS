@@ -28,7 +28,7 @@
 <body>
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid px-5">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.php?controller=Home&action=index">
                 <img src="/wwwroot/img/logo.svg" id="logo">
             </a>
 
@@ -41,11 +41,21 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="./sobre.html">Sobre</a>
+                        <a class="nav-link" aria-current="page" href="index.php?controller=Home&action=sobre">Sobre</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./contato.html">Contato</a>
+                        <a class="nav-link" href="index.php?controller=Home&action=contato">Contato</a>
                     </li>
+
+                    <?php
+                        // Assume que session_start() já foi chamado no controlador
+                        $logado = isset($_SESSION['logado']) && $_SESSION['logado'] === true;
+
+                        if ($logado) {
+                            // Usuário está logado
+                            
+                        }
+                    ?>
                     <li class="nav-item">
                         <a class="nav-link" href="/Views/Account/login.html">Login</a>
                     </li>
