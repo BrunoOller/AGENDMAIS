@@ -12,57 +12,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 
     <!-- Link Favicon -->
-    <link rel="shortcut icon" href="/wwwroot/img/agendm-fav.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="<?php echo BASE_URL; ?>app/wwwroot/img/agendm-fav.svg" type="image/x-icon">
 
     <!-- Link Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
 
     <!-- Links CSS -->
-    <link rel="stylesheet" href="/wwwroot/css/reset.css">
-    <link rel="stylesheet" href="/wwwroot/css/color.css">
-    <link rel="stylesheet" href="/wwwroot/css/Home/homeStyle.css">
-    <link rel="stylesheet" href="/wwwroot/css/globalStyle.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>app/wwwroot/css/reset.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>app/wwwroot/css/color.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>app/wwwroot/css/Home/homeStyle.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>app/wwwroot/css/globalStyle.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid px-5">
-            <a class="navbar-brand" href="index.php?controller=Home&action=index">
-                <img src="/wwwroot/img/logo.svg" id="logo">
-            </a>
-
-            <!-- Botão para mobile -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.php?controller=Home&action=sobre">Sobre</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php?controller=Home&action=contato">Contato</a>
-                    </li>
-
-                    <?php
-                        // Assume que session_start() já foi chamado no controlador
-                        $logado = isset($_SESSION['logado']) && $_SESSION['logado'] === true;
-
-                        if ($logado) {
-                            // Usuário está logado
-                            
-                        }
-                    ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Views/Account/login.html">Login</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <?php include 'app/Views/Layout/header.php'; ?>
 
     <section id="apresentation">
         <div class="container a-content">
@@ -81,21 +45,21 @@
             <div class="block">
                 <h1 class="num-passo">1.</h1>
                 <h2>Escolha um serviço disponível</h2>
-                <img src="/wwwroot/img/home/icons/activity.svg" alt="Icone de atividade">
+                <img src="<?php echo BASE_URL; ?>app/wwwroot/img/home/icons/activity.svg" alt="Icone de atividade">
                 <p>Escolha um horário em um serviço público ou privado disponível no site.</p>
             </div>
 
             <div class="block">
                 <h1 class="num-passo">2.</h1>
                 <h2>Conclua o agendamento</h2>
-                <img src="/wwwroot/img/home/icons/check-circle.svg" alt="Icone de atividade">
+                <img src="<?php echo BASE_URL; ?>app/wwwroot/img/home/icons/check-circle.svg" alt="Icone de atividade">
                 <p>Após realizar o processo e/ou pagamento em caso de instituição privada, conclua-o e aguarde.</p>
             </div>
 
             <div class="block">
                 <h1 class="num-passo">3.</h1>
                 <h2>Acompanhe o processo pelo site</h2>
-                <img src="/wwwroot/img/home/icons/eye.svg" alt="Icone de atividade">
+                <img src="<?php echo BASE_URL; ?>app/wwwroot/img/home/icons/eye.svg" alt="Icone de atividade">
                 <p>Acompanhe seu agendamento em tempo real direto pelo site.</p>
             </div>
         </div>
@@ -106,7 +70,7 @@
         <div class="pa-blocks">
             <article class="pa-block">
                 <div class="img">
-                    <img src="/wwwroot/img/home/Panoramica-1.png" alt="Imagem de Radiologia Panorâmica">
+                    <img src="<?php echo BASE_URL; ?>app/wwwroot/img/home/Panoramica-1.png" alt="Imagem de Radiologia Panorâmica">
                 </div>
                 <div class="texts">
                     <h2>Radiologia Panorâmica</h2>
@@ -117,7 +81,7 @@
             </article>
             <article class="pa-block">
                 <div class="img">
-                    <img src="/wwwroot/img/home/radiografia-periapical-4.jpeg" alt="Imagem de Radiologia Periapical">
+                    <img src="<?php echo BASE_URL; ?>app/wwwroot/img/home/radiografia-periapical-4.jpeg" alt="Imagem de Radiologia Periapical">
                 </div>
                 <div class="texts">
                     <h2>Radiologia Periapical</h2>
@@ -128,7 +92,7 @@
             </article>
             <article class="pa-block">
                 <div class="img">
-                    <img src="/wwwroot/img/home/clinica-de-tomografia-odontologica.jpg" alt="Imagem de Tomografia">
+                    <img src="<?php echo BASE_URL; ?>app/wwwroot/img/home/clinica-de-tomografia-odontologica.jpg" alt="Imagem de Tomografia">
                 </div>
                 <div class="texts">
                     <h2>Tomografia</h2>
@@ -144,7 +108,7 @@
         <h1 class="titulo-section">Navegue pelo AGEND+</h1>
         <div class="container blocks">
             <div class="block">
-                <img src="/wwwroot/img/home/icons/award.svg" alt="Icone de atividade">
+                <img src="<?php echo BASE_URL; ?>app/wwwroot/img/home/icons/award.svg" alt="Icone de atividade">
                 <div class="textos">
                     <h2>Serviços Populares</h2>
                     <p>Os serviços mais utilizados e com melhor avaliação da sua região.</p>
@@ -153,7 +117,7 @@
             </div>
 
             <div class="block">
-                <img src="/wwwroot/img/home/icons/clock.svg" alt="Icone de atividade">
+                <img src="<?php echo BASE_URL; ?>app/wwwroot/img/home/icons/clock.svg" alt="Icone de atividade">
                 <div class="textos">
                     <h2>Meus Agendamentos</h2>
                     <p>Acompanhe e gerencie suas consultas em andamento.</p>
@@ -162,7 +126,7 @@
             </div>
 
             <div class="block">
-                <img src="/wwwroot/img/home/icons/heart.svg" alt="Icone de atividade">
+                <img src="<?php echo BASE_URL; ?>app/wwwroot/img/home/icons/heart.svg" alt="Icone de atividade">
                 <div class="textos">
                     <h2>Nossas Unidades</h2>
                     <p>Consulte onde há nossas unidades.</p>
@@ -179,7 +143,7 @@
                 <p id="text-sa">Clique no botão abaixo para fazer o seu agendamento sem precisar voltar o site.</p>
                 <a id="btn-start" href="./agendamento.html">Começar</a>
             </div>
-            <img src="/wwwroot/img/home/doctor.png" alt="Foto genérica de um médico">
+            <img src="<?php echo BASE_URL; ?>app/wwwroot/img/home/doctor.png" alt="Foto genérica de um médico">
         </div>
     </section>
 

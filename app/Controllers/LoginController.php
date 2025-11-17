@@ -14,11 +14,17 @@
         }
 
         public function autenticar() {
-            session_start();
+            //session_start();
 
-            if ($_SERVER['REQUREST_METHOD'] == 'POST') {
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
                 $senha = filter_input(INPUT_POST, 'senha');
+
+                if (empty($email) || empty($senha)) {
+                    // Se faltar email ou senha, redireciona com erro e EVITA o erro Fatal.
+                    header("Location: index.php?controller=Login&action=index&msg=erro_campos"); 
+                    exit;
+                }
 
                 $usuarioDAO = new UsuarioDAO();
                 $usuario = $usuarioDAO->findByEmail($email);
@@ -79,7 +85,7 @@
         }
         
         public function logout() {
-            session_start();
+            //session_start();
             session_unset();
             session_destroy();
             header("Location: index.php?controller=Home&action=index");

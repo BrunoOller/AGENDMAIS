@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AGEND+ - Sistema de Agendamento de Saúde</title>
-    <link rel="shortcut icon" href="/wwwroot/img/agendm-fav.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="<?php echo BASE_URL; ?>app/wwwroot/img/agendm-fav.svg" type="image/x-icon">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="/wwwroot/css/reset.css">
-    <link rel="stylesheet" href="/wwwroot/css/color.css">
-    <link rel="stylesheet" href="/wwwroot/css/Home/agendamento.css">
-    <link rel="stylesheet" href="/wwwroot/css/globalStyle.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>app/wwwroot/css/reset.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>app/wwwroot/css/color.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>app/wwwroot/css/Home/agendamento.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>app/wwwroot/css/globalStyle.css">
 
     <style>
         .choose {
@@ -79,33 +79,7 @@
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
         crossorigin="anonymous"></script>
 
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid px-5">
-            <a class="navbar-brand" href="./index.html">
-                <img src="../../wwwroot/img/logo.svg" id="logo">
-            </a>
-
-            <!-- Botão para mobile -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="./sobre.html">Sobre</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./contato.html">Contato</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Views/Account/login.html">Login</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <?php include 'app/Views/Layout/header.php'; ?>
 
     <div class="gradeAgendamento">
         <h2>AGENDAMENTO DE CONSULTA:</h2>
@@ -208,10 +182,10 @@
     </div>
 
     <!-- Links JS -->
-    <script src="/wwwroot/js/agendamento/script-exame.js"></script>
-    <script src="/wwwroot/js/agendamento/script-unidades.js"></script>
-    <script src="/wwwroot/js/agendamento/script-data-hora.js"></script>
-    <script src="/wwwroot/js/agendamento/script-popExame.js"></script>
+    <script src="<?php echo BASE_URL; ?>app/wwwroot/js/agendamento/script-exame.js"></script>
+    <script src="<?php echo BASE_URL; ?>app/wwwroot/js/agendamento/script-unidades.js"></script>
+    <script src="<?php echo BASE_URL; ?>app/wwwroot/js/agendamento/script-data-hora.js"></script>
+    <script src="<?php echo BASE_URL; ?>app/wwwroot/js/agendamento/script-popExame.js"></script>
 </body>
 
 </html>

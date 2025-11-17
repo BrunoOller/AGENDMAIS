@@ -9,24 +9,24 @@
     <title>AGENDMAIS - Cadastro</title>
 
     <!-- Link Favicon -->
-    <link rel="shortcut icon" href="/wwwroot/img/agendm-fav.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="<?php echo BASE_URL; ?>app/wwwroot/img/agendm-fav.svg" type="image/x-icon">
 
     <!-- Links CSS -->
-    <link rel="stylesheet" href="/wwwroot/css/color.css">
-    <link rel="stylesheet" href="/wwwroot/css/reset.css">
-    <link rel="stylesheet" href="/wwwroot/css/Account/registerStyle.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>app/wwwroot/css/color.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>app/wwwroot/css/reset.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>app/wwwroot/css/Account/registerStyle.css">
 
     <!-- Link Fontawesome -->
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v6.7.2/css/all.css">
 </head>
 
 <body>
-    <a class="btn-voltar" href="/Views/Home/index.html">
+    <a class="btn-voltar" href="index.php?controller=Home&action=index">
         <i class="fa-solid fa-arrow-left"></i>
     </a>
 
     <header id="h-cadastro">
-        <img src="/wwwroot/img/logo.svg" alt="Logo AGEND+" id="logo">
+        <img src="<?php echo BASE_URL; ?>app/wwwroot/img/logo.svg" alt="Logo AGEND+" id="logo">
     </header>
 
     <section id="h-content">
@@ -38,7 +38,7 @@
     </section>
 
     <section id="content">
-        <form>
+        <form action="index.php?controller=Login&action=registrar" method="POST">
             <div class="f-nome">
                 <label for="nome">Nome Completo<span class="required">*</span></label>
                 <input type="text" placeholder="" name="nome" id="nome">
@@ -59,86 +59,36 @@
                 <label for="tel">Telefone<span class="required">*</span></label>
                 <input type="tel" placeholder="Ex: 14999999999" name="tel" id="tel">
             </div>
-            <div class="f-cep">
-                <label for="cep">CEP<span class="required">*</span></label>
-                <input type="number" placeholder="Ex: 14000100" name="cep" id="cep">
-            </div>
-            <div class="f-rua">
-                <label for="rua">Rua<span class="required">*</span></label>
-                <input type="text" placeholder="" name="rua" id="rua">
-            </div>
-            <div class="f-num">
-                <label for="num">Número<span class="required">*</span></label>
-                <input type="number" placeholder="" name="num" id="num">
-            </div>
-            <div class="f-bairro">
-                <label for="bairro">Bairro<span class="required">*</span></label>
-                <input type="text" placeholder="" name="bairro" id="bairro">
-            </div>
-            <div class="f-cidade">
-                <label for="cidade">Cidade<span class="required">*</span></label>
-                <input type="text" placeholder="" name="cidade" id="cidade">
-            </div>
-            <div class="f-estado">
-                <label for="estado" class="form-label">Estado<span class="required">*</span></label>
-                <select class="form-select" id="estado">
-                    <option value="" disabled selected>UF</option>
-                    <option value="AC">AC</option>
-                    <option value="AL">AL</option>
-                    <option value="AP">AP</option>
-                    <option value="AM">AM</option>
-                    <option value="BA">BA</option>
-                    <option value="CE">CE</option>
-                    <option value="DF">DF</option>
-                    <option value="ES">ES</option>
-                    <option value="GO">GO</option>
-                    <option value="MA">MA</option>
-                    <option value="MT">MT</option>
-                    <option value="MS">MS</option>
-                    <option value="MG">MG</option>
-                    <option value="PA">PA</option>
-                    <option value="PB">PB</option>
-                    <option value="PR">PR</option>
-                    <option value="PE">PE</option>
-                    <option value="PI">PI</option>
-                    <option value="RJ">RJ</option>
-                    <option value="RN">RN</option>
-                    <option value="RS">RS</option>
-                    <option value="RO">RO</option>
-                    <option value="RR">RR</option>
-                    <option value="SC">SC</option>
-                    <option value="SP">SP</option>
-                    <option value="SE">SE</option>
-                    <option value="TO">TO</option>
-                </select>
-            </div>
             <div class="f-sen">
-                <label for="sen">Senha<span class="required">*</span></label>
-                <input type="password" placeholder="" name="sen" id="sen">
+                <label for="senha">Senha<span class="required">*</span></label>
+                <input type="password" placeholder="" name="senha" id="senha">
             </div>
             <div class="f-conf">
                 <label for="conf">Confirmar Senha<span class="required">*</span></label>
                 <input type="password" placeholder="" name="conf" id="conf">
+
+                <div class="btn">
+                    <button type="submit">Cadastrar</button>
+                </div>
             </div>
         </form>
 
+        <?php if ($msg === 'erro_db'): ?>
+            <p class="text-danger" style="text-align: center; color: red;">
+                Erro ao cadastrar. O e-mail ou CPF já pode estar em uso.
+            </p>
+        <?php endif; ?>
+
         <div class="agree">
             <input type="checkbox" name="check" id="check">
-            <p>Concordo com os <a href="/Views/Home/termos.html">Termos de Uso</a>, e com as <a
-                    href="/Views/Home/politicas.html">Políticas de Privacidade</a>.</p>
+            <p>Concordo com os <a href="index.php?controller=Home&action=termos">Termos de Uso</a>, e com as <a
+                    href="index.php?controller=Home&action=politicas">Políticas de Privacidade</a>.</p>
         </div>
-
-        <div class="btn"><a href="/Views/Home/index.html">Cadastrar</a></div>
 
         <div class="haveAccount">
-            <p>Já possui uma conta? <a href="./login.html">Entrar</a></p>
+            <p>Já possui uma conta? <a href="index.php?controller=Login&action=index">Entrar</a></p>
         </div>
     </section>
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-
-    <script src="/wwwroot/js/script.js"></script>
 </body>
 
 </html>

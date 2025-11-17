@@ -1,4 +1,10 @@
 <?php
+    session_start();
+
+    $basePath = str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
+    $baseUrl = rtrim($basePath, '/') . '/';
+    define('BASE_URL', $basePath);
+
     spl_autoload_register(function ($class) {
         $file = str_replace('\\', DIRECTORY_SEPARATOR, $class) . '.php';
         if (file_exists($file)) {
