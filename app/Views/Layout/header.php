@@ -26,9 +26,17 @@
                     <?php
                     if ($logado) {
                         // --- LINKS PARA USUÁRIO LOGADO ---
+                        $nomeCompleto = $_SESSION['usu_nome'] ?? 'Usuário';
+                        $primeiroEspaco = strpos($nomeCompleto, ' ');
+                        
+                        if ($primeiroEspaco !== false) {
+                            $primeiroNome = substr($nomeCompleto, 0, $primeiroEspaco);
+                        } else {
+                            $primeiroNome = $nomeCompleto;
+                        }
                     ?>
  
-                        <span class="nav-link">Olá, <strong><?php echo $_SESSION['usu_nome']; ?></strong>!</span>
+                        <span class="nav-link">Olá, <strong><?php echo $primeiroNome; ?></strong>!</span>
 
                         <?php
                         if (isset($_SESSION['usu_is_admin']) && $_SESSION['usu_is_admin']) {

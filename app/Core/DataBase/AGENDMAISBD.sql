@@ -40,3 +40,9 @@ CREATE TABLE IF NOT EXISTS agendamentos (
 		ON DELETE RESTRICT,
 	UNIQUE KEY uk_agendamento_usuario (usuario_id, agend_data, agend_hora)
 );
+
+-- Adicionando Usuário Admin
+INSERT INTO usuarios 
+    (usu_cpf, usu_nome, usu_data, usu_email, usu_senha, usu_telefone, usu_is_admin)
+VALUES 
+    ('00000000000', 'Admin', '2000-01-01', 'admin@agendmais.com', '$2y$10$BtYuiafUnT6hnh/8aV787OU4UcA1vs4IY656xV0FUJV5PGO0fDL1i', '99999999999', 1);
