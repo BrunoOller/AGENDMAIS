@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>app/wwwroot/css/reset.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>app/wwwroot/css/Account/loginStyle.css">
 
+    <!-- Links Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
     <!-- Link Fontawesome -->
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v6.7.2/css/all.css">
 </head>
@@ -33,33 +36,43 @@
         <div class="line"></div>
         <div class="text">
             <h1>LOGIN</h1>
-            <span>...</span>
         </div>
     </section>
 
     <section id="content">
+        <?php if ($msg === 'erro'): ?>
+            <div class="alert alert-danger" role="alert">
+                E-mail ou senha inválidos. Tente novamente.
+            </div>
+        <?php endif; ?>
+        <?php if ($msg === 'erro_campos'): ?>
+            <div class="alert alert-danger" role="alert">
+                Preencha todos os campos.
+            </div>
+        <?php endif; ?>
+        <?php if ($msg === 'sucesso'): ?>
+            <div class="alert alert-success" role="alert">
+                Cadastro realizado! Faça login.
+            </div>
+        <?php endif; ?>
+
         <form action="index.php?controller=Login&action=autenticar" method="POST">
-            <div class="f-nome">
+            <div class="f-email">
                 <label for="email">E-mail<span class="required">*</span></label>
                 <input type="text" placeholder="" name="email" id="email">
             </div>
-            <div class="f-sen">
+
+            <div class="f-senha">
                 <label for="senha">Senha<span class="required">*</span></label>
                 <input type="password" placeholder="" name="senha" id="senha">
             </div>
 
-            <div class="btn"><button type="submit">Entrar</button></div>
+            <div class="f-btn">
+                <div class="button-s">
+                    <button type="submit">Entrar</button>
+                </div>
+            </div>
         </form>
-
-        <?php if ($msg === 'erro'): ?>
-            <p class="text-danger" style="text-align: center; color: red;">E-mail ou senha inválidos. Tente novamente.</p>
-        <?php endif; ?>
-        <?php if ($msg === 'erro_campos'): ?>
-            <p class="text-danger" style="text-align: center; color: red;">Preencha todos os campos.</p>
-        <?php endif; ?>
-        <?php if ($msg === 'sucesso'): ?>
-            <p class="text-success" style="text-align: center; color: green;">Cadastro realizado! Faça login.</p>
-        <?php endif; ?>
 
         <div class="agree">
             <input type="checkbox" name="check" id="check">
@@ -67,7 +80,9 @@
                     href="index.php?controller=Home&action=politicas">Políticas de Privacidade</a>.</p>
         </div>
 
-        <div class="btn"><a href="/Views/Home/index.html">Entrar</a></div>
+        <div class="s-line">
+            <div class="line"></div>
+        </div>
 
         <div class="haveAccount">
             <p>Não possui uma conta? <a href="index.php?controller=Login&action=registrarIndex">Criar</a></p>
@@ -78,6 +93,8 @@
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
     <script src="<?php echo BASE_URL; ?>/wwwroot/js/script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 
 </html>

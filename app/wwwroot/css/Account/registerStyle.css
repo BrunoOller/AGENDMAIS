@@ -17,7 +17,7 @@
     }
 
     &:hover i {
-        color: #FFF;
+        color: var(--cor-textos-footer-02);
         transition: all .25s ease-in;
     }
 }
@@ -28,7 +28,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem 20px 7px 20px;
+    padding: 4rem 20px 1rem 20px;
 
     & #logo {
         width: auto;
@@ -46,7 +46,7 @@ header {
     gap: 1.5rem;
 
     & .line {
-        width: 30%;
+        width: 25rem;
         height: 1px;
         background-color: #585858;
     }
@@ -61,17 +61,9 @@ header {
         gap: .5rem;
 
         & h1 {
-            color: #111111;
-            font-size: 1.5rem;
-        }
-
-        & p,
-        span {
-            color: #b3b3b3;
-        }
-
-        & span {
-            font-size: 1.3rem;
+            color: #303030;
+            font-size: 1.25rem;
+            font-weight: 700;
         }
     }
 }
@@ -93,7 +85,27 @@ header {
         justify-content: space-between;
         gap: .75rem;
 
-        & div {
+        & .f-nome,
+        .f-email,
+        .f-tel,
+        .f-sen,
+        .f-conf {
+            max-width: 50rem;
+            min-width: 22rem;
+        }
+
+        & .f-data,
+        .f-cpf {
+            max-width: 24.6rem;
+        }
+
+        & .f-nome,
+        .f-email,
+        .f-data,
+        .f-cpf,
+        .f-tel,
+        .f-sen,
+        .f-conf {
             width: 100%;
             height: auto;
             display: flex;
@@ -131,34 +143,52 @@ header {
             }
         }
 
+        & .f-btn {
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: .35rem;
+            margin-top: 5px;
+
+            & .button-s {
+                width: 100%;
+                max-width: 50rem;
+                min-width: 22rem;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                & button {
+                    width: 100%;
+                    height: 2.1rem;
+                    background-color: var(--cor-header-titulos);
+                    color: var(--cor-textos-01);
+                    font-family: 'Montserrat';
+                    text-transform: uppercase;
+                    border-radius: 5px;
+                    box-shadow: 0 5px 10px #0000002e;
+                    font-weight: 600;
+                    font-size: 1rem;
+                    transition: background-color .25s ease-out;
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    &:hover {
+                        background-color: #c17786;
+                        transition: background-color .25s ease-in;
+                    }
+                }
+            }
+        }
+
         & .f-data,
         .f-cpf {
-            width: 49%;
-        }
-
-        & .f-tel {
-            width: 68%;
-        }
-
-        & .f-cep,
-        .f-cidade {
-            width: 30%;
-        }
-
-        & .f-rua {
-            width: 78%;
-        }
-
-        & .f-num {
-            width: 20%;
-        }
-
-        & .f-bairro {
-            width: 50%;
-        }
-
-        & .f-estado {
-            width: 16%;
+            width: 48%;
         }
     }
 
@@ -187,31 +217,17 @@ header {
         }
     }
 
-    & .btn {
-        width: 42.5%;
+    & .s-line {
+        width: 100%;
         height: auto;
         display: flex;
         justify-content: center;
         align-items: center;
 
-        & a {
-            width: 100%;
-            height: 2.1rem;
-            background-color: var(--cor-header-titulos);
-            color: var(--cor-textos-01);
-            font-family: 'Montserrat';
-            font-weight: 600;
-            font-size: 1rem;
-            transition: background-color .25s ease-out;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            &:hover {
-                background-color: #c17786;
-                transition: background-color .25s ease-in;
-            }
+        & .line {
+            width: 4rem;
+            height: 1px;
+            background-color: #cecece;
         }
     }
 
