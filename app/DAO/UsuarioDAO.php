@@ -13,7 +13,7 @@
         public function findByEmail(string $email): ?Usuario {
             $pdo = Database::getConnection();
             
-            $sql = "SELECT id_usuario, usu_cpf, usu_nome, usu_data, usu_email, usu_senha, usu_telefone, usu_is_admin
+            $sql = "SELECT id_usuario, unidade_id, usu_cpf, usu_nome, usu_data, usu_email, usu_senha, usu_telefone, usu_is_admin
                     FROM usuarios
                     WHERE usu_email = ?";
             $stmt = $pdo->prepare($sql);

@@ -46,3 +46,18 @@ INSERT INTO usuarios
     (usu_cpf, usu_nome, usu_data, usu_email, usu_senha, usu_telefone, usu_is_admin)
 VALUES 
     ('00000000000', 'Admin', '2000-01-01', 'admin@agendmais.com', '$2y$10$BtYuiafUnT6hnh/8aV787OU4UcA1vs4IY656xV0FUJV5PGO0fDL1i', '99999999999', 1);
+
+-- Adicionando Unidades
+-- Editando coluna de unidades
+ALTER TABLE unidades
+ADD COLUMN uni_nome VARCHAR(255) NOT NULL UNIQUE AFTER id_unidade;
+
+-- Adiciona a coluna para a FK
+ALTER TABLE usuarios
+ADD COLUMN unidade_id INT NULL AFTER id_usuario;
+
+-- Define a Chave Estrangeira
+ALTER TABLE usuarios
+ADD CONSTRAINT fk_usuario_unidade
+FOREIGN KEY (unidade_id) REFERENCES unidades(id_unidade)
+ON DELETE SET NULL ON UPDATE CASCADE;

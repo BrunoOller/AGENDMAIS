@@ -3,6 +3,7 @@
 
     class Usuario {
         private int $id_usuario;
+        private ?int $unidade_id;
         private string $usu_cpf;
         private string $usu_nome;
         private string $usu_data;
@@ -13,6 +14,7 @@
 
         public function __construct(array $data = []) {
             $this->id_usuario = $data['id_usuario'] ?? 0;
+            $this->unidade_id = $data['unidade_id'] ?? null;
             $this->usu_cpf = $data['usu_cpf'] ?? '';
             $this->usu_nome = $data['usu_nome'] ?? '';
             $this->usu_data = $data['usu_data'] ?? '';
@@ -28,6 +30,13 @@
         }
         public function setIdUsuario(int $id_usuario): void {
             $this->id_usuario = $id_usuario;
+        }
+
+        public function getUnidadeId(): int {
+            return $this->unidade_id;
+        }
+        public function setUnidadeId(int $unidade_id): void {
+            $this->unidade_id = $unidade_id;
         }
 
         public function getUsuCpf(): string {
