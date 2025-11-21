@@ -2,10 +2,10 @@
     namespace app\Models;
 
     class Unidade {
-        private $id_unidade;
-        private $uni_nome;
-        private $uni_endereco;
-        private $uni_telefone;
+        private ?int $id_unidade;
+        private string $uni_nome;
+        private string $uni_endereco;
+        private ?string $uni_telefone;
 
         public function __construct(array $data = []) {
             $this->id_unidade = $data['id_unidade'] ?? null;
@@ -15,10 +15,10 @@
         }
 
         // Getters and Setters
-        public function getIdUnidade(): int {
+        public function getIdUnidade(): ?int {
             return $this->id_unidade;
         }
-        public function setIdUnidade(int $id_unidade): void {
+        public function setIdUnidade(?int $id_unidade): void {
             $this->id_unidade = trim($id_unidade);
         }
 
@@ -36,10 +36,10 @@
             $this->uni_endereco = trim($uni_endereco);
         }
 
-        public function getUniTelefone(): string {
+        public function getUniTelefone(): ?string {
             return $this->uni_telefone;
         }
-        public function setUniTelefone(string $uni_telefone): void {
+        public function setUniTelefone(?string $uni_telefone): void {
             $this->uni_telefone = trim($uni_telefone);
         }
 

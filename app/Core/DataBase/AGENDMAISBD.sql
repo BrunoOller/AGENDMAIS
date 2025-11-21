@@ -61,3 +61,13 @@ ALTER TABLE usuarios
 ADD CONSTRAINT fk_usuario_unidade
 FOREIGN KEY (unidade_id) REFERENCES unidades(id_unidade)
 ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- Adicionando status ao agendamento
+ALTER TABLE agendamentos
+ADD COLUMN agend_status ENUM(
+    'Pendente',       /* Aguardando revisão do Monitor */
+    'Confirmado',     /* Revisado e aprovado pela Unidade */
+    'Rejeitado',      /* Revisado e não aprovado (ex: horário já ocupado) */
+    'Cancelado',      /* Cancelado pelo Paciente ou Monitor */
+    'Finalizado'      /* Paciente compareceu à consulta */
+) NOT NULL DEFAULT 'Pendente';

@@ -31,22 +31,26 @@
         public function create(Usuario $usuario): bool {
             $pdo = Database::getConnection();
 
-            $sql = "INSERT INTO usuarios (usu_cpf, usu_nome, usu_data, usu_email, usu_senha, usu_telefone, usu_is_admin)
-                    VALUES (?, ?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO usuarios (unidade_id, usu_cpf, usu_nome, usu_data, usu_email, usu_senha, usu_telefone, usu_is_admin)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
             $stmt = $pdo->prepare($sql);
 
+            $hashedPassword = password_hash($usuario->getUsuSenha(), PASSWORD_DEFAULT);
+
             try {
                 return $stmt->execute([
+                    $usuario->getUnidadeId(),
                     $usuario->getUsuCpf(),
                     $usuario->getUsuNome(),
                     $usuario->getUsuData(),
                     $usuario->getUsuEmail(),
-                    $usuario->getUsuSenha(),
+                    $hashedPassword,
                     $usuario->getUsuTelefone(),
                     $usuario->getUsuIsAdmin()
                 ]);
             } catch (\PDOException $e) {
+                die("Erro do BD ao criar usuário: " . $e->getMessage());
                 // Em caso de email duplicado ou outro erro do BD
                 return false;
             }

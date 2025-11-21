@@ -41,17 +41,17 @@
 
     <section id="content">
         <?php if ($msg === 'erro'): ?>
-            <div class="alert alert-danger" role="alert">
+            <div class="alert alert-danger" style="width: 42.5%;" role="alert">
                 E-mail ou senha inválidos. Tente novamente.
             </div>
         <?php endif; ?>
         <?php if ($msg === 'erro_campos'): ?>
-            <div class="alert alert-danger" role="alert">
+            <div class="alert alert-danger" style="width: 42.5%;" role="alert">
                 Preencha todos os campos.
             </div>
         <?php endif; ?>
         <?php if ($msg === 'sucesso'): ?>
-            <div class="alert alert-success" role="alert">
+            <div class="alert alert-success" style="width: 42.5%;" role="alert">
                 Cadastro realizado! Faça login.
             </div>
         <?php endif; ?>

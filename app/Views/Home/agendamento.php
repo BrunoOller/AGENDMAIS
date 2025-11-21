@@ -81,105 +81,122 @@
 
     <?php include 'app/Views/Layout/header.php'; ?>
 
-    <div class="gradeAgendamento">
-        <h2>AGENDAMENTO DE CONSULTA:</h2>
-        <p>Agende aqui de forma rápida e simples!</p>
-    </div>
+    <form method="POST" action="index.php?controller=Agendamento&action=agendar">
 
-    <span>...</span>
+        <div class="gradeAgendamento">
+            <h2>AGENDAMENTO DE CONSULTA:</h2>
+            <p>Agende aqui de forma rápida e simples!</p>
+        </div>
 
-    <div class="selections">
-        <div class="container s-section">
-            <div class="s-exame">
-                <h2>Selecione um exame*</h2>
-                <div class="selection">
-                    <form method="get">
-                        <select id="select-exame" required>
+           <span>...</span>
+
+        <?php if (isset($msg)): ?>
+            <?php
+            $alert_class = '';
+            $alert_message = '';
+            $show_alert = true;
+
+            switch ($msg) {
+                case 'sucesso':
+                    $alert_class = 'alert-success';
+                    $alert_message = 'Agendamento solicitado com sucesso! Consulte seu agendamento em "Meus Agendamentos".';
+                    break;
+                case 'erro_campos':
+                    $alert_class = 'alert-warning';
+                    $alert_message = 'Erro: Preencha todos os campos obrigatórios para continuar.';
+                    break;
+                case 'erro_bd':
+                    $alert_class = 'alert-danger';
+                    $alert_message = 'Erro ao salvar o agendamento. Tente novamente mais tarde.';
+                    break;
+                default:
+                    $show_alert = false;
+                    break;
+            }
+            ?>
+            <?php if ($show_alert): ?>
+                <div class="container mt-3">
+                    <div class="alert <?= $alert_class; ?> alert-dismissible fade show" role="alert">
+                        <?= $alert_message; ?>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>
+            <?php endif; ?>
+        <?php endif; ?>
+
+        <div class="selections">
+            <div class="container s-section">
+                <div class="s-exame">
+                    <h2>Selecione um exame*</h2>
+                    <div class="selection">
+                        <select id="select-exame" name="select_exame" required>
                             <option value="" disabled selected>Clique para selecionar</option>
                             <option value="tomografia">Tomografia Computadorizada</option>
                             <option value="panoramica">Radiografia Panorâmica</option>
                             <option value="periapical">Radiografia Periapical</option>
                         </select>
-                    </form>
+                    </div>
                 </div>
-            </div>
-            <div class="s-unidade">
-                <h2>Selecione a unidade desejada*</h2>
-                <div class="selection">
-                    <select id="select-unidade" required>
-                        <option value="" disabled selected>Clique para selecionar</option>
-                        <!-- Certifique-se que os 'value' são simples e únicos -->
-                        <option value="barra_bonita">Barra Bonita</option>
-                        <option value="bariri">Bariri</option>
-                        <option value="jau">Jaú</option>
-                    </select>
-                </div>
+                <div class="s-unidade">
+                    <h2>Selecione a unidade desejada*</h2>
+                    <div class="selection">
+                        <select id="select-unidade" name="unidade_id" required>
+                            <option value="" disabled selected>Clique para selecionar</option> <!--o dropdown está aqui, tem esses pois era para demonstração, pode retirá-los-->
+                            <?php
+                            // Verifica se a variável $unidades existe e é um array
+                            if (isset($unidades) && is_array($unidades)) {
+                                // Itera sobre cada objeto Unidade retornado do banco de dados
+                                foreach ($unidades as $unidade) {
+                                    // Usa o ID da unidade como 'value' para o POST
+                                    $id = $unidade->getIdUnidade();
+                                    // Usa o nome da unidade como o texto visível
+                                    $nome = $unidade->getUniNome();
 
-                <!-- NOVO CONTAINER PARA O ENDEREÇO -->
-                <!-- Ele começa escondido e será preenchido e exibido pelo JavaScript -->
-                <div id="info-unidade" class="info-box"
-                    style="display: none; margin-top: 15px; padding: 10px; background-color: #f4f4f4; border-radius: 5px;">
-                    <p id="info-endereco" style="margin: 0; font-style: italic;"></p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="info-exam" class="text-image">
-        <div class="container ti-section">
-            <img id="info-image" src="" alt="Imagem do exame" />
-            <h3 id="info-title"></h3>
-            <p id="info-desc"></p>
-        </div>
-    </div>
-
-    <div class="choose">
-        <div class="container c-section">
-            <div class="s-data">
-                <h2>Escolha o dia da consulta*</h2>
-                <div class="selection">
-                    <input type="date" id="data-agendamento" name="data_agendamento" required>
-                </div>
-            </div>
-            <div class="s-horario">
-                <h2>Qual horário você prefere?*</h2>
-                <div class="selection">
-                    <input type="time" id="horario-agendamento" name="horario_agendamento" required>
+                                    echo "<option value=\"{$id}\">{$nome}</option>";
+                                }
+                            }
+                            ?>
+                        </select>
+                    </div>
+                    <div id="info-unidade" class="info-box"
+                        style="display: none; margin-top: 15px; padding: 10px; background-color: #f4f4f4; border-radius: 5px;">
+                        <p id="info-endereco" style="margin: 0; font-style: italic;"></p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="observacao">
+        <div class="choose">
+            <div class="container c-section">
+                <div class="s-data">
+                    <h2>Escolha o dia da consulta*</h2>
+                    <div class="selection">
+                        <input type="date" id="data-agendamento" name="data_agendamento" required>
+                    </div>
+                </div>
+                <div class="s-horario">
+                    <h2>Qual horário você prefere?*</h2>
+                    <div class="selection">
+                        <input type="time" id="horario-agendamento" name="horario_agendamento" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btn-submit">
+            <button type="submit" id="s-button" class="btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop">
+                Agendar
+            </button>
+        </div>
+    </form>
+
+    <!--<div class="observacao">
         <div class="container obs-section">
             <h2>Observações (Opcional):</h2>
             <textarea name="obs" placeholder="Coloque suas observações aqui." id="obs"></textarea>
         </div>
-    </div>
+    </div>-->
 
-    <div class="btn-submit">
-        <button type="button" id="s-button" class="btn btn-primary" data-bs-toggle="modal"
-            data-bs-target="#staticBackdrop">
-            Agendar
-        </button>
-
-        <!-- Modal -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Agendamento solicitado</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        Você solicitou seu agendamento, fique atento ao email, que mais cedo ou mais tarde chegará a
-                        confirmação ou não.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Links JS -->
     <script src="<?php echo BASE_URL; ?>app/wwwroot/js/agendamento/script-exame.js"></script>

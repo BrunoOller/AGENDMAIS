@@ -4,7 +4,7 @@
     use App\Models\Unidade;
     use App\Core\Database;
     use PDO;
-
+    
     class UnidadeDAO {
         public function create(Unidade $unidade): bool {
             $pdo = Database::getConnection();
@@ -28,11 +28,15 @@
 
         public function findAll(): array {
             $pdo = Database::getConnection();
-            $sql = "SELECT * FROM unidades ORDER BY uni_nome";
+            $sql = "SELECT * FROM unidades ORDER BY uni_nome"; // Usando 'unidades'
+
+            // Usando prepare é a melhor prática
             $stmt = $pdo->prepare($sql);
+            $stmt->execute();
 
             $unidades = [];
             while ($data = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                // Instancia o Model Unidade
                 $unidades[] = new Unidade($data);
             }
             return $unidades;

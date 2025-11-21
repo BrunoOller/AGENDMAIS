@@ -35,7 +35,7 @@
                 <h1 id="name">Sistema de Agendamento de Radiologias Odontológicas</h1>
                 <span id="subphrase">Agende seu exame odontológico de forma rápida, segura e totalmente online.</span>
             </div>
-            <a href="./agendamento.html">Faça um Agendamento</a>
+            <a href="index.php?controller=Agendamento&action=agendamentoIndex">Faça um Agendamento</a>
         </div>
     </section>
 
@@ -76,7 +76,7 @@
                     <h2>Radiologia Panorâmica</h2>
                     <span>Exame que captura toda a arcada dentária em uma única imagem.</span>
                     <!-- Link atualizado para passar o parâmetro 'panoramica' -->
-                    <a href="agendamento.html?exame=panoramica">Agendar</a>
+                    <a href="index.php?controller=Agendamento&action=agendamentoIndex&exame=panoramica">Agendar</a>
                 </div>
             </article>
             <article class="pa-block">
@@ -87,7 +87,7 @@
                     <h2>Radiologia Periapical</h2>
                     <span>Detalhe da raiz e estruturas ao redor — indicado para diagnóstico pontual.</span>
                     <!-- Link atualizado para passar o parâmetro 'periapical' -->
-                    <a href="agendamento.html?exame=periapical">Agendar</a>
+                    <a href="index.php?controller=Agendamento&action=agendamentoIndex&exame=panoramica">Agendar</a>
                 </div>
             </article>
             <article class="pa-block">
@@ -98,7 +98,7 @@
                     <h2>Tomografia</h2>
                     <span>Imagem 3D para planejamento preciso em implantes e cirurgias complexas.</span>
                     <!-- Link atualizado para passar o parâmetro 'tomografia' -->
-                    <a href="agendamento.html?exame=tomografia">Agendar</a>
+                    <a href="index.php?controller=Agendamento&action=agendamentoIndex&exame=panoramica">Agendar</a>
                 </div>
             </article>
         </div>
@@ -131,7 +131,7 @@
                     <h2>Nossas Unidades</h2>
                     <p>Consulte onde há nossas unidades.</p>
                 </div>
-                <a href="./agendamento.html">Explorar</a>
+                <a href="index.php?controller=Agendamento&action=agendamentoIndex">Explorar</a>
             </div>
         </div>
     </section>
@@ -141,7 +141,7 @@
             <div class="texts-e-btn">
                 <h1 id="title-sa">Comece a fazer seu agendamento.</h1>
                 <p id="text-sa">Clique no botão abaixo para fazer o seu agendamento sem precisar voltar o site.</p>
-                <a id="btn-start" href="./agendamento.html">Começar</a>
+                <a id="btn-start" href="index.php?controller=Agendamento&action=agendamentoIndex">Começar</a>
             </div>
             <img src="<?php echo BASE_URL; ?>app/wwwroot/img/home/doctor.png" alt="Foto genérica de um médico">
         </div>

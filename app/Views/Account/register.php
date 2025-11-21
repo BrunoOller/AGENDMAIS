@@ -41,7 +41,7 @@
 
     <section id="content">
         <?php if ($msg === 'erro_db'): ?>
-            <div class="alert alert-danger" role="alert">
+            <div class="alert alert-danger" style="width: 42.5%;" role="alert">
                 Erro ao cadastrar. O e-mail ou CPF já pode estar em uso.
             </div>
         <?php endif; ?>

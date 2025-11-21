@@ -49,7 +49,7 @@
                 <div class="a-nav">
                     <ul>
                         <li><a href="#"><i class="fa-solid fa-chart-pie"></i> Dashboard</a></li>
-                        <li><a href="./a-analises.html"><i class="fa-solid fa-chart-simple"></i> Cadastrar Unidade</a></li>
+                        <li><a href="index.php?controller=Admin&action=cadastrarUnidadeIndex"><i class="fa-solid fa-chart-simple"></i> Cadastrar Unidade</a></li>
                         <!--<li><a href="./a-solicitacoes.html"><i class="fa-solid fa-bell"></i> Solicitações de cadastro</a></li>
                         <li><a href="./a-usuarios.html"><i class="fa-solid fa-person"></i> Usuários</a></li>-->
                     </ul>

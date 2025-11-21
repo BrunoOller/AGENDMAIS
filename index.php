@@ -6,7 +6,10 @@
     define('BASE_URL', $basePath);
 
     spl_autoload_register(function ($class) {
-        $file = str_replace('\\', DIRECTORY_SEPARATOR, $class) . '.php';
+        $prefix = 'App\\'; 
+        $baseDir = __DIR__ . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR; 
+        $relativeClass = substr($class, strlen($prefix));
+        $file = $baseDir . str_replace('\\', DIRECTORY_SEPARATOR, $relativeClass) . '.php';
         if (file_exists($file)) {
             require $file;
         }
