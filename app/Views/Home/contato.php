@@ -25,14 +25,14 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg">
+    <!--<nav class="navbar navbar-expand-lg">
         <div class="container-fluid px-5">
             <a class="navbar-brand" href="./index.html">
-                <img src="<?php echo BASE_URL; ?>app/wwwroot/img/logo.svg" id="logo">
+                <img src="<?php //echo BASE_URL; ?>app/wwwroot/img/logo.svg" id="logo">
             </a>
 
             <!-- Botão para mobile -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            <!--<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -51,7 +51,8 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav>-->
+    <?php include 'app/Views/Layout/header.php'; ?>
 
     <main>
         <div class="c-content">

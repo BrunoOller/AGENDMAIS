@@ -36,6 +36,8 @@
                 'data_nascimento' => $usuarioModel->getUsuData() 
             ];
 
+            error_log("DEBUG CPF Carregado para o Usuário ID: " . $userId . " -> CPF: " . ($usuario->cpf ?? 'NULL/Vazio'));
+
             try {
                 $agendamentoDAO = new AgendamentoDAO();
                 $agendamentos = $agendamentoDAO->findByUserId($userId);
@@ -96,5 +98,7 @@
                 exit;
             }
         }
+
+        
     }
 ?>

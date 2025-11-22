@@ -1,5 +1,4 @@
 <?php
-    // Garantimos que a variável de status é definida aqui, caso a View não a defina
     $logado = $_SESSION['logado'] ?? false;
 ?>
     <nav class="navbar navbar-expand-lg">
@@ -25,7 +24,6 @@
 
                     <?php
                     if ($logado) {
-                        // --- LINKS PARA USUÁRIO LOGADO ---
                         $nomeCompleto = $_SESSION['usu_nome'] ?? 'Usuário';
                         $primeiroEspaco = strpos($nomeCompleto, ' ');
                         
@@ -49,7 +47,7 @@
                         ?>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Meus Agendamentos</a>
+                            <a class="nav-link" href="index.php?controller=Perfil&action=perfilIndex">Perfil</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="index.php?controller=Login&action=logout">Sair</a>

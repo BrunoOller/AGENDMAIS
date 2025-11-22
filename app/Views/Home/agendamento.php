@@ -88,7 +88,7 @@
             <p>Agende aqui de forma rápida e simples!</p>
         </div>
 
-           <span>...</span>
+        <span>...</span>
 
         <?php if (isset($msg)): ?>
             <?php
@@ -99,7 +99,7 @@
             switch ($msg) {
                 case 'sucesso':
                     $alert_class = 'alert-success';
-                    $alert_message = 'Agendamento solicitado com sucesso! Consulte seu agendamento em "Meus Agendamentos".';
+                    $alert_message = 'Agendamento solicitado com sucesso! Consulte seu agendamento em "Perfil" e vá em "Meus Agendamentos".';
                     break;
                 case 'erro_campos':
                     $alert_class = 'alert-warning';
@@ -131,9 +131,15 @@
                     <div class="selection">
                         <select id="select-exame" name="select_exame" required>
                             <option value="" disabled selected>Clique para selecionar</option>
-                            <option value="tomografia">Tomografia Computadorizada</option>
-                            <option value="panoramica">Radiografia Panorâmica</option>
-                            <option value="periapical">Radiografia Periapical</option>
+                            <?php
+                            if (empty($exames)) {
+                                echo "<option value=\"\" disabled>Nenhum exame encontrado.</option>";
+                            } else {
+                                foreach ($exames as $value => $label) {
+                                    echo "<option value=\"" . htmlspecialchars($value) . "\">" . htmlspecialchars($label) . "</option>";
+                                }
+                            }
+                            ?>
                         </select>
                     </div>
                 </div>

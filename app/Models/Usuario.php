@@ -32,7 +32,7 @@
             $this->id_usuario = $id_usuario;
         }
 
-        public function getUnidadeId(): int {
+        public function getUnidadeId(): ?int {
             return $this->unidade_id;
         }
         public function setUnidadeId(int $unidade_id): void {

@@ -55,7 +55,8 @@
 
             $stmt = $pdo->prepare($sql);
 
-            $hashedPassword = password_hash($usuario->getUsuSenha(), PASSWORD_DEFAULT);
+            //$hashedPassword = password_hash($usuario->getUsuSenha(), PASSWORD_DEFAULT);
+            $senha_hash = $usuario->getUsuSenha();
 
             try {
                 return $stmt->execute([
@@ -64,7 +65,7 @@
                     $usuario->getUsuNome(),
                     $usuario->getUsuData(),
                     $usuario->getUsuEmail(),
-                    $hashedPassword,
+                    $senha_hash,
                     $usuario->getUsuTelefone(),
                     $usuario->getUsuIsAdmin()
                 ]);
