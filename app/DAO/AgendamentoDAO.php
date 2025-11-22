@@ -30,7 +30,23 @@
             }
         }
 
-        public function findAllByUsuario(int $usuario_id): array {
+        public function findByUserId(int $userId): array {
+            $pdo = Database::getConnection();
+            $sql = "SELECT a.*, u.uni_nome FROM agendamentos a JOIN unidades u ON a.unidade_id = u.id_unidade WHERE
+             a.usuario_id = ?
+             ORDER BY a.agend_data DESC, a.agend_hora DESC";
+            
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([$userId]);
+
+            $agendamentos = [];
+            while ($data = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $agendamentos[] = new Agendamento($data);
+            }
+            return $agendamentos;
+        }
+
+        /*public function findAllByUsuario(int $usuario_id): array {
             $pdo = Database::getConnection();
             $sql = "SELECT * FROM agendamentos WHERE usuario_id = ?";
 
@@ -44,5 +60,6 @@
             }
             return $agendamentos;
         }
+            */
     }
 ?>
