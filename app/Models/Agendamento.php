@@ -9,6 +9,8 @@
         private string $agend_data;
         private string $agend_hora;
         private string $agend_status;    
+        private ?string $uni_nome = null;
+        private ?string $usu_nome = null;
         
         public function __construct(array $data = []) {
             if (!empty($data)) {
@@ -19,6 +21,9 @@
                 $this->agend_data = (string)($data['agend_data'] ?? '');
                 $this->agend_hora = (string)($data['agend_hora'] ?? '');
                 $this->agend_status = (string)($data['agend_status'] ?? 'Pendente');
+
+                $this->uni_nome = $data['uni_nome'] ?? null;
+                $this->usu_nome = $data['usu_nome'] ?? null;
             }
         }
 
@@ -70,6 +75,20 @@
         }
         public function setAgendStatus(string $agend_status): void {
             $this->agend_status = $agend_status;
+        }
+
+        public function getUniNome(): ?string {
+            return $this->uni_nome;
+        }
+        public function setUniNome(?string $uni_nome): void {
+            $this->uni_nome = $uni_nome;
+        }
+
+        public function getUsuNome(): ?string {
+            return $this->usu_nome;
+        }
+        public function setUsuNome(?string $usu_nome): void {
+            $this->usu_nome = $usu_nome;
         }
     }
 ?>

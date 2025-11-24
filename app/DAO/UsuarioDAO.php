@@ -4,10 +4,7 @@
     use App\Core\Database;
     use App\Models\Usuario;
     use PDO;
-
-    require_once 'app/Core/Database.php';
-    require_once 'app/Models/Usuario.php';
-
+    use PDOException;
     class UsuarioDAO {
         // Método para Login
         public function findByEmail(string $email): ?Usuario {
@@ -83,7 +80,7 @@
                         usu_nome = ?,
                         usu_email = ?,
                         usu_telefone = ?,
-                        usu_data = ?
+                        usu_data = ?,
                     WHERE id_usuario = ?";
 
             $stmt = $pdo->prepare($sql);
@@ -126,6 +123,57 @@
                 ]);
             } catch (\PDOException $e) {
                 error_log("Erro ao atualizar usuário no BD (com senha): " . $e->getMessage());
+                return false;
+            }
+        }
+
+        public function countAll(): int {
+            $pdo = Database::getConnection();
+            
+            $sql = "SELECT COUNT(id_usuario) AS total FROM usuarios";
+            
+            try {
+                $stmt = $pdo->prepare($sql);
+                $stmt->execute();
+                
+                $result = $stmt->fetch(PDO::FETCH_ASSOC);
+                
+                return (int) $result['total'];
+            } catch (PDOException $e) {
+                error_log("Erro ao contar usuários: " . $e->getMessage());
+                return 0;
+            }
+        }
+
+        public function findAll(): array {
+            $pdo = Database::getConnection();
+            
+            // O JOIN opcional se você quiser o nome da unidade do monitor
+            $sql = "SELECT u.*, uni.uni_nome 
+                    FROM usuarios u
+                    LEFT JOIN unidades uni ON u.unidade_id = uni.id_unidade
+                    ORDER BY u.usu_nome ASC";
+            
+            $stmt = $pdo->query($sql);
+            $usuarios = [];
+
+            while ($data = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                // Instancia o modelo Usuario para cada linha
+                $usuarios[] = new Usuario($data);
+            }
+            return $usuarios;
+        }
+
+        public function delete(int $id_usuario): bool {
+            $pdo = Database::getConnection();
+            $sql = "DELETE FROM usuarios WHERE id_usuario = ?";
+            $stmt = $pdo->prepare($sql);
+            
+            try {
+                return $stmt->execute([$id_usuario]);
+            } catch (\PDOException $e) { 
+                error_log("Erro ao excluir usuário: " . $e->getMessage());
+                // Por exemplo, se houver agendamentos associados a este usuário.
                 return false;
             }
         }

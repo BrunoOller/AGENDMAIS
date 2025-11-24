@@ -12,6 +12,17 @@
                 exit;
             }
 
+            $agendamentoDAO = new AgendamentoDAO();
+            $unidadeDAO = new UnidadeDAO();
+
+            // 2. BUSCA A LISTA DE EXAMES (ENUMs) DO BANCO DE DADOS
+            $exames = $agendamentoDAO->getExamesList();
+            
+            if (isset($exames['Erro'])) {
+                error_log("Erro ao carregar ENUMs de exames: " . $exames['Erro']);
+                $exames = []; // Garante que a view não quebre
+            }
+
             try {
                 $unidadeDAO = new UnidadeDAO();
                 $unidades = $unidadeDAO->findAll(); // Busca as unidades no banco

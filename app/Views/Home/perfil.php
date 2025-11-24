@@ -146,11 +146,9 @@ $foto_perfil_url = BASE_URL . 'app/wwwroot/img/fotos-perfil/3.png';
             if (!empty($agendamentos)):
                 $counter = 1;
                 foreach ($agendamentos as $ag):
-                    // CORREÇÃO: Usando os métodos separados e concatenando para criar o objeto DateTime
                     $data_hora_string = $ag->getAgendData() . ' ' . $ag->getAgendHora();
                     $data_hora = new \DateTime($data_hora_string);
 
-                    // Usando os getters corretos do Model
                     $status_text = $ag->getAgendStatus();
                     $descricao_exame = $ag->getAgendExame();
 
@@ -176,7 +174,7 @@ $foto_perfil_url = BASE_URL . 'app/wwwroot/img/fotos-perfil/3.png';
                             </div>
                             <div class="i-infos">
                                 <ul>
-                                    <!--<li><span id="emphasis">CPF:</span> <?php //echo htmlspecialchars($usuario->cpf ?? 'Não informado'); ?></li>-->
+                                    <!--<li><span id="emphasis">Unidade:</span> </li>-->
                                     <li><span id="emphasis">Horário escolhido:</span> <?php echo $data_hora->format('H:i'); ?></li>
                                     <li><span id="emphasis">Dia da consulta:</span> <?php echo $data_hora->format('d/m/Y'); ?></li>
                                     <li><span id="emphasis">Exame/Serviço:</span> <br> <span id="exam"><?php echo htmlspecialchars($ag->getAgendExame()); ?></span></li>

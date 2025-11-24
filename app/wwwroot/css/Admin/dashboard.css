@@ -140,6 +140,7 @@
                 width: 100%;
                 height: auto;
                 display: flex;
+                flex-direction: column;
                 background: linear-gradient(to bottom,
                         #4BC997 30%,
                         var(--cor-fundo-03) 40%,
@@ -147,7 +148,7 @@
                 background-repeat: no-repeat;
 
                 & .fundo-offcanva {
-                    width: 25%;
+                    width: 20%;
                     height: 100%;
                 }
 

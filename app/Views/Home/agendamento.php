@@ -132,14 +132,20 @@
                         <select id="select-exame" name="select_exame" required>
                             <option value="" disabled selected>Clique para selecionar</option>
                             <?php
-                            if (empty($exames)) {
-                                echo "<option value=\"\" disabled>Nenhum exame encontrado.</option>";
-                            } else {
-                                foreach ($exames as $value => $label) {
-                                    echo "<option value=\"" . htmlspecialchars($value) . "\">" . htmlspecialchars($label) . "</option>";
-                                }
-                            }
+                            // Verifica se $exames existe e não está vazio
+                            if (!empty($exames) && !isset($exames['Erro'])):
+                                foreach ($exames as $key => $nomeExame):
                             ?>
+                                    <option value="<?= htmlspecialchars($key) ?>">
+                                        <!-- Se você quiser um formato mais legível, pode capitalizar o nome, por exemplo -->
+                                        <?= htmlspecialchars(ucfirst(str_replace('_', ' ', $nomeExame))) ?>
+                                    </option>
+                                <?php
+                                endforeach;
+                            else:
+                                ?>
+                                <option value="">Nenhum exame disponível (Erro BD)</option>
+                            <?php endif; ?>
                         </select>
                     </div>
                 </div>
