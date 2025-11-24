@@ -17,12 +17,14 @@
 
             $agendamentoDAO = new AgendamentoDAO();
             $usuarioDAO = new UsuarioDAO();
+            $unidadeDAO = new UnidadeDAO();
 
             $totalAgendamentos = $agendamentoDAO->countAll();
             $totalUsuarios = $usuarioDAO->countAll();
-
+            $unidades = $unidadeDAO->findAll();
             $agendamentos = $agendamentoDAO->findAll();
             $usuarios = $usuarioDAO->findAll();
+            $agendamentos = $agendamentoDAO->findAllWithDetails();
                
             $data = [
                 'total_agendamentos' => $totalAgendamentos,
@@ -96,6 +98,33 @@
             $this->cadastrarUnidadeIndex();
         }
 
+        public function excluirUnidade() {
+        
+            if (!isset($_SESSION['logado']) || !$_SESSION['logado'] || !($_SESSION['usu_is_admin'] ?? false)) {
+                header("Location: index.php?controller=Login&action=index&msg=acesso_negado");
+                exit;
+            }
+
+            $idUnidade = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+
+            if (!$idUnidade) {
+                header("Location: index.php?controller=Admin&action=dashboard&msg=id_invalido");
+                exit;
+            }
+
+            $unidadeDAO = new UnidadeDAO();
+            $resultado = $unidadeDAO->delete($idUnidade);
+
+            if ($resultado) {
+                $msg = 'unidade_excluida'; 
+            } else {
+                $msg = 'erro_excluir_unidade'; 
+            }
+
+            header("Location: index.php?controller=Admin&action=dashboard&msg=" . $msg);
+            exit;
+        }
+
         public function gerenciarUsuarios() {
             if (!isset($_SESSION['logado']) || !$_SESSION['logado'] || !$_SESSION['usu_is_admin']) {
                 header("Location: index.php?controller=Home&action=index");
@@ -148,71 +177,44 @@
             exit;
         }
 
-        public function editarUsuarioIndex() {
-            // 1. Verificação de segurança (Apenas Admin pode acessar)
+        public function salvarEdicaoAgendamento() {
+        
             if (!isset($_SESSION['logado']) || !$_SESSION['logado'] || !($_SESSION['usu_is_admin'] ?? false)) {
                 header("Location: index.php?controller=Login&action=index&msg=acesso_negado");
                 exit;
             }
 
-            // 2. Coleta o ID do usuário a ser editado (vem da URL)
-            $idUsuario = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
-        
-            if (!$idUsuario) {
-                header("Location: index.php?controller=Admin&action=dashboard&msg=id_invalido");
+
+            $idAgendamento = filter_input(INPUT_POST, 'id_agendamento', FILTER_VALIDATE_INT);
+            $novoStatus = filter_input(INPUT_POST, 'agend_status', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+            if (!$idAgendamento || !$novoStatus) {
+                header("Location: index.php?controller=Admin&action=dashboard&msg=dados_invalidos");
                 exit;
             }
 
-            // 3. Busca o usuário no Banco de Dados
-            $usuarioDAO = new UsuarioDAO();
-            $usuarioModel = $usuarioDAO->findById($idUsuario);
+            $agendamentoDAO = new AgendamentoDAO();
+         
+            $agendamentoModel = $agendamentoDAO->findById($idAgendamento); 
 
-            if (!$usuarioModel) {
-                header("Location: index.php?controller=Admin&action=dashboard&msg=usuario_nao_encontrado");
+            if (!$agendamentoModel) {
+                header("Location: index.php?controller=Admin&action=dashboard&msg=agendamento_nao_encontrado");
                 exit;
             }
 
-            $usuario = $usuarioModel;
-        
-            // 5. Inclui a View do formulário de edição
-            // Crie este arquivo: app/Views/Admin/editar_usuario.php
-            include 'app/Views/Admin/editUser.php'; 
+            try {
+
+            $agendamentoModel->setAgendStatus($novoStatus);
+
+            $agendamentoDAO->update($agendamentoModel); 
+
+                header("Location: index.php?controller=Admin&action=dashboard&msg=sucesso_agendamento");
+                exit;
+            
+            } catch (\Throwable $th) {
+                header("Location: index.php?controller=Admin&action=dashboard&msg=erro_db_agendamento");
+                exit;
+            }
         }
-
-        public function editarUsuario() {
-            // 1. Verifica se o usuário é administrador (Segurança)
-            if (!isset($_SESSION['logado']) || !$_SESSION['logado'] || !$_SESSION['usu_is_admin']) {
-                header("Location: index.php?controller=Home&action=index");
-                exit;
-            }   
-
-            // 2. Busca o ID do usuário na URL
-            if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
-                header("Location: index.php?controller=Admin&action=dashboard");
-                exit;
-            }
-
-            $idUsuario = (int)$_GET['id'];
-            // Assumimos que UsuarioDAO e UnidadeDAO já foram incluídos
-            $usuarioDAO = new UsuarioDAO();
-    
-            // 3. Busca os dados do usuário e a lista de unidades
-            $usuario = $usuarioDAO->findById($idUsuario);
-    
-            if (!$usuario) {
-                header("Location: index.php?controller=Admin&action=dashboard&msg=usuario_nao_encontrado");
-                exit;
-            }
-
-            // 4. Envia os dados para a view
-            $data = [
-                'usuario' => $usuario
-            ];
-    
-            // 5. Carrega a view de Edição
-            // Certifique-se de que este caminho está correto
-            include 'app/Views/Admin/editUser.php'; 
-        }
-
     }
 ?>

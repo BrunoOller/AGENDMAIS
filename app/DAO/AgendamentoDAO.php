@@ -162,5 +162,27 @@
                 return 0;
             }
         }
+
+        public function findAllWithDetails(): array {
+            $pdo = Database::getConnection();
+
+            $sql = "SELECT 
+                        a.*,
+                        u.usu_nome AS usu_nome, 
+                        uni.uni_nome AS uni_nome
+                    FROM agendamentos a
+                    JOIN usuarios u ON a.usuario_id = u.id_usuario -- OBS: Usei a.usuario_id aqui, verifique o nome da sua coluna FK
+                    LEFT JOIN unidades uni ON a.unidade_id = uni.id_unidade
+                    ORDER BY a.agend_data DESC, a.agend_hora DESC";
+    
+            $stmt = $pdo->query($sql);
+            $agendamentos = [];
+
+            while ($data = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                // O Model Agendamento agora suporta 'usu_nome' e 'uni_nome' diretamente!
+                $agendamentos[] = new Agendamento($data); 
+            }
+            return $agendamentos;
+        }
     }
 ?>

@@ -42,6 +42,7 @@ CREATE TABLE IF NOT EXISTS agendamentos (
 );
 
 -- Adicionando Usuário Admin
+-- Senha: admin
 INSERT INTO usuarios 
     (usu_cpf, usu_nome, usu_data, usu_email, usu_senha, usu_telefone, usu_is_admin)
 VALUES 
@@ -65,9 +66,8 @@ ON DELETE SET NULL ON UPDATE CASCADE;
 -- Adicionando status ao agendamento
 ALTER TABLE agendamentos
 ADD COLUMN agend_status ENUM(
-    'Pendente',       /* Aguardando revisão do Monitor */
-    'Confirmado',     /* Revisado e aprovado pela Unidade */
-    'Rejeitado',      /* Revisado e não aprovado (ex: horário já ocupado) */
-    'Cancelado',      /* Cancelado pelo Paciente ou Monitor */
-    'Finalizado'      /* Paciente compareceu à consulta */
+    'Pendente',     
+    'Confirmado',     
+    'Realizado',      
+    'Cancelado'      
 ) NOT NULL DEFAULT 'Pendente';

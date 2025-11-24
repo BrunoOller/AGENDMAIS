@@ -59,5 +59,19 @@
             $pdo = Database::getConnection();
             return (int) $pdo->lastInsertId();
         }
+
+        public function delete(int $id): bool {
+            $pdo = Database::getConnection();
+            $sql = "DELETE FROM unidades WHERE id_unidade = ?";
+        
+            try {
+                $stmt = $pdo->prepare($sql);
+
+                return $stmt->execute([$id]);
+            } catch (\PDOException $e) {
+
+                return false;
+            }
+        }
     }
 ?>
