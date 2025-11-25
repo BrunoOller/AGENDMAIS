@@ -75,7 +75,6 @@
                 <div class="texts">
                     <h2>Radiologia Panorâmica</h2>
                     <span>Exame que captura toda a arcada dentária em uma única imagem.</span>
-                    <!-- Link atualizado para passar o parâmetro 'panoramica' -->
                     <a href="index.php?controller=Agendamento&action=agendamentoIndex&exame=panoramica">Agendar</a>
                 </div>
             </article>
@@ -86,7 +85,6 @@
                 <div class="texts">
                     <h2>Radiologia Periapical</h2>
                     <span>Detalhe da raiz e estruturas ao redor — indicado para diagnóstico pontual.</span>
-                    <!-- Link atualizado para passar o parâmetro 'periapical' -->
                     <a href="index.php?controller=Agendamento&action=agendamentoIndex&exame=panoramica">Agendar</a>
                 </div>
             </article>
@@ -97,7 +95,6 @@
                 <div class="texts">
                     <h2>Tomografia</h2>
                     <span>Imagem 3D para planejamento preciso em implantes e cirurgias complexas.</span>
-                    <!-- Link atualizado para passar o parâmetro 'tomografia' -->
                     <a href="index.php?controller=Agendamento&action=agendamentoIndex&exame=panoramica">Agendar</a>
                 </div>
             </article>

@@ -27,11 +27,9 @@
 
 <body>
     <?php
-    // Extrai os dados do array $data para variáveis locais
-    $total_usuarios = $data['total_usuarios'] ?? '0'; // Pega a contagem de usuários
-    $total_agendamentos = $data['total_agendamentos'] ?? '0'; // Pega a contagem de agendamentos
+    $total_usuarios = $data['total_usuarios'] ?? '0'; 
+    $total_agendamentos = $data['total_agendamentos'] ?? '0'; 
 
-    // Verifica se a variável de sessão de usuário está definida (para o nome na barra lateral)
     $usu_nome = $_SESSION['usu_nome'] ?? 'ADMINISTRADOR';
     ?>
     <main>
@@ -109,7 +107,6 @@
                             <?php if (!empty($agendamentos)): ?>
                                 <?php foreach ($agendamentos as $agendamento): ?>
                                     <?php
-                                    // Lógica de Status (Cores)
                                     $status = htmlspecialchars($agendamento->getAgendStatus());
                                     $badge_class = match (strtolower($status)) {
                                         'pendente' => 'badge bg-warning text-dark',
@@ -236,10 +233,8 @@
                                     <?php
                                     $usuarioData = $usuario instanceof \App\Models\Usuario ? $usuario : new \App\Models\Usuario($usuario);
 
-                                    // Define o tipo de usuário
                                     $tipoUsuario = $usuarioData->getUsuIsAdmin() ? 'Administrador' : ($usuarioData->getUnidadeId() ? 'Monitor' : 'Paciente');
 
-                                    // Destaca o Admin (Opcional)
                                     $rowClass = $usuarioData->getUsuIsAdmin() ? 'table-info' : '';
                                     ?>
                                     <tr class="<?= $rowClass ?>">
@@ -329,16 +324,13 @@
 
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-                // Encontra todos os botões de edição na tabela de agendamentos
                 const editButtons = document.querySelectorAll('.btn-edit-agendamento');
                 const modalElement = document.getElementById('editarAgendamentoModal');
 
-                // Define a variável de modal (necessário para o Bootstrap 5)
                 const editarAgendamentoModal = new bootstrap.Modal(modalElement);
 
                 editButtons.forEach(button => {
                     button.addEventListener('click', function() {
-                        // Pega os dados armazenados no botão (data-attributes)
                         const id = this.getAttribute('data-id');
                         const exame = this.getAttribute('data-exame');
                         const data = this.getAttribute('data-data');
@@ -347,10 +339,8 @@
                         const pacienteNome = this.getAttribute('data-paciente');
                         const unidadeNome = this.getAttribute('data-unidade-nome');
 
-                        // Formata a data para exibir
                         const dataFormatada = new Date(data + 'T00:00:00').toLocaleDateString('pt-BR');
 
-                        // 1. Preenche os detalhes (texto) no Modal
                         document.getElementById('modalAgendamentoID').textContent = id;
                         document.getElementById('modalPacienteNome').textContent = pacienteNome;
                         document.getElementById('modalAgendExame').textContent = exame;
@@ -358,20 +348,18 @@
                         document.getElementById('modalAgendHora').textContent = hora;
                         document.getElementById('modalUnidadeNome').textContent = unidadeNome;
 
-                        // 2. Preenche os campos de input (para envio do formulário)
-                        document.getElementById('inputAgendamentoID').value = id;
-                        document.getElementById('inputAgendStatus').value = status; // Preenche o <select> do Status
 
-                        // 3. Exibe o modal
+                        document.getElementById('inputAgendamentoID').value = id;
+                        document.getElementById('inputAgendStatus').value = status;
+
                         editarAgendamentoModal.show();
                     });
                 });
 
-                // Opcional: Tratar o retorno da edição
+
                 const urlParams = new URLSearchParams(window.location.search);
                 if (urlParams.get('msg') === 'sucesso_agendamento') {
-                    alert('Agendamento alterado com sucesso!'); // Exibe um alerta de sucesso
-                    // Limpa a URL para que a mensagem não reapareça ao atualizar
+                    alert('Agendamento alterado com sucesso!');
                     history.replaceState({}, document.title, window.location.pathname + window.location.search.replace(/&msg=sucesso_agendamento/g, ''));
                 }
             });

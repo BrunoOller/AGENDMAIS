@@ -21,7 +21,6 @@
             $usuarioModel = $usuarioDAO->findById($userId);
 
             if (!$usuarioModel) {
-                // Se o usuário não for encontrado (problema no BD), encerra a sessão por segurança
                 session_destroy();
                 header("Location: index.php?controller=Login&action=index&msg=erro_usuario_nao_encontrado");
                 exit;
@@ -52,7 +51,6 @@
 
         public function updateProfile() {
             if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-                // Se não for POST (alguém tentou acessar via URL), redireciona para a página de perfil
                 header("Location: index.php?controller=Perfil&action=perfilIndex");
                 exit;
             }
@@ -79,16 +77,14 @@
             $updateSuccess = false;
 
             if (!empty($senha)) {
-                // 2.1. Se a senha foi preenchida: Criptografa e usa o método completo
                 $senha_hashed = password_hash($senha, PASSWORD_DEFAULT);
                 $updateSuccess = $usuarioDAO->updateWithPassword($userId, $nome, $email, $telefone, $data_nascimento, $senha_hashed);
             } else {
-                // 2.2. Se a senha NÃO foi preenchida: Usa o método sem a senha
+
                 $updateSuccess = $usuarioDAO->update($userId, $nome, $email, $telefone, $data_nascimento);
             }
 
             if ($updateSuccess) {
-                // Atualiza a sessão após o sucesso no BD (importante para o cabeçalho)
                 $_SESSION['usuario_nome'] = $nome; 
                 $_SESSION['usuario_email'] = $email;
                 header("Location: index.php?controller=Perfil&action=perfilIndex&msg=update_sucesso");

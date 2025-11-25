@@ -15,25 +15,23 @@
             $agendamentoDAO = new AgendamentoDAO();
             $unidadeDAO = new UnidadeDAO();
 
-            // 2. BUSCA A LISTA DE EXAMES (ENUMs) DO BANCO DE DADOS
             $exames = $agendamentoDAO->getExamesList();
             
             if (isset($exames['Erro'])) {
                 error_log("Erro ao carregar ENUMs de exames: " . $exames['Erro']);
-                $exames = []; // Garante que a view não quebre
+                $exames = [];
             }
 
             try {
                 $unidadeDAO = new UnidadeDAO();
-                $unidades = $unidadeDAO->findAll(); // Busca as unidades no banco
+                $unidades = $unidadeDAO->findAll();
             } catch (\Exception $e) {
-                // Trata erro de BD ou de carregamento de classes
                 $unidades = []; 
                 error_log("Erro ao carregar unidades: " . $e->getMessage());
             }
 
-            $msg = $_GET['msg'] ?? null; // Para exibir mensagens de sucesso/erro
-            include 'app/Views/Home/agendamento.php'; // Sua View HTML
+            $msg = $_GET['msg'] ?? null;
+            include 'app/Views/Home/agendamento.php';
         }
 
         public function agendar() {

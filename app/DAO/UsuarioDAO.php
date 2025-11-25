@@ -6,7 +6,6 @@
     use PDO;
     use PDOException;
     class UsuarioDAO {
-        // Método para Login
         public function findByEmail(string $email): ?Usuario {
             $pdo = Database::getConnection();
             
@@ -24,7 +23,6 @@
             return null;
         }
 
-        // Método de Buscar Usuário pelo ID
         public function findById(int $id_usuario): ?Usuario {
             $pdo = Database::getConnection();
             
@@ -43,7 +41,6 @@
             return null;
         }
 
-        // Método para Cadastro
         public function create(Usuario $usuario): bool {
             $pdo = Database::getConnection();
 
@@ -52,7 +49,6 @@
 
             $stmt = $pdo->prepare($sql);
 
-            //$hashedPassword = password_hash($usuario->getUsuSenha(), PASSWORD_DEFAULT);
             $senha_hash = $usuario->getUsuSenha();
 
             try {
@@ -68,7 +64,6 @@
                 ]);
             } catch (\PDOException $e) {
                 die("Erro do BD ao criar usuário: " . $e->getMessage());
-                // Em caso de email duplicado ou outro erro do BD
                 return false;
             }
         }
@@ -90,7 +85,7 @@
                     $nome,
                     $email,
                     $telefone,
-                    $data_nascimento, // Mapeado para a coluna 'usu_data'
+                    $data_nascimento,
                     $userId
                 ]);
             } catch (\PDOException $e) {
@@ -117,8 +112,8 @@
                     $nome,
                     $email,
                     $telefone,
-                    $data_nascimento, // Mapeado para a coluna 'usu_data'
-                    $senha_hashed, // A senha Criptografada
+                    $data_nascimento,
+                    $senha_hashed,
                     $userId
                 ]);
             } catch (\PDOException $e) {

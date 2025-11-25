@@ -60,7 +60,6 @@
                 ];
 
                 $senhaPura = $_POST['usu_senha'] ?? '';
-                // Cria o hash da senha usando o algoritmo padrão (bcrypt, o mais seguro)
                 $senhaHash = password_hash($senhaPura, PASSWORD_DEFAULT);
 
                 $usuarioData = [
@@ -133,29 +132,26 @@
 
             $usuarioDAO = new UsuarioDAO();
         
-            // Agora podemos usar o novo método findAll()
             $usuarios = $usuarioDAO->findAll(); 
 
             $data = [
                 'usuarios' => $usuarios,
-                'msg' => $_GET['msg'] ?? null // Para mensagens de sucesso/erro após uma exclusão
+                'msg' => $_GET['msg'] ?? null
             ];
 
             include 'app/Views/Admin/dashboard.php';
         }
 
         public function excluirUsuario() {
-            // 1. Verifica se o usuário é administrador (Segurança)
             if (!isset($_SESSION['logado']) || !$_SESSION['logado'] || !$_SESSION['usu_is_admin']) {
                 header("Location: index.php?controller=Home&action=index");
                 exit;
             }
     
-        // 2. Verifica se o ID do usuário foi fornecido
             if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                 $idUsuario = (int)$_GET['id'];
         
-                // **PREVENÇÃO CRÍTICA**: Impede que o admin exclua a si mesmo
+        
                 if ($idUsuario === $_SESSION['id_usuario']) {
                     header("Location: index.php?controller=Admin&action=dashboard&msg=erro_auto_exclusao");
                     exit;
@@ -163,7 +159,6 @@
 
                 $usuarioDAO = new UsuarioDAO();
 
-            // 3. Tenta excluir
                 if ($usuarioDAO->delete($idUsuario)) {
                     header("Location: index.php?controller=Admin&action=dashboard&msg=excluido_sucesso_usuario");
                     exit;
@@ -172,7 +167,6 @@
                     exit;
                 }
             }
-            // 4. Redireciona se não houver ID válido
             header("Location: index.php?controller=Admin&action=dashboard");
             exit;
         }

@@ -12,8 +12,6 @@
         private static $charset = 'utf8mb4';
         private static $pdo = null;
 
-        // Retorna a instância da conexão PDO
-
         public static function getConnection() {
             if (self::$pdo === null) {
                 $dsn = "mysql:host=" . self::$host . ";dbname=" . self::$db . ";charset=" . self::$charset;
@@ -25,7 +23,6 @@
                 try {
                     self::$pdo = new PDO($dsn, self::$user, self::$pass, $options);
                 } catch (\PDOException $e) {
-                    // Caso dar erro na conexão, interrompe a execução e exibe a mensagem de erro
                     die("Erro ao se conectar: ". $e->getMessage());
                 }
             }

@@ -25,13 +25,11 @@
                     $agendamento->getAgendStatus()
                 ]);
             } catch (PDOException $e) {
-                // Em caso de erro do BD
                 return false;
             }
         }
 
         public function getExamesList(): array {
-            // Mantendo a lógica de conexão dentro do método
             $pdo = Database::getConnection(); 
             
             $sql = "SHOW COLUMNS FROM agendamentos LIKE 'agend_exame'";
@@ -42,15 +40,12 @@
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
             if (empty($result) || !isset($result['Type'])) {
-                // Retorna um array vazio em caso de falha na leitura da coluna
                 return [];
             }
             
-            // Lógica para extrair e limpar os valores do ENUM
             $enumString = str_replace(['enum(', ')'], '', $result['Type']);
             $enumValues = explode(',', str_replace("'", '', $enumString));
             
-            // Cria um array associativo onde a chave e o valor são iguais
             return array_combine($enumValues, $enumValues);
         }
 
@@ -171,7 +166,7 @@
                         u.usu_nome AS usu_nome, 
                         uni.uni_nome AS uni_nome
                     FROM agendamentos a
-                    JOIN usuarios u ON a.usuario_id = u.id_usuario -- OBS: Usei a.usuario_id aqui, verifique o nome da sua coluna FK
+                    JOIN usuarios u ON a.usuario_id = u.id_usuario 
                     LEFT JOIN unidades uni ON a.unidade_id = uni.id_unidade
                     ORDER BY a.agend_data DESC, a.agend_hora DESC";
     
@@ -179,7 +174,6 @@
             $agendamentos = [];
 
             while ($data = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                // O Model Agendamento agora suporta 'usu_nome' e 'uni_nome' diretamente!
                 $agendamentos[] = new Agendamento($data); 
             }
             return $agendamentos;

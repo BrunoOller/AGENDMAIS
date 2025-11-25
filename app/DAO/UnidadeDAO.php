@@ -21,22 +21,19 @@
                     $unidade->getUniTelefone()
                 ]);
             } catch (\PDOException $e) {
-                // Em caso de erro do BD
                 return false;
             }
         }
 
         public function findAll(): array {
             $pdo = Database::getConnection();
-            $sql = "SELECT * FROM unidades ORDER BY uni_nome"; // Usando 'unidades'
+            $sql = "SELECT * FROM unidades ORDER BY uni_nome";
 
-            // Usando prepare é a melhor prática
             $stmt = $pdo->prepare($sql);
             $stmt->execute();
 
             $unidades = [];
             while ($data = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                // Instancia o Model Unidade
                 $unidades[] = new Unidade($data);
             }
             return $unidades;

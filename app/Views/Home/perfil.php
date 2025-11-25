@@ -16,7 +16,6 @@ function showMessage($msg)
 
 $feedback = showMessage($_GET['msg'] ?? null);
 
-// Garante que a foto de perfil usa a URL base (o 3.png é um placeholder)
 $foto_perfil_url = BASE_URL . 'app/wwwroot/img/fotos-perfil/semfoto.jpg';
 ?>
 
@@ -192,8 +191,8 @@ $foto_perfil_url = BASE_URL . 'app/wwwroot/img/fotos-perfil/semfoto.jpg';
             <?php endif; ?>
         </div>
 
-        <!-- O botão "Ver mais" necessitaria de uma lógica JavaScript/AJAX para paginação, mantendo-o estático por enquanto. -->
-        <?php if (!empty($agendamentos) && count($agendamentos) > 5): // Exemplo de condição para exibir 
+        
+        <?php if (!empty($agendamentos) && count($agendamentos) > 5):
         ?>
             <button id="see-more">Ver mais</button>
         <?php endif; ?>
