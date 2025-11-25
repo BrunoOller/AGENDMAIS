@@ -89,6 +89,7 @@ header {
     & form {
         max-width: 45rem;
         width: 30%;
+        min-width: 22rem;
         height: auto;
         display: flex;
         flex-wrap: wrap;
@@ -193,6 +194,10 @@ header {
             font-size: 1rem;
             background-color: #575757;
         }
+        
+        & p {
+            margin-bottom: 0;
+        }
 
         & p,
         a {
@@ -263,6 +268,56 @@ input[type=number] {
     appearance: textfield;
 }
 
-input[type=number] {
-    appearance: textfield;
+@media (max-width: 768px) {
+    .btn-voltar {
+        top: 2rem;
+        left: 1rem;
+    }
+
+    header #logo {
+        height: 4rem;
+    }
+
+    #h-content .line {
+        width: 80%;
+    }
+
+    #content form {
+        width: 90%; 
+        min-width: unset;
+        max-width: 90%; 
+    }
+
+    #content .alert {
+        width: 90% !important;
+        margin: 0 auto 10px auto; 
+        padding: 10px;
+    }
+
+    #content form .f-email label,
+    #content form .f-email input,
+    #content form .f-senha label,
+    #content form .f-senha input,
+    #content form .f-btn .button-s,
+    #content .haveAccount {
+        width: 100%;
+        min-width: unset;
+        max-width: 100%;
+        text-align: left;
+    }
+    
+    #content .agree {
+        width: 95%;
+        min-width: unset;
+        max-width: 100%;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 1rem 1rem;
+        justify-content: flex-start;
+    }
+    
+    #content .agree p {
+        text-align: left;
+        padding: 0;
+    }
 }

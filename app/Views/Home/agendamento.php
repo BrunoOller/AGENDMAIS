@@ -24,7 +24,7 @@
             align-items: center;
 
             & .c-section {
-                width: 50%;
+                width: 100%;
                 height: auto;
                 display: flex;
                 justify-content: center;
@@ -71,6 +71,20 @@
                 }
             }
         }
+
+        @media (max-width: 768px) {
+            .choose .c-section {
+                flex-direction: column;
+                gap: 1.5rem;
+                padding: 2rem 1rem;
+            }
+
+            .choose .c-section .s-data,
+            .choose .c-section .s-horario {
+                width: 100%;
+                padding: 0;
+            }
+        }
     </style>
 </head>
 
@@ -84,6 +98,7 @@
     <form method="POST" action="index.php?controller=Agendamento&action=agendar">
 
         <div class="gradeAgendamento">
+            <div class="itens"></div>
             <h2>AGENDAMENTO DE CONSULTA:</h2>
             <p>Agende aqui de forma rápida e simples!</p>
         </div>
@@ -130,14 +145,13 @@
                     <h2>Selecione um exame*</h2>
                     <div class="selection">
                         <select id="select-exame" name="select_exame" required>
-                            <option value="" disabled selected>Clique para selecionar</option>
+                            <option value="" disabled selected>Selecionar</option>
                             <?php
                             // Verifica se $exames existe e não está vazio
                             if (!empty($exames) && !isset($exames['Erro'])):
                                 foreach ($exames as $key => $nomeExame):
                             ?>
                                     <option value="<?= htmlspecialchars($key) ?>">
-                                        <!-- Se você quiser um formato mais legível, pode capitalizar o nome, por exemplo -->
                                         <?= htmlspecialchars(ucfirst(str_replace('_', ' ', $nomeExame))) ?>
                                     </option>
                                 <?php
@@ -153,8 +167,7 @@
                     <h2>Selecione a unidade desejada*</h2>
                     <div class="selection">
                         <select id="select-unidade" name="unidade_id" required>
-                            <option value="" disabled selected>Clique para selecionar</option> <!--o dropdown está aqui, tem esses pois era para demonstração, pode retirá-los-->
-                            <?php
+                            <option value="" disabled selected>Selecionar</option> <?php
                             // Verifica se a variável $unidades existe e é um array
                             if (isset($unidades) && is_array($unidades)) {
                                 // Itera sobre cada objeto Unidade retornado do banco de dados
@@ -202,15 +215,6 @@
         </div>
     </form>
 
-    <!--<div class="observacao">
-        <div class="container obs-section">
-            <h2>Observações (Opcional):</h2>
-            <textarea name="obs" placeholder="Coloque suas observações aqui." id="obs"></textarea>
-        </div>
-    </div>-->
-
-
-    <!-- Links JS -->
     <script src="<?php echo BASE_URL; ?>app/wwwroot/js/agendamento/script-exame.js"></script>
     <script src="<?php echo BASE_URL; ?>app/wwwroot/js/agendamento/script-unidades.js"></script>
     <script src="<?php echo BASE_URL; ?>app/wwwroot/js/agendamento/script-data-hora.js"></script>

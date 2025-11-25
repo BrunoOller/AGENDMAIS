@@ -11,7 +11,6 @@ nav {
     padding: 1rem 0 0 0;
     flex-direction: column;
     align-items: center;
-    gap: .05rem;
 
     & h2 {
         font-size: 1.5rem;
@@ -46,7 +45,7 @@ span {
     align-items: center;
 
     & .s-section {
-        width: 50%;
+        width: 100%;
         height: auto;
         display: flex;
         justify-content: center;
@@ -197,5 +196,46 @@ span {
             background-color: var(--cor-textos-footer-02);
             transition: all .35s ease-in;
         }
+    }
+}
+
+@media (max-width: 768px) {
+
+    .gradeAgendamento h2 {
+        font-size: 1.3rem;
+    }
+    .gradeAgendamento p {
+        font-size: 1rem;
+    }
+    span {
+        font-size: 1.5rem;
+    }
+
+    .selections .s-section {
+        flex-direction: column; 
+        gap: 1.5rem; 
+        padding: 2rem 1rem; 
+    }
+
+    .selections .s-section .s-exame,
+    .selections .s-section .s-unidade {
+        width: 100%; 
+        padding: 0; 
+    }
+
+    .text-image .ti-section {
+        width: 90%;
+    }
+    .text-image .ti-section #info-desc {
+        width: 95%; 
+    }
+
+    .observacao .obs-section {
+        width: 90%; 
+        padding: 0 1rem;
+    }
+    .observacao .obs-section textarea {
+        min-height: 150px;
+        max-height: 250px;
     }
 }
