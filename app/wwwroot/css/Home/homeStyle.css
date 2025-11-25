@@ -169,8 +169,9 @@ nav {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    
     & .pa-blocks {
+        max-width: 1300px;
         width: 100%;
         height: auto;
         display: flex;
@@ -183,7 +184,7 @@ nav {
         & .pa-block {
             display: flex;
             gap: 1rem;
-            width: 480px;
+            width: 400px;
             height: 220px;
             align-items: flex-start;
             background: var(--card-bg, #fff);
