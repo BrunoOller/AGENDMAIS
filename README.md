@@ -1,7 +1,7 @@
 <div align="center" id="inicio">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="resources/assets/images/logos/logo-bora-rachao-white.png">
-    <source media="(prefers-color-scheme: light)" srcset="resources/assets/images/logos/logo-bora-rachao-black.png">
+    <source media="(prefers-color-scheme: dark)" srcset="app/wwwroot/img/logo-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="app/wwwroot/img/logo.svg">
     <img alt="Logo AGENDMAIS" src="resources/assets/images/logos/logo-bora-rachao-white.png" width="550">
   </picture>
   
@@ -135,28 +135,39 @@ O sistema deve ser compatível com outras soluções administrativas utilizadas 
 # 3. Regras de negócio
 ### Figura 1 - Canvas, modelo de negócios:
 <div align="center">
-  <img alt="Figura 1 - Canvas, modelo de negócios" src=".github/modelo-canvas.png" width="550">
+  <img alt="Figura 1 - Canvas, modelo de negócios" src=".github/ModeloNegocio.jpeg" width="550">
 </div>
 
 ## 3.1. O que será elaborado?
 ### Proposta de valor:
-  - ...
+  - Facilitar o agendamento de consultas em Radiologias Odontológicas por meio de um website.
+  - Eliminar a necessidade de filas e deslocamentos até as unidades.
 
 ## 3.2. Como será elaborado?
 ### Parcerias principais:
-  - ...
+  - Empresas de radiologia Odontológica.
 ### Atividades principais:
-  - ...
+  - Agendamento Online.
+  - Facilitar o acesso às Radiologias Odontológicas.
 ### Recursos principais:
-  - ...
+  - Equipe de desenvolvimento.
+  - Internet.
+  - Plataforma de hospedagem
+  - Conteúdo e informações
 
 ## 3.3. Para quem será elaborado?
 ### Segmento de mercado:
-  - ...
+  - Usuários Locais
+  - Patrocinadores e investidores
+  - Radiologia local
+  - Empresa de radiologia privada
 ### Relacionamento com o cliente: 
-  - ...
+  - Atendimento ao cliente
+  - Agendar Serviços oferecidos pelas Radiologias
 ### Canais: 
-  - ...
+  - Website
+  - Redes Sociais
+  - Parceria local
 
 ## 3.4. Quanto custará?
 ### Estrutura de custos: 
@@ -165,7 +176,7 @@ O sistema deve ser compatível com outras soluções administrativas utilizadas 
   - Custo de patente;
   - Suporte ao cliente.
 ### Fontes de renda: 
-  - ...
+  - Devido ao caráter educacional e acadêmico, não estamos considerando fontes de Receita.
 
 [Voltar para o início](#inicio)
 
@@ -187,18 +198,18 @@ O sistema se mostra operacionalmente viável devido à sua interface intuitiva e
 # 5. Design
 ### Paleta de cores:
 
-| Nome                      | Hexadecimal | Cor |
-|---------------------------|:-----------:|:---:|
-| Branco                    | #FFFFFF     | [![](https://img.shields.io/badge/____-FFFFFF?style=for-the-badge)](#) |
-| Cinza (gelo)              | #F3F2F2     | [![](https://img.shields.io/badge/____-F3F2F2?style=for-the-badge)](#) |
-| Cinza (claro)             | #EDEDED     | [![](https://img.shields.io/badge/____-EDEDED?style=for-the-badge)](#) |
-| Cinza (médio)             | #BFBFBF     | [![](https://img.shields.io/badge/____-BFBFBF?style=for-the-badge)](#) |
-| Cinza (médio-escuro)      | #646464     | [![](https://img.shields.io/badge/____-646464?style=for-the-badge)](#) |
-| Cinza (escuro)            | #323232     | [![](https://img.shields.io/badge/____-323232?style=for-the-badge)](#) |
-| Preto carvão              | #1F1F1F     | [![](https://img.shields.io/badge/____-1F1F1F?style=for-the-badge)](#) |
-| Preto                     | #000000     | [![](https://img.shields.io/badge/____-000000?style=for-the-badge)](#) |
-| Verde menta               | #4BC997     | [![](https://img.shields.io/badge/____-4BC997?style=for-the-badge)](#) |
-| Verde vibrante            | #039E60     | [![](https://img.shields.io/badge/____-039E60?style=for-the-badge)](#) |
+| Nome             | Hexadecimal | Cor |
+|------------------|:-----------:|:---:|
+| Preto carvão      | #1F1F1F     | ![](https://img.shields.io/badge/-%231F1F1F?style=for-the-badge&color=1F1F1F) |
+| Branco            | #FFFFFF     | ![](https://img.shields.io/badge/-%23FFFFFF?style=for-the-badge&color=FFFFFF) |
+| Rosa claro        | #EC91A3     | ![](https://img.shields.io/badge/-%23EC91A3?style=for-the-badge&color=EC91A3) |
+| Preto             | #000000     | ![](https://img.shields.io/badge/-%23000000?style=for-the-badge&color=000000) |
+| Cinza (escuro)    | #323232     | ![](https://img.shields.io/badge/-%23323232?style=for-the-badge&color=323232) |
+| Cinza (gelo)      | #F3F2F2     | ![](https://img.shields.io/badge/-%23F3F2F2?style=for-the-badge&color=F3F2F2) |
+| Cinza (médio)     | #414141     | ![](https://img.shields.io/badge/-%23414141?style=for-the-badge&color=414141) |
+| Cinza             | #797979     | ![](https://img.shields.io/badge/-%23797979?style=for-the-badge&color=797979) |
+| Rosa queimado     | #B76374     | ![](https://img.shields.io/badge/-%23B78374?style=for-the-badge&color=B76374) |
+| Cinza (claro)     | #D9D9D9     | ![](https://img.shields.io/badge/-%23D9D9D9?style=for-the-badge&color=D9D9D9) |
 
 ### Tipografia: 
 - [Montserrat - Google Fonts](https://fonts.google.com/specimen/Montserrat)
@@ -229,12 +240,12 @@ graph TD
 
 - ### Figura 2 - Protótipo da página principal Home:
 <div align="center">
-  <img alt="Figura 2 - Protótipo da página principal Home" src=".github/home-prototipo.png" width="550">
+  <img alt="Figura 2 - Protótipo da página principal Home" src=".github/DesktopHome.svg" width="550">
 </div>
 
 - ### Figura 3 - Protótipo da tela de perfil do usuário:
 <div align="center">
-  <img alt="Figura 3 - Protótipo da tela de perfil do usuário" src=".github/profile-prototipo.png" width="550">
+  <img alt="Figura 3 - Protótipo da tela de perfil do usuário" src=".github/DesktopPerfil.svg" width="550">
 </div>
 
 [Voltar para o início](#inicio)
@@ -244,12 +255,71 @@ graph TD
   
 - ### Figura 4 - Página Home:
 <div align="center">
-  <img alt="Figura 4 - Página Home" src=".github/home-aplicacao.jpeg" width="550">
+  <img alt="Figura 4 - Página Home" src=".github/DesktopHome.svg" width="550">
 </div>
 
 - ### Figura 5 - Página Perfil do Usuário:
 <div align="center">
-  <img alt="Figura 5 - Página Perfil do Usuário" src=".github/profile-aplicacao.jpeg" width="550">
+  <img alt="Figura 5 - Página Perfil do Usuário" src=".github/DesktopPerfil.svg" width="550">
+</div>
+
+[Voltar para o início](#inicio)
+
+# 8. Diagramas da aplicação
+Os diagramas da aplicação representam de forma visual a estrutura e o funcionamento do sistema, auxiliando na compreensão e no planejamento do projeto. Por meio da notação UML, é possível visualizar as principais interações, classes e entidades do banco de dados, facilitando o entendimento entre todos os envolvidos no desenvolvimento.
+
+## 8.1. Diagrama de Casos de Uso
+Mostra como os usuários interagem com o sistema e quais são as principais funcionalidades disponíveis. Ajuda a identificar os papéis dos atores e os fluxos de uso da aplicação.
+- ### Figura 6:
+<div align="center">
+  <img alt="Figura 6 - Diagrama de Casos de Uso" src=".github/CasosDeUso.png" width="550">
+</div>
+
+## 8.2. Diagrama de Classes
+Apresenta a estrutura interna do sistema, mostrando as classes, seus atributos, métodos e relacionamentos. Permite compreender a organização do código e a relação entre os componentes.
+
+```mermaid
+classDiagram
+direction LR
+    class Usuario {
+	    - id_usuario: ?int
+	    - CPF: string
+	    - nome: string
+	    - email: string
+	    - senha: string
+	    - telefone: string
+	    - data_nascimento: date
+	    - is_admin: boolean
+	    + agendarExame()
+	    + listarAgendamentos()
+    }
+    class Agendamento {
+	    - id_agendamento: ?int
+      - unidade_id: int
+      - usuario_id: int
+      - exame: enum
+	    - data: date
+	    - hora: time
+	    - status: enum
+      - uni_nome: ?string
+	    - usu_nome: ?string
+	    + confirmar() 
+	    + cancelar()
+      + consultar () 
+    }
+    class Unidade {
+	    - id_unidade: ?int
+	    - endereco: string
+	    - telefone: string
+    }
+    Usuario "1" *--> "n" Agendamento
+    Unidade "1" *--> "n" Agendamento
+```
+## 8.3. Diagrama de Banco de Dados
+Representa as tabelas e os relacionamentos que compõem a base de dados do sistema. Serve para planejar e documentar a forma como as informações serão armazenadas e conectadas.
+- ### Figura 7:
+<div align="center">
+  <img alt="Figura 7 - Diagrama de Banco de Dados" src=".github/modelBDAGENDMAIS-semfundo.png'" width="550">
 </div>
 
 [Voltar para o início](#inicio)
