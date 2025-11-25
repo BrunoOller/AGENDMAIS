@@ -71,3 +71,25 @@ ADD COLUMN agend_status ENUM(
     'Realizado',      
     'Cancelado'      
 ) NOT NULL DEFAULT 'Pendente';
+
+INSERT INTO usuarios (usu_cpf, usu_nome, usu_email, usu_senha, usu_telefone, usu_is_admin) VALUES
+('12345678901', 'Ana Beatriz Santos', 'ana.santos@emailficticio.com', '$2y$10$wZ4ZjNZJlEYKtu/zwMVtGeyPEYKQm/MvDMvE8ySKug3HRipYu7AZy', '(11) 98765-4321', 0),
+('23456789012', 'Carlos Eduardo Lima', 'carlos.lima@mailtest.com.br', '$2y$10$wZ4ZjNZJlEYKtu/zwMVtGeyPEYKQm/MvDMvE8ySKug3HRipYu7AZy', '(21) 99876-5432', 0),
+('34567890123', 'Mariana Almeida Costa', 'mariana.costa@projetofict.net', '$2y$10$wZ4ZjNZJlEYKtu/zwMVtGeyPEYKQm/MvDMvE8ySKug3HRipYu7AZy', '(31) 97654-3210', 0),
+('45678901234', 'João Victor Pereira', 'jv.pereira@dados.online', '$2y$10$wZ4ZjNZJlEYKtu/zwMVtGeyPEYKQm/MvDMvE8ySKug3HRipYu7AZy', '(41) 96543-2109', 0),
+('56789012345', 'Fernanda Ribeiro Melo', 'fernanda.melo@maildev.com', '$2y$10$wZ4ZjNZJlEYKtu/zwMVtGeyPEYKQm/MvDMvE8ySKug3HRipYu7AZy', '(51) 95432-1098', 0),
+('67890123456', 'Rafael de Souza Junior', 'rafael.junior@emailfake.com', '$2y$10$wZ4ZjNZJlEYKtu/zwMVtGeyPEYKQm/MvDMvE8ySKug3HRipYu7AZy', '(61) 94321-0987', 0),
+('78901234567', 'Larissa Viana Gomes', 'larissa.vgomes@teste.info', '$2y$10$wZ4ZjNZJlEYKtu/zwMVtGeyPEYKQm/MvDMvE8ySKug3HRipYu7AZy', '(71) 93210-9876', 0),
+('89012345678', 'Pedro Henrique Dantas', 'ph.dantas@nuvem.digital', '$2y$10$wZ4ZjNZJlEYKtu/zwMVtGeyPEYKQm/MvDMvE8ySKug3HRipYu7AZy', '(81) 92109-8765', 0),
+('90123456789', 'Juliana Morais Castro', 'ju.castro@dataficticia.org', '$2y$10$wZ4ZjNZJlEYKtu/zwMVtGeyPEYKQm/MvDMvE8ySKug3HRipYu7AZy', '(92) 91098-7654', 0),
+('01234567890', 'Bruno Tavares Rocha', 'bruno.rocha@dev.com', '$2y$10$wZ4ZjNZJlEYKtu/zwMVtGeyPEYKQm/MvDMvE8ySKug3HRipYu7AZy', '(11) 91234-5678', 0),
+('10987654321', 'Luana Ferreira Borges', 'luana.ferreira@testemail.br', '$2y$10$wZ4ZjNZJlEYKtu/zwMVtGeyPEYKQm/MvDMvE8ySKug3HRipYu7AZy', '(21) 92345-6789', 0),
+('21098765432', 'Gustavo Santos Silva', 'gustavo.ss@ficticios.com.br', '$2y$10$wZ4ZjNZJlEYKtu/zwMVtGeyPEYKQm/MvDMvE8ySKug3HRipYu7AZy', '(31) 93456-7890', 0),
+('32109876543', 'Patricia Sampaio Neves', 'patricia.neves@devtools.net', '$2y$10$wZ4ZjNZJlEYKtu/zwMVtGeyPEYKQm/MvDMvE8ySKug3HRipYu7AZy', '(41) 94567-8901', 0),
+('43210987654', 'André Felipe Martins', 'andre.martins@exemplo.online', '$2y$10$wZ4ZjNZJlEYKtu/zwMVtGeyPEYKQm/MvDMvE8ySKug3HRipYu7AZy', '(51) 95678-9012', 0),
+('54321098765', 'Camila Dias Nogueira', 'camila.nogueira@email.site', '$2y$10$wZ4ZjNZJlEYKtu/zwMVtGeyPEYKQm/MvDMvE8ySKug3HRipYu7AZy', '(61) 96789-0123', 0),
+('65432109876', 'Lucas Pires Machado', 'lucas.machado@testing.info', '$2y$10$wZ4ZjNZJlEYKtu/zwMVtGeyPEYKQm/MvDMvE8ySKug3HRipYu7AZy', '(71) 97890-1234', 0),
+('76543210987', 'Érica Guedes Reis', 'erica.reis@fakedata.com', '$2y$10$wZ4ZjNZJlEYKtu/zwMVtGeyPEYKQm/MvDMvE8ySKug3HRipYu7AZy', '(81) 98901-2345', 0),
+('87654321098', 'Diego Costa Bernardes', 'diego.bernardes@corp.test', '$2y$10$wZ4ZjNZJlEYKtu/zwMVtGeyPEYKQm/MvDMvE8ySKug3HRipYu7AZy', '(92) 90123-4567', 0),
+('98765432109', 'Vanessa Sales Oliveira', 'vanessa.sales@emailtest.net', '$2y$10$wZ4ZjNZJlEYKtu/zwMVtGeyPEYKQm/MvDMvE8ySKug3HRipYu7AZy', '(11) 91122-3344', 0),
+('09876543210', 'Ricardo Mendes Rocha', 'ricardo.rocha@dadosdev.com', '$2y$10$wZ4ZjNZJlEYKtu/zwMVtGeyPEYKQm/MvDMvE8ySKug3HRipYu7AZy', '(21) 92233-4455', 0);
