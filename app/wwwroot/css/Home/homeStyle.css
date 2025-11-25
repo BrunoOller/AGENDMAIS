@@ -50,7 +50,7 @@ nav {
 
             & #subphrase {
                 font-weight: 500;
-                font-size: 1rem;
+                font-size: 1.1rem;
                 color: #424242;
             }
         }
@@ -85,7 +85,10 @@ nav {
     gap: 1.75rem;
 
     & .blocks {
+        max-width: 1250px;
+        width: 100%;
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         gap: 2rem;
 
@@ -263,12 +266,16 @@ nav {
     gap: 1.75rem;
 
     & .blocks {
+        max-width: 1250px;
+        width: 100%;
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         gap: 2rem;
 
         & .block {
-            width: 385px;
+            width: 23%;
+            min-width: 385px;
             height: auto;
 
             border: 1px solid #d3d3d3;
@@ -359,11 +366,16 @@ nav {
 
     & .sa-content {
         display: flex;
+        width: 1100px;
+        flex-wrap: wrap-reverse;
+        justify-content: center;
         align-items: center;
-        gap: 1.5rem;
+        row-gap: 1.5rem;
+        column-gap: 2.5rem;
+        
 
         & .texts-e-btn {
-            width: 45%;
+            width: 500px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -406,7 +418,7 @@ nav {
         }
 
         & img {
-            width: 45%;
+            width: 500px;
             height: auto;
             border-radius: 15px;
             border: 1px solid #d3d3d3;

@@ -13,10 +13,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
 
+    <!-- Links CSS -->
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>app/wwwroot/css/reset.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>app/wwwroot/css/color.css">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>app/wwwroot/css/Home/aboutStyle.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>app/wwwroot/css/Home/aboutStyle.css?v=1.0">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>app/wwwroot/css/globalStyle.css">
+
+    <!-- Link Fontawesome -->
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v7.1.0/css/all.css">
 </head>
 
 <body>
@@ -26,8 +30,8 @@
     <section class="bemvindo">
         <div class="box">
             <h1>BEM VINDO(A) AO AGEND+</h1>
-            <p>Agende seu atendimento nos postos de saúde de forma rápida e prática. Aqui você pode marcar consultas,
-                exames e vacinas sem precisar sair de casa. Simples, rápido e seguro.</p>
+            <p>Agende seus exames de radiologia odontológica na Massucato de forma rápida e totalmente online.
+                Escolha a unidade, selecione o exame e finalize seu agendamento em poucos cliques.</p>
         </div>
     </section>
 
@@ -37,36 +41,31 @@
         <div class="sc-content">
             <div class="cardCima">
                 <h2>AGENDAMENTOS ONLINE</h2>
-                <p>Evite filas e economize tempo! Escolha o serviço desejado, selecione a unidade de saúde e agende no
-                    melhor horário para você.
+                <p>Evite ligações e espera! Agende seus exames odontológicos na unidade Massucato de sua escolha,
+                    no melhor horário para você.
                 <p>
             </div>
 
-            <!-- Linha -->
-            <div class="line"></div>
-
             <!-- SERVIÇOS DISPONÍVEIS -->
             <div class="cardCima">
-                <h2>SERVIÇOS DISPONÍVEIS</h2>
+                <h2>EXAMES DISPONÍVEIS</h2>
                 <div class="textos">
                     <ul>
-                        <li>Consultas médicas</li>
-                        <li>Aplicação de vacinas</li>
-                        <li>Exames laboratoriais</li>
-                        <li>Atendimento odontológico</li>
+                        <li>Raio-X Odontológico</li>
+                        <li>Radiografia Panorâmica</li>
+                        <li>Cefalometria</li>
+                        <li>Tomografia Computadorizada</li>
                     </ul>
-                    <p>(Disponibilidade pode variar por unidade)</p>
+                    <p>(Exames podem variar conforme a unidade)</p>
                 </div>
             </div>
 
-            <!-- Linha -->
-            <div class="line"></div>
 
             <!-- ENCONTRE O POSTO MAIS PRÓXIMO -->
             <div class="cardCima">
-                <h2>ENCONTRE O POSTO MAIS PRÓXIMO</h2>
-                <p>Use nossa ferramenta de localização para descobrir qual unidade está mais perto de você e veja os
-                    horários disponíveis.
+                <h2>UNIDADES MASSUCATO</h2>
+                <p>Escolha entre nossas unidades em Barra Bonita, Jaú e Bariri. Veja os horários disponíveis
+                    e agende sem complicação.
                 <p>
             </div>
         </div>
@@ -79,9 +78,10 @@
                 <h2>COMO FUNCIONA?</h2>
                 <ul>
                     <li>1 - Crie sua conta ou faça login</li>
-                    <li>2 - Escolha o serviço e o posto de saúde</li>
-                    <li>3 - Selecione a data e horário</li>
-                    <li>4 - Confirme o agendamento e pronto!</li>
+                    <li>2 - Escolha o exame desejado</li>
+                    <li>3 - Selecione a unidade (Barra Bonita, Jaú ou Bariri)</li>
+                    <li>4 - Escolha a data e horário</li>
+                    <li>5 - Confirme seu agendamento</li>
                 </ul>
             </div>
 
@@ -89,10 +89,9 @@
             <div class="line"></div>
 
             <div class="cardBaixo">
-                <h2>SERVIÇOS DISPONÍVEIS</h2>
-                <p>Seus dados estão protegidos. Utilizamos protocolos de segurança para garantir a confidencialidade das
-                    suas informações.
-                <p>
+                <h2>SEGURANÇA DOS DADOS</h2>
+                <p>Seu agendamento e suas informações pessoais são protegidos por protocolos de segurança avançados,
+                    garantindo privacidade e confiabilidade em todo o processo.</p>
             </div>
         </div>
     </section>
@@ -101,7 +100,7 @@
 
     <!-- Imagem que fica no meio da tela -->
     <div class="imgPag">
-        <img src="<?php echo BASE_URL; ?>app/wwwroot/img/about-us/posto-img.png" alt="">
+        <img src="<?php echo BASE_URL; ?>app/wwwroot/img/about-us/banner-about.png" alt="">
     </div>
 
     <section class="lineHor">
@@ -114,7 +113,14 @@
             <div class="sobrenos">
                 <!-- Sobre nós -->
                 <h2 class="title-sn">Sobre Nós</h2>
-                <p class="text-sn">O AGEND+ (Sistema de Agendamento de Saúde) é uma plataforma criada em 2025 com o objetivo de modernizar e facilitar o acesso aos serviços de saúde pública e privada em todo o Brasil. Desenvolvido com foco na eficiência e na inclusão digital, o AGEND+ proporciona uma experiência simples, segura e acessível para o agendamento de consultas em unidades de saúde. <br> <br> O AGEND+ (Sistema de Agendamento de Saúde) é uma plataforma criada em 2025 com o objetivo de modernizar e facilitar o acesso aos serviços de saúde pública e privada em todo o Brasil. Desenvolvido com foco na eficiência e na inclusão digital, o AGEND+ proporciona uma experiência simples, segura e acessível para o agendamento de consultas em unidades de saúde.</p>
+                <p class="text-sn">O AGEND+ é o sistema oficial de agendamentos da Radiologia Odontológica Massucato, desenvolvido para
+                    facilitar e modernizar a forma como pacientes agendam seus exames. Criado em 2025, o sistema foi pensado
+                    para oferecer praticidade, rapidez e transparência no processo de agendamento, conectando pacientes
+                    às unidades de Barra Bonita, Jaú e Bariri de maneira simples e eficiente.
+                    <br><br>
+                    Nosso objetivo é tornar o acesso aos exames odontológicos mais organizado e acessível, garantindo uma
+                    experiência digital fluida desde a escolha do exame até a chegada na clínica.
+                </p>
             </div>
         </div>
     </div>
@@ -124,7 +130,13 @@
             <div class="nossocompro">
                 <!-- Nosso Compromisso -->
                 <h2 class="title-nc">Nosso Compromisso</h2>
-                <p class="text-nc">Trabalhamos com seriedade para promover o acesso à saúde de maneira mais inteligente, humana e digital. Acreditamos que a tecnologia deve estar a serviço da vida — e é por isso que desenvolvemos soluções que fazem a diferença no dia a dia de quem precisa de atendimento e de quem trabalha para oferecê-lo. <br> <br> Estamos em constante evolução, ouvindo nossos usuários e aprimorando nossos recursos. O AGEND+ é mais do que um sistema de agendamento: é um passo importante rumo a uma saúde mais moderna, acessível e organizada para todos. </p>
+                <p class="text-nc">Trabalhamos para tornar o agendamento de exames odontológicos mais rápido, moderno e confiável.
+                    Acreditamos que a tecnologia deve simplificar a vida das pessoas — por isso criamos um sistema onde
+                    cada etapa é intuitiva e segura.
+                    <br><br>
+                    Estamos em constante evolução, sempre ouvindo nossos usuários e aprimorando o AGEND+. Nosso propósito
+                    é oferecer a melhor experiência possível para quem depende de exames precisos e profissionais de excelência.
+                </p>
             </div>
         </div>
     </div>
@@ -136,26 +148,35 @@
         </div>
         <div class="equipe">
             <div class="fotosquipe">
-                <img src="<?php echo BASE_URL; ?>app/wwwroot/img/about-us/bruno.png" alt="">
-                <section class="lineHor">
-                    <div class="hor"></div>
-                </section>
+                <div class="exibicao">
+                    <img src="<?php echo BASE_URL; ?>app/wwwroot/img/about-us/bruno.png" alt="">
+                    <div class="links">
+                        <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                        <a href=""><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
                 <p>Bruno Oller Brunelli</p>
             </div>
 
             <div class="fotosquipe">
-                <img src="<?php echo BASE_URL; ?>app/wwwroot/img/about-us/surita.png" alt="Icone de atividade">
-                <section class="lineHor">
-                    <div class="hor"></div>
-                </section>
+                <div class="exibicao">
+                    <img src="<?php echo BASE_URL; ?>app/wwwroot/img/about-us/surita.png" alt="Icone de atividade">
+                    <div class="links">
+                        <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                        <a href=""><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
                 <p>João Pedro Surita</p>
             </div>
 
             <div class="fotosquipe">
-                <img src="<?php echo BASE_URL; ?>app/wwwroot/img/about-us/doa.png" alt="Icone de atividade">
-                <section class="lineHor">
-                    <div class="hor"></div>
-                </section>
+                <div class="exibicao">
+                    <img src="<?php echo BASE_URL; ?>app/wwwroot/img/about-us/doa.png" alt="Icone de atividade">
+                    <div class="links">
+                        <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                        <a href=""><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
                 <p>Eduardo Petarnella Gabri</p>
             </div>
         </div>
@@ -163,12 +184,12 @@
 
     <footer id="footer">
         <div class="container f-content">
-            <h2 id="copy"><span>&copy; 2025 AGEND+</span> Sistema de Agendamento de Saúde - Todos os direitos
+            <h2 id="copy"><span>&copy; 2025 AGEND+</span> Sistema de Agendamento de Radiologia Odontologica - Todos os direitos
                 reservados.</h2>
             <div class="links">
-                <a href="./politicas.html">Política de Privacidade</a>
+                <a href="index.php?controller=Home&action=politicas">Política de Privacidade</a>
                 <div class="line"></div>
-                <a href="./termos.html">Termos de Uso</a>
+                <a href="index.php?controller=Home&action=termos">Termos de Uso</a>
             </div>
         </div>
     </footer>

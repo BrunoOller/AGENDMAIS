@@ -93,12 +93,12 @@
 
     <footer id="footer">
         <div class="container f-content">
-            <h2 id="copy"><span>&copy; 2025 AGEND+</span> Sistema de Agendamento de Saúde - Todos os direitos
+            <h2 id="copy"><span>&copy; 2025 AGEND+</span> Sistema de Agendamento de Radiologia Odontologica - Todos os direitos
                 reservados.</h2>
             <div class="links">
-                <a href="./politicas.html">Política de Privacidade</a>
+                <a href="index.php?controller=Home&action=politicas">Política de Privacidade</a>
                 <div class="line"></div>
-                <a href="./termos.html">Termos de Uso</a>
+                <a href="index.php?controller=Home&action=termos">Termos de Uso</a>
             </div>
         </div>
     </footer>

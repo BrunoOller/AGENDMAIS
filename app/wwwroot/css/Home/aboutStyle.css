@@ -91,7 +91,7 @@ nav {
 
             .textos {
                 width: 80%;
-                
+
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -100,7 +100,7 @@ nav {
                 & ul {
                     width: 80%;
                     display: flex;
-                    
+
                     flex-direction: column;
                     align-items: start;
 
@@ -164,7 +164,7 @@ nav {
 
             &:nth-child(1) {
                 align-items: start;
-                
+
                 & li {
                     width: 90%;
                     font-size: 1.25rem;
@@ -186,7 +186,7 @@ nav {
                 }
             }
 
-            
+
             & h2 {
                 color: var(--cor-header-titulos);
                 font-size: 1.5rem;
@@ -216,9 +216,10 @@ nav {
     background: #FFFFFF;
 
     & .hor {
-        width: 50rem;
-        height: 2px;
-        background-color: var(--cor-header-titulos);
+        width: 37%;
+        min-width: 24rem;
+        height: 1px;
+        background-color: #1f1f1f;
     }
 }
 
@@ -226,31 +227,37 @@ nav {
     background: #FFFFFF;
 }
 
-.t-sobrenos, .t-nossocompro {
+.t-sobrenos,
+.t-nossocompro {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 4rem 0;
 
-    & .box, .nbox {
-        width: 65%;
+    & .box,
+    .nbox {
+        width: 60%;
         height: auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
 
-        & .title-sn, .title-nc {
-            font-size: 2rem;
-            font-weight: 600;
+        & .title-sn,
+        .title-nc {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
             color: var(--cor-header-titulos);
         }
 
-        & .text-sn, .text-nc {
+        & .text-sn,
+        .text-nc {
             width: 90%;
             height: auto;
             font-size: 1.25rem;
             margin-left: 2rem;
+            margin-top: 1rem;
         }
     }
 }
@@ -269,8 +276,9 @@ nav {
         width: 65%;
 
         & h1 {
-            font-size: 2rem;
-            font-weight: 600;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
             color: var(--cor-header-titulos);
         }
     }
@@ -306,25 +314,65 @@ nav {
                 & .hor {
                     width: 17rem;
                     height: 1.5px;
-                    background-color: var(--cor-header-titulos);
+                    background-color: #cecece;
                 }
             }
 
-            & img {
-                border-radius: 10px;
+            & .exibicao {
                 width: 100%;
                 height: auto;
+                position: relative;
+
+                & img {
+                    border-radius: 10px;
+                    width: 100%;
+                    height: auto;
+                    box-shadow: 0 5px 10px #0000002e;
+                }
+
+                & .links {
+                    width: 3rem;
+                    height: auto;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    padding: 10px 5px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: .5rem;
+
+                    & a i {
+                        font-size: 26pt;
+                        color: #fff;
+                        text-shadow: 0 5px 10px #000000;
+                    }
+
+                    & a:nth-child(1) i {
+                        transition: all .25s ease-out;
+
+                        &:hover {
+                            color: #ec91a3;
+                            text-shadow: 0 0 10px #f08b9f;
+                            transition: all .25s ease-in;
+                        }
+                    }
+
+                    & a:nth-child(2) i {
+                        transition: all .25s ease-out;
+
+                        &:hover {
+                            text-shadow: 0 0 10px #ffffff;
+                            transition: all .25s ease-in;
+                        }
+                    }
+                }
             }
 
             & p {
                 width: 90%;
                 font-size: 1.2rem;
+                font-weight: 500;
                 text-align: center;
-            }
-
-            &:hover {
-                transform: translateY(-5px);
-                transition: transform .2s ease-in;
             }
         }
     }

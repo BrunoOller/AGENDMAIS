@@ -25,6 +25,63 @@ nav {
     }
 }
 
+.choose {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & .c-section {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        padding: 3rem .5rem;
+
+        & .s-data,
+        .s-horario {
+            width: 40%;
+            height: auto;
+            padding: 5px;
+
+            & h2 {
+                font-size: 1.15rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                color: var(--cor-texto-02);
+            }
+
+            & .selection {
+                display: flex;
+                flex-direction: column;
+
+                & input[type="date"],
+                input[type="time"] {
+                    width: 100%;
+                    background: #F4F4F4;
+                    border: 1px solid #1F1F1F;
+                    box-shadow: 0 5px 10px #00000011;
+                    color: #5B5B5B;
+                    padding: .5rem .75rem;
+                    border-radius: 2px;
+                    font-size: 1rem;
+                    font-weight: 400;
+                    text-overflow: ellipsis;
+                    cursor: pointer;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
 span {
     width: 100%;
     height: auto;
@@ -204,38 +261,56 @@ span {
     .gradeAgendamento h2 {
         font-size: 1.3rem;
     }
+
     .gradeAgendamento p {
         font-size: 1rem;
     }
+
     span {
         font-size: 1.5rem;
     }
 
     .selections .s-section {
-        flex-direction: column; 
-        gap: 1.5rem; 
-        padding: 2rem 1rem; 
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 2rem 1rem;
     }
 
     .selections .s-section .s-exame,
     .selections .s-section .s-unidade {
-        width: 100%; 
-        padding: 0; 
+        width: 100%;
+        padding: 0;
     }
 
     .text-image .ti-section {
         width: 90%;
     }
+
     .text-image .ti-section #info-desc {
-        width: 95%; 
+        width: 95%;
     }
 
     .observacao .obs-section {
-        width: 90%; 
+        width: 90%;
         padding: 0 1rem;
     }
+
     .observacao .obs-section textarea {
         min-height: 150px;
         max-height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .choose .c-section {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 2rem 1rem;
+    }
+
+    .choose .c-section .s-data,
+    .choose .c-section .s-horario {
+        width: 100%;
+        padding: 0;
     }
 }

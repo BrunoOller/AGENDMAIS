@@ -21,7 +21,7 @@
     <!-- Links CSS -->
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>app/wwwroot/css/reset.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>app/wwwroot/css/color.css">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>app/wwwroot/css/Home/homeStyle.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>app/wwwroot/css/Home/homeStyle.css?v=1.0">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>app/wwwroot/css/globalStyle.css">
 </head>
 
@@ -46,14 +46,14 @@
                 <h1 class="num-passo">1.</h1>
                 <h2>Escolha um serviço disponível</h2>
                 <img src="<?php echo BASE_URL; ?>app/wwwroot/img/home/icons/activity.svg" alt="Icone de atividade">
-                <p>Escolha um horário em um serviço público ou privado disponível no site.</p>
+                <p>Escolha um exame, unidade e um horário disponível para realizar o agendamento.</p>
             </div>
 
             <div class="block">
                 <h1 class="num-passo">2.</h1>
                 <h2>Conclua o agendamento</h2>
                 <img src="<?php echo BASE_URL; ?>app/wwwroot/img/home/icons/check-circle.svg" alt="Icone de atividade">
-                <p>Após realizar o processo e/ou pagamento em caso de instituição privada, conclua-o e aguarde.</p>
+                <p>Após realizar o processo de agendamento, conclua-o e aguarde.</p>
             </div>
 
             <div class="block">
@@ -122,7 +122,7 @@
                     <h2>Meus Agendamentos</h2>
                     <p>Acompanhe e gerencie suas consultas em andamento.</p>
                 </div>
-                <a href="./perfil.html#appointmentHistory">Visualizar</a>
+                <a href="index.php?controller=Perfil&action=perfilIndex#appointmentHistory">Visualizar</a>
             </div>
 
             <div class="block">
@@ -149,12 +149,12 @@
 
     <footer id="footer">
         <div class="container f-content">
-            <h2 id="copy"><span>&copy; 2025 AGEND+</span> Sistema de Agendamento de Saúde - Todos os direitos
+            <h2 id="copy"><span>&copy; 2025 AGEND+</span> Sistema de Agendamento de Radiologia Odontologica - Todos os direitos
                 reservados.</h2>
             <div class="links">
-                <a href="./politicas.html">Política de Privacidade</a>
+                <a href="index.php?controller=Home&action=politicas">Política de Privacidade</a>
                 <div class="line"></div>
-                <a href="./termos.html">Termos de Uso</a>
+                <a href="index.php?controller=Home&action=termos">Termos de Uso</a>
             </div>
         </div>
     </footer>
