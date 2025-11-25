@@ -17,7 +17,7 @@ function showMessage($msg)
 $feedback = showMessage($_GET['msg'] ?? null);
 
 // Garante que a foto de perfil usa a URL base (o 3.png é um placeholder)
-$foto_perfil_url = BASE_URL . 'app/wwwroot/img/fotos-perfil/semfoto.jpg';
+$foto_perfil_url = BASE_URL . 'app/wwwroot/img/fotos-perfil/3.png';
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +52,7 @@ $foto_perfil_url = BASE_URL . 'app/wwwroot/img/fotos-perfil/semfoto.jpg';
 
     <section id="foto-perfil">
         <h1>Seu perfil</h1>
-        <img src="<?php echo BASE_URL; ?>app/wwwroot/img/fotos-perfil/semfoto.jpg" alt="Foto de Perfil" id="foto">
+        <img src="<?php echo BASE_URL; ?>app/wwwroot/img/fotos-perfil/3.png" alt="Foto de Perfil" id="foto">
     </section>
 
     <form action="index.php?controller=Perfil&action=updateProfile" method="POST">
@@ -123,7 +123,7 @@ $foto_perfil_url = BASE_URL . 'app/wwwroot/img/fotos-perfil/semfoto.jpg';
 
         <!-- Botão de Salvar (Submete o formulário) -->
         <div class="container d-flex justify-content-center mb-5">
-            <button type="submit" class="btn btn-success btn-lg shadow">
+            <button id="btn-color" type="submit" class="btn btn-lg shadow">
                 <i class="fas fa-save me-2"></i> Salvar Alterações
             </button>
         </div>
