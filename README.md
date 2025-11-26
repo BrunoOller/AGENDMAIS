@@ -319,7 +319,7 @@ direction LR
 Representa as tabelas e os relacionamentos que compõem a base de dados do sistema. Serve para planejar e documentar a forma como as informações serão armazenadas e conectadas.
 - ### Figura 7:
 <div align="center">
-  <img alt="Figura 7 - Diagrama de Banco de Dados" src=".github/ModelBD.svg'" width="550">
+  <img alt="Figura 7 - Diagrama de Banco de Dados" src=".github/model_BD_AGENDMAIS.png" width="550">
 </div>
 
 [Voltar para o início](#inicio)
